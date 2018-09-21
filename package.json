@@ -1,0 +1,22 @@
+{
+  "name": "jsondiffer",
+  "version": "1.0.0",
+  "description": "json diff lib",
+  "main": "lib/jsondiffer.js",
+  "types": "lib/jsondiffer.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukascivil/jsondiffer.git"
+  },
+  "keywords": ["json", "diff"],
+  "author": "lukascivil",
+  "homepage": "https://github.com/lukascivil/jsondiffer#readme",
+  "devDependencies": {
+    "typescript": "^3.0.3"
+  }
+}

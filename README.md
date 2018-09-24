@@ -2,6 +2,9 @@
 
 [![npm version](http://img.shields.io/npm/v/json-difference.svg?style=flat)](https://www.npmjs.com/package/json-difference "View this project on npm")
 
+## Example
+[master](http://jsondifference.lukascivil.com.br)
+
 ## Installation
 
 `$ npm install json-difference`

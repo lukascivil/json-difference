@@ -12,17 +12,16 @@ export class JsonDiffer {
     let struct2_paths = this.getStructPaths(struct2);
 
     // A-B
-    delta.removed = this.getRemovedPaths(struct1_paths, struct2_paths)
-    // // B-A
-    delta.new = this.getAddedPaths(struct1_paths, struct2_paths)
-    // // a->b
+    delta.removed = this.getPathsDiff(struct1_paths, struct2_paths)
+    // B-A
+    delta.new = this.getPathsDiff(struct2_paths, struct1_paths)
+    // a->b
     delta.edited = this.getEditedPaths(struct1_paths, struct2_paths)
 
     return delta;
   }
 
   private getStructPaths(struct: any, paths: any = [], currentpath = '') {
-    let oi: any
     for (const key in struct) {
       let path = currentpath !== '' ? currentpath + "/" + key : key;
       console.log('key', key)
@@ -30,23 +29,23 @@ export class JsonDiffer {
       if (typeof struct[key] == "object") {
         this.getStructPaths(struct[key], paths, path);
       } else {
-        oi = {
-          [path]: struct[key]
-        };
-        paths.push(oi);
-
+        paths[path] = struct[key];
       }
     };
     return paths;
   }
 
-  // Diference
-  private getRemovedPaths(struct1_paths: any, struct2_paths: any) {
-    return struct1_paths.filter((x: any) => !struct2_paths.includes(x))
-  }
+  // Diference by key
+  private getPathsDiff(struct1_paths: any, struct2_paths: any) {
+    let diff: any = {};
 
-  private getAddedPaths(struct1_paths: any, struct2_paths: any) {
-    return struct2_paths.filter((x: any) => !struct1_paths.includes(x))
+    for (const key in struct1_paths) {
+      if (!(key in struct2_paths)) {
+        diff[key] = struct1_paths[key];
+      }
+    }
+
+    return diff;
   }
 
   // Diference by value

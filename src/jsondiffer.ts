@@ -49,21 +49,25 @@ export class JsonDiffer {
     return struct2_paths.filter((x: any) => !struct1_paths.includes(x))
   }
 
+  // Diference by value
   private getEditedPaths(struct1_paths: any, struct2_paths: any) {
-    let paths: any = [];
+    let diffs: any = [];
+    let diff: any = {};
+
     for (const key in struct1_paths) {
       if (struct2_paths.hasOwnProperty(key)) {
         if (struct1_paths[key] != struct2_paths[key]) {
-          let diff: any = {
-            edited: {
+          diff = {
+            [key]: {
               newvalue: struct1_paths[key],
               oldvalue: struct2_paths[key]
             }
           };
-          paths.push(diff);
+          diffs.push(diff);
         }
       }
-      return paths
     }
+    return diffs;
   }
+
 }

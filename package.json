@@ -2,8 +2,11 @@
   "name": "jsondiffer",
   "version": "1.0.0",
   "description": "json diff lib",
-  "main": "lib/jsondiffer.js",
-  "types": "lib/jsondiffer.d.ts",
+  "main": "dist/jsondiffer.js",
+  "types": "dist/jsondiffer.d.ts",
+  "files": [
+    "dist",
+  ],
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",

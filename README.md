@@ -7,7 +7,13 @@
 
 ## Installation
 
-`$ npm install json-difference`
+`npm install json-difference`
+
+```html
+<script type="module"> 
+import {JsonDiffer} from "https://rawgit.com/lukascivil/jsondiffer/master/dist.browser/jsondiffer.js";
+</script>
+```
 
 ## Usage
 

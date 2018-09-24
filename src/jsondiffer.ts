@@ -24,8 +24,6 @@ export class JsonDiffer {
   private getStructPaths(struct: any, paths: any = [], currentpath = '') {
     for (const key in struct) {
       let path = currentpath !== '' ? currentpath + "/" + key : key;
-      console.log('key', key)
-      console.log('struct[key]', struct[key])
       if (typeof struct[key] == "object") {
         this.getStructPaths(struct[key], paths, path);
       } else {

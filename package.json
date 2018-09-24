@@ -1,5 +1,5 @@
 {
-  "name": "jsondiffer",
+  "name": "json-difference",
   "version": "1.0.0",
   "description": "json diff lib",
   "main": "dist/jsondiffer.js",

@@ -9,7 +9,7 @@
     "dist.browser"
   ],
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest --config jestconfig.json --coverage",
     "example": "tsc examples/index.ts && node examples/index.js",
     "build": "tsc && tsc -p tsconfig.browser.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",

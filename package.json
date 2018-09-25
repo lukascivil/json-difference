@@ -13,7 +13,8 @@
     "example": "tsc examples/index.ts && node examples/index.js",
     "build": "tsc && tsc -p tsconfig.browser.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",

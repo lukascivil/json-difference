@@ -1,7 +1,8 @@
 language: nodejs
 
 before_script:
-  - npm run build
+  # npm install -> npm prepare -> npm run build
+  - npm install 
 
 script:
   - npm run test

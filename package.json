@@ -1,6 +1,6 @@
 {
   "name": "json-difference",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "json diff lib",
   "main": "dist/jsondiffer.js",
   "types": "dist/jsondiffer.d.ts",

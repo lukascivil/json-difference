@@ -3,6 +3,7 @@
 [![npm version](http://img.shields.io/npm/v/json-difference.svg?style=flat)](https://www.npmjs.com/package/json-difference "View this project on npm")
 [![Build Status](https://travis-ci.org/lukascivil/jsondiffer.svg?branch=master)](https://travis-ci.org/lukascivil/jsondiffer)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![codecov](https://codecov.io/gh/lukascivil/jsondiffer/branch/master/graph/badge.svg)](https://codecov.io/gh/lukascivil/jsondiffer)
 
 ## Example
 [master](http://jsondifference.lukascivil.com.br)

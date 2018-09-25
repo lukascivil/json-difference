@@ -9,6 +9,7 @@
     "dist.browser"
   ],
   "scripts": {
+    "test": "jest --config jestconfig.json",
     "example": "tsc examples/index.ts && node examples/index.js",
     "build": "tsc && tsc -p tsconfig.browser.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
@@ -25,6 +26,9 @@
   "author": "lukascivil",
   "homepage": "https://github.com/lukascivil/jsondiffer#readme",
   "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.1",
     "typescript": "^3.0.3"
   }
 }

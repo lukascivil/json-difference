@@ -18,7 +18,10 @@
     "type": "git",
     "url": "git+https://github.com/lukascivil/jsondiffer.git"
   },
-  "keywords": ["json", "diff"],
+  "keywords": [
+    "json",
+    "diff"
+  ],
   "author": "lukascivil",
   "homepage": "https://github.com/lukascivil/jsondiffer#readme",
   "devDependencies": {

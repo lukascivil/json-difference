@@ -21,9 +21,9 @@ import {JsonDiffer} from "https://rawgit.com/lukascivil/jsondiffer/master/dist.b
 
 ## Usage
 
-`getDiff(oldStruct, newStruct)`
+`getDiff(newStruct, oldStruct)`
 
-Returns the structural diff between `oldStruct` and `newStruct`.
+Returns the structural diff between `newStruct` and `oldStruct`.
 
 ## Example
 

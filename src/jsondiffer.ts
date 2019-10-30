@@ -50,14 +50,13 @@ export class JsonDiffer {
   private getEditedPaths(struct1_paths: any, struct2_paths: any) {
     let diffs: any = [];
     let diff: any = {};
-
     for (const key in struct1_paths) {
       if (struct2_paths.hasOwnProperty(key)) {
         if (struct1_paths[key] != struct2_paths[key]) {
           diff = {
             [key]: {
-              newvalue: struct1_paths[key],
-              oldvalue: struct2_paths[key]
+              oldvalue: struct1_paths[key],
+              newvalue: struct2_paths[key]
             }
           };
           diffs.push(diff);

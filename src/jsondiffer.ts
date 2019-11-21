@@ -1,41 +1,41 @@
 export class JsonDiffer {
-  constructor() { }
-
   public getDiff(struct1: any, struct2: any) {
     const delta = {
       new: [],
       removed: [],
-      edited: [],
+      edited: []
     };
 
     let struct1_paths = this.getStructPaths(struct1);
     let struct2_paths = this.getStructPaths(struct2);
 
     // A-B
-    delta.removed = this.getPathsDiff(struct1_paths, struct2_paths)
+    delta.removed = this.getPathsDiff(struct1_paths, struct2_paths);
     // B-A
-    delta.new = this.getPathsDiff(struct2_paths, struct1_paths)
+    delta.new = this.getPathsDiff(struct2_paths, struct1_paths);
     // a->b
-    delta.edited = this.getEditedPaths(struct1_paths, struct2_paths)
+    delta.edited = this.getEditedPaths(struct1_paths, struct2_paths);
 
     return delta;
   }
 
   private getStructPaths(struct: any, paths: any = [], currentpath = '') {
     for (const key in struct) {
-      let path = currentpath !== '' ? currentpath + "/" + key : key;
-      if (typeof struct[key] == "object") {
+      const path = currentpath !== '' ? currentpath + '/' + key : key;
+
+      if (typeof struct[key] == 'object') {
         this.getStructPaths(struct[key], paths, path);
       } else {
         paths[path] = struct[key];
       }
-    };
+    }
+
     return paths;
   }
 
-  // Diference by key
+  // Difference by key
   private getPathsDiff(struct1_paths: any, struct2_paths: any) {
-    let diff: any = {};
+    const diff: any = {};
 
     for (const key in struct1_paths) {
       if (!(key in struct2_paths)) {
@@ -46,13 +46,14 @@ export class JsonDiffer {
     return diff;
   }
 
-  // Diference by value
+  // Difference by value
   private getEditedPaths(struct1_paths: any, struct2_paths: any) {
-    let diffs: any = [];
+    const diffs: any = [];
     let diff: any = {};
+
     for (const key in struct1_paths) {
       if (struct2_paths.hasOwnProperty(key)) {
-        if (struct1_paths[key] != struct2_paths[key]) {
+        if (struct1_paths[key] !== struct2_paths[key]) {
           diff = {
             [key]: {
               oldvalue: struct1_paths[key],
@@ -63,7 +64,7 @@ export class JsonDiffer {
         }
       }
     }
+
     return diffs;
   }
-
 }

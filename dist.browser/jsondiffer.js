@@ -5,7 +5,7 @@ var JsonDiffer = /** @class */ (function () {
         var delta = {
             new: [],
             removed: [],
-            edited: [],
+            edited: []
         };
         var struct1_paths = this.getStructPaths(struct1);
         var struct2_paths = this.getStructPaths(struct2);
@@ -21,18 +21,17 @@ var JsonDiffer = /** @class */ (function () {
         if (paths === void 0) { paths = []; }
         if (currentpath === void 0) { currentpath = ''; }
         for (var key in struct) {
-            var path = currentpath !== '' ? currentpath + "/" + key : key;
-            if (typeof struct[key] == "object") {
+            var path = currentpath !== '' ? currentpath + '/' + key : key;
+            if (typeof struct[key] == 'object') {
                 this.getStructPaths(struct[key], paths, path);
             }
             else {
                 paths[path] = struct[key];
             }
         }
-        ;
         return paths;
     };
-    // Diference by key
+    // Difference by key
     JsonDiffer.prototype.getPathsDiff = function (struct1_paths, struct2_paths) {
         var diff = {};
         for (var key in struct1_paths) {
@@ -42,18 +41,18 @@ var JsonDiffer = /** @class */ (function () {
         }
         return diff;
     };
-    // Diference by value
+    // Difference by value
     JsonDiffer.prototype.getEditedPaths = function (struct1_paths, struct2_paths) {
         var _a;
         var diffs = [];
         var diff = {};
         for (var key in struct1_paths) {
             if (struct2_paths.hasOwnProperty(key)) {
-                if (struct1_paths[key] != struct2_paths[key]) {
+                if (struct1_paths[key] !== struct2_paths[key]) {
                     diff = (_a = {},
                         _a[key] = {
-                            newvalue: struct1_paths[key],
-                            oldvalue: struct2_paths[key]
+                            oldvalue: struct1_paths[key],
+                            newvalue: struct2_paths[key]
                         },
                         _a);
                     diffs.push(diff);

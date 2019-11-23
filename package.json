@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "test": "jest --config jestconfig.json --coverage",
-    "example": "tsc examples/index.ts && node examples/index.js",
+    "example": "echo Use {simple} or {stress} as example param && cd ./examples && npm run",
     "build": "tsc && tsc -p tsconfig.browser.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "npm run build",

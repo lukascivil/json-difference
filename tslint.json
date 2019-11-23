@@ -4,7 +4,10 @@
   "jsRules": {},
   "rules": {
     "quotemark": [true, "single"],
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "ordered-imports": [false],
+    "prefer-const": true
   },
   "rulesDirectory": []
 }

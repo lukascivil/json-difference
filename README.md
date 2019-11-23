@@ -21,13 +21,19 @@
 </script>
 ```
 
+## Example
+
+Running example:
+
+`npm run example {simple, stress}`
+
 ## Usage
+
+Method:
 
 `getDiff(oldStruct, newStruct)`
 
 Returns the structural diff between `oldStruct` and `newStruct`.
-
-## Example
 
 Simple usage:
 

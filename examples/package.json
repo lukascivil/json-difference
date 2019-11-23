@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "example to test jsondiffer",
   "scripts": {
-    "simple": "tsc -p tsconfig.json && node dist/simple.js",
-    "stress": "tsc -p tsconfig.json && npm run copy-files && node dist/stress.js",
+    "build": "tsc -p tsconfig.json && npm run copy-files",
+    "simple": "npm run build && node dist/simple.js",
+    "stress": "npm run build && node dist/stress.js",
     "copy-files": "copyfiles -u 1 src/**/*.json dist"
   },
   "author": "lukascivil",

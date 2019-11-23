@@ -1,13 +1,14 @@
+import { IDelta, EditedPaths, StructPaths, PathsDiff } from './models/jsondiffer.model';
+
 export class JsonDiffer {
-  public getDiff(struct1: any, struct2: any) {
-    const delta = {
-      new: [],
-      removed: [],
+  public getDiff(struct1: any, struct2: any): IDelta {
+    const delta: IDelta = {
+      new: {},
+      removed: {},
       edited: []
     };
-
-    let struct1_paths = this.getStructPaths(struct1);
-    let struct2_paths = this.getStructPaths(struct2);
+    const struct1_paths = this.getStructPaths(struct1);
+    const struct2_paths = this.getStructPaths(struct2);
 
     // A-B
     delta.removed = this.getPathsDiff(struct1_paths, struct2_paths);
@@ -19,7 +20,7 @@ export class JsonDiffer {
     return delta;
   }
 
-  private getStructPaths(struct: any, paths: any = [], currentpath = '') {
+  private getStructPaths(struct: any, paths: any = [], currentpath = ''): StructPaths {
     for (const key in struct) {
       const path = currentpath !== '' ? currentpath + '/' + key : key;
 
@@ -34,7 +35,7 @@ export class JsonDiffer {
   }
 
   // Difference by key
-  private getPathsDiff(struct1_paths: any, struct2_paths: any) {
+  private getPathsDiff(struct1_paths: any, struct2_paths: any): PathsDiff {
     const diff: any = {};
 
     for (const key in struct1_paths) {
@@ -47,7 +48,7 @@ export class JsonDiffer {
   }
 
   // Difference by value
-  private getEditedPaths(struct1_paths: any, struct2_paths: any) {
+  private getEditedPaths(struct1_paths: any, struct2_paths: any): EditedPaths {
     const diffs: any = [];
     let diff: any = {};
 

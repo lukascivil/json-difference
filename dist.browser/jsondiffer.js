@@ -3,8 +3,8 @@ var JsonDiffer = /** @class */ (function () {
     }
     JsonDiffer.prototype.getDiff = function (struct1, struct2) {
         var delta = {
-            new: [],
-            removed: [],
+            new: {},
+            removed: {},
             edited: []
         };
         var struct1_paths = this.getStructPaths(struct1);

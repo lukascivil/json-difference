@@ -51,8 +51,8 @@ var JsonDiffer = /** @class */ (function () {
                 if (struct1_paths[key] !== struct2_paths[key]) {
                     diff = (_a = {},
                         _a[key] = {
-                            oldvalue: struct1_paths[key],
-                            newvalue: struct2_paths[key]
+                            oldValue: struct1_paths[key],
+                            newValue: struct2_paths[key]
                         },
                         _a);
                     diffs.push(diff);

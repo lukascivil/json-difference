@@ -1,4 +1,4 @@
-export type DefaultValue = number | string | boolean;
+type DefaultValue = number | string | boolean;
 
 export type EditedPaths = Array<{ [key: string]: { newValue: DefaultValue; oldValue: DefaultValue } }>;
 export interface IStructPaths {

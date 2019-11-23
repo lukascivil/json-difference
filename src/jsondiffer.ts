@@ -1,4 +1,4 @@
-import { IDelta, EditedPaths, IStructPaths, IPathsDiff, DefaultValue } from './models/jsondiffer.model';
+import { IDelta, EditedPaths, IStructPaths, IPathsDiff } from './models/jsondiffer.model';
 
 export class JsonDiffer {
   public getDiff(oldStruct: any, newStruct: any): IDelta {

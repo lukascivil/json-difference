@@ -1,6 +1,6 @@
 {
   "name": "json-difference",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "json diff lib",
   "main": "dist/jsondiffer.js",
   "types": "dist/jsondiffer.d.ts",
@@ -14,8 +14,8 @@
     "example": "echo Use {simple} or {stress} as example param && cd ./examples && npm run",
     "build": "tsc && tsc -p tsconfig.browser.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test"
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test"
   },
   "repository": {
     "type": "git",
@@ -28,11 +28,11 @@
   "author": "lukascivil",
   "homepage": "https://github.com/lukascivil/jsondiffer#readme",
   "devDependencies": {
-    "@types/jest": "^23.3.2",
-    "jest": "^23.6.0",
-    "ts-jest": "^23.10.1",
-    "tslint": "^5.20.1",
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.3",
+    "ts-jest": "^27.1.0",
+    "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.0.3"
+    "typescript": "^4.5.2"
   }
 }

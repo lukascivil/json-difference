@@ -4,13 +4,17 @@
   "description": "json diff lib",
   "main": "dist/core",
   "types": "dist/models/jsondiffer.d.ts",
+  "engines": {
+    "node": ">=14.x"
+  },
   "files": [
     "dist",
     "dist.browser"
   ],
   "scripts": {
-    "lint": "yarn eslint --ext .ts",
-    "test": "yarn jest --config jestconfig.json --coverage",
+    "lint": "eslint --ext .ts",
+    "check-types": "tsc --noemit -p tsconfig.json",
+    "test": "jest --config jestconfig.json --coverage",
     "test:local": "jest --watchAll --config jestconfig.json",
     "example": "echo Use {simple} or {stress} as example param && cd ./examples && npm run",
     "build": "tsc && tsc -p tsconfig.browser.json",

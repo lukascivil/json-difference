@@ -1,28 +1,29 @@
 var JsonDiffer = /** @class */ (function () {
     function JsonDiffer() {
     }
-    JsonDiffer.prototype.getDiff = function (struct1, struct2) {
+    JsonDiffer.prototype.getDiff = function (oldStruct, newStruct) {
         var delta = {
             new: {},
             removed: {},
             edited: []
         };
-        var struct1_paths = this.getStructPaths(struct1);
-        var struct2_paths = this.getStructPaths(struct2);
+        var oldStructPaths = this.getStructPaths(oldStruct);
+        var newStructPaths = this.getStructPaths(newStruct);
         // A-B
-        delta.removed = this.getPathsDiff(struct1_paths, struct2_paths);
+        delta.removed = this.getPathsDiff(oldStructPaths, newStructPaths);
         // B-A
-        delta.new = this.getPathsDiff(struct2_paths, struct1_paths);
+        delta.new = this.getPathsDiff(newStructPaths, oldStructPaths);
         // a->b
-        delta.edited = this.getEditedPaths(struct1_paths, struct2_paths);
+        delta.edited = this.getEditedPaths(oldStructPaths, newStructPaths);
         return delta;
     };
-    JsonDiffer.prototype.getStructPaths = function (struct, paths, currentpath) {
-        if (paths === void 0) { paths = []; }
-        if (currentpath === void 0) { currentpath = ''; }
-        for (var key in struct) {
-            var path = currentpath !== '' ? currentpath + '/' + key : key;
-            if (typeof struct[key] == 'object') {
+    JsonDiffer.prototype.getStructPaths = function (struct, paths, currentPath) {
+        if (paths === void 0) { paths = {}; }
+        if (currentPath === void 0) { currentPath = ''; }
+        for (var _i = 0, _a = Object.keys(struct); _i < _a.length; _i++) {
+            var key = _a[_i];
+            var path = currentPath !== '' ? "".concat(currentPath, "/").concat(key) : key;
+            if (typeof struct[key] === 'object') {
                 this.getStructPaths(struct[key], paths, path);
             }
             else {
@@ -32,27 +33,27 @@ var JsonDiffer = /** @class */ (function () {
         return paths;
     };
     // Difference by key
-    JsonDiffer.prototype.getPathsDiff = function (struct1_paths, struct2_paths) {
+    JsonDiffer.prototype.getPathsDiff = function (oldStructPaths, newStructPaths) {
         var diff = {};
-        for (var key in struct1_paths) {
-            if (!(key in struct2_paths)) {
-                diff[key] = struct1_paths[key];
+        for (var key in oldStructPaths) {
+            if (!(key in newStructPaths)) {
+                diff[key] = oldStructPaths[key];
             }
         }
         return diff;
     };
     // Difference by value
-    JsonDiffer.prototype.getEditedPaths = function (struct1_paths, struct2_paths) {
+    JsonDiffer.prototype.getEditedPaths = function (oldStructPaths, newStructPaths) {
         var _a;
         var diffs = [];
         var diff = {};
-        for (var key in struct1_paths) {
-            if (struct2_paths.hasOwnProperty(key)) {
-                if (struct1_paths[key] !== struct2_paths[key]) {
+        for (var key in oldStructPaths) {
+            if (newStructPaths.hasOwnProperty(key)) {
+                if (oldStructPaths[key] !== newStructPaths[key]) {
                     diff = (_a = {},
                         _a[key] = {
-                            oldValue: struct1_paths[key],
-                            newValue: struct2_paths[key]
+                            oldValue: oldStructPaths[key],
+                            newValue: newStructPaths[key]
                         },
                         _a);
                     diffs.push(diff);

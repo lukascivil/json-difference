@@ -11,6 +11,7 @@
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "test": "jest --config jestconfig.json --coverage",
+    "test:local": "jest --watchAll --config jestconfig.json",
     "example": "echo Use {simple} or {stress} as example param && cd ./examples && npm run",
     "build": "tsc && tsc -p tsconfig.browser.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",

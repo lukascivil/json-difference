@@ -1,8 +1,8 @@
 // Models
-import { IPathsDiff, IStructPaths } from '../models/jsondiffer.model';
+import { PathsDiff, StructPaths } from '../models/jsondiffer.model';
 
-export const getPathsDiff = (oldStructPaths: IStructPaths, newStructPaths: IStructPaths): IPathsDiff => {
-  const diff: IPathsDiff = {};
+export const getPathsDiff = (oldStructPaths: StructPaths, newStructPaths: StructPaths): PathsDiff => {
+  const diff: PathsDiff = {};
 
   for (const key in oldStructPaths) {
     if (!(key in newStructPaths)) {

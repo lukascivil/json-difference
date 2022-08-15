@@ -1,7 +1,7 @@
 // Models
-import { IStructPaths } from '../models/jsondiffer.model';
+import { StructPaths } from '../models/jsondiffer.model';
 
-export const getStructPaths = (struct: any, paths: IStructPaths = {}, currentPath = ''): IStructPaths => {
+export const getStructPaths = (struct: any, paths: StructPaths = {}, currentPath = ''): StructPaths => {
   for (const key of Object.keys(struct)) {
     const path = currentPath !== '' ? `${currentPath}/${key}` : key;
 

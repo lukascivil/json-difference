@@ -1,8 +1,8 @@
 // Models
-import { EditedPaths, IStructPaths } from '../models/jsondiffer.model';
+import { EditedPath, StructPaths } from '../models/jsondiffer.model';
 
-export const getEditedPaths = (oldStructPaths: IStructPaths, newStructPaths: IStructPaths): EditedPaths => {
-  const diffs: EditedPaths = [];
+export const getEditedPaths = (oldStructPaths: StructPaths, newStructPaths: StructPaths): Array<EditedPath> => {
+  const diffs: Array<EditedPath> = [];
   let diff: any = {};
 
   for (const key in oldStructPaths) {

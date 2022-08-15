@@ -2,18 +2,19 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          node-version: [14.x]
+
+    strategy:
+      matrix:
+        node-version: [14.x]
 
     steps:
       - name: Checkout repository

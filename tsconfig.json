@@ -1,16 +1,12 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "types": ["jest"],
     "module": "commonjs",
     "declaration": true,
     "outDir": "./dist",
     "strict": true
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/__tests__/*"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }

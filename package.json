@@ -9,7 +9,7 @@
     "dist.browser"
   ],
   "scripts": {
-    "lint": "tslint --project tsconfig.json",
+    "lint": "eslint --ext .ts",
     "test": "jest --config jestconfig.json --coverage",
     "test:local": "jest --watchAll --config jestconfig.json",
     "example": "echo Use {simple} or {stress} as example param && cd ./examples && npm run",

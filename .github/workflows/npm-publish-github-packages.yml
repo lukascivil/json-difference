@@ -44,5 +44,5 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: yarn
       - uses: JS-DevTools/npm-publish@v1
-        env:
+        with:
           token: ${{ secrets.NPM_TOKEN }}

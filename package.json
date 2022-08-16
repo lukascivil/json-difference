@@ -17,7 +17,7 @@
     "test": "jest --config jestconfig.json --coverage",
     "test:local": "jest --watchAll --config jestconfig.json",
     "example": "echo Use {simple} or {stress} as example param && cd ./examples && npm run",
-    "build": "tsc && tsc -p tsconfig.browser.json",
+    "build": "tsc && vite build",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test"
@@ -42,6 +42,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "jest": "^28.1.3",
     "ts-jest": "^28.0.8",
-    "typescript": "4.4.3"
+    "typescript": "4.4.3",
+    "vite": "^3.0.7",
+    "vite-tsconfig-paths": "^3.5.0"
   }
 }

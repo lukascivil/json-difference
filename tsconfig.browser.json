@@ -2,17 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./dist.browser",
-    "target": "es5",
     "module": "es6",
     "moduleResolution": "node",
-    "lib": [
-      "es2016"
-    ]
+    "target": "es5",
+    "lib": ["es2016"],
+    "sourceRoot": "./src/",
+    "rootDir": "./src/"
   },
-  "include": [
-    "./src/**/*"
-  ],
-  "exclude": [
-    "./src/__tests__/",
-  ]
+  "include": ["./src/**/*"],
+  "exclude": ["./src/__tests__/"]
 }

@@ -17,7 +17,7 @@
 
 ```html
 <script type="module">
-  import { JsonDiffer } from 'https://rawgit.com/lukascivil/jsondiffer/master/dist.browser/jsondiffer.js';
+  import { getDiff } from 'https://rawgit.com/lukascivil/jsondiffer/master/dist.browser/json-difference.mjs';
 </script>
 ```
 

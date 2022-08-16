@@ -8,13 +8,19 @@
 [![codecov](https://codecov.io/gh/lukascivil/jsondiffer/branch/master/graph/badge.svg)](https://codecov.io/gh/lukascivil/jsondiffer)
 [![MIT License](https://img.shields.io/npm/l/deep-object-diff.svg?style=flat)](https://github.com/lukascivil/jsondiffer/blob/master/LICENSE)
 
+Computes the difference between two objects and returns an intuitive result.
+
 ## Example
 
-[master](http://jsondifference.lukascivil.com.br)
+[Last release](http://jsondifference.lukascivil.com.br)
 
 ## Installation
 
-`npm install json-difference --save`
+```sh
+yarn add json-difference
+```
+
+Or
 
 ```html
 <script type="module">
@@ -26,7 +32,7 @@
 
 Running example:
 
-`npm run example {simple, stress}`
+`yarn example {simple, stress}`
 
 ## Usage
 
@@ -39,13 +45,12 @@ Returns the structural diff between `oldStruct` and `newStruct`.
 Simple usage:
 
 ```ts
-import { JsonDiffer } from 'json-difference';
+import { getDiff } from 'json-difference';
 
 const coffee = { color: { color1: 'black', color2: 'brown' }, special: true };
 const oil = { color: { color1: 'red', color2: 'blue' }, special2: false };
 
-const jsondifference = new JsonDiffer();
-let diff = jsondifference.getDiff(coffee, oil);
+let diff = getDiff(coffee, oil);
 
 console.log(diff);
 ```
@@ -63,14 +68,14 @@ Output:
   "edited": [
     {
       "color/color1": {
-        "oldvalue": "black",
-        "newvalue": "red"
+        "oldValue": "black",
+        "newValue": "red"
       }
     },
     {
       "color/color2": {
-        "oldvalue": "brown",
-        "newvalue": "blue"
+        "oldValue": "brown",
+        "newValue": "blue"
       }
     }
   ]

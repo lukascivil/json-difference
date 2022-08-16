@@ -17,7 +17,7 @@
     "check-types": "tsc --noemit -p tsconfig.json",
     "test": "jest --config jestconfig.json --coverage",
     "test:local": "jest --watchAll --config jestconfig.json",
-    "example": "echo Use {simple} or {stress} as example param && cd ./examples && npm run",
+    "example": "echo Use {simple} or {stress} as example param && cd ./examples && yarn",
     "build": "tsc && vite build",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "yarn build",

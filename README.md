@@ -61,7 +61,7 @@ Output:
 
 ```json
 {
-  "new": {
+  "added": {
     "special2": false
   },
   "removed": {

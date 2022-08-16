@@ -66,4 +66,23 @@ describe('GetDiff function', () => {
 
     expect(result).toEqual(expectedResult);
   });
+
+  test('Should compute the difference between structures with different object values', () => {
+    const oldStruct = { a: [], b: {}, c: [], d: {} };
+    const newStruct = { a: {}, b: [], c: false, d: 1 };
+    const expectedResult = {
+      edited: [
+        { a: { newValue: {}, oldValue: [] } },
+        { b: { newValue: [], oldValue: {} } },
+        { c: { newValue: false, oldValue: [] } },
+        { d: { newValue: 1, oldValue: {} } }
+      ],
+      new: {},
+      removed: {}
+    };
+
+    const result = getDiff(oldStruct, newStruct);
+
+    expect(result).toEqual(expectedResult);
+  });
 });

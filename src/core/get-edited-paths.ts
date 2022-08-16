@@ -10,7 +10,7 @@ export const getEditedPaths = (oldStructPaths: StructPaths, newStructPaths: Stru
       if (
         typeof oldStructPaths[key] === 'object' &&
         typeof newStructPaths[key] === 'object' &&
-        JSON.stringify(newStructPaths[key]) === JSON.stringify(newStructPaths[key])
+        JSON.stringify(oldStructPaths[key]) === JSON.stringify(newStructPaths[key])
       ) {
         continue;
       }

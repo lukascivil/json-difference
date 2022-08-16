@@ -35,10 +35,15 @@ describe('GetEditedPaths function', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  test('Should compute the difference between structures with different object values', () => {
+  test('Should return paths when has structures with different object values', () => {
     const oldStruct = { a: [], b: {}, c: [], d: {} };
     const newStruct = { a: {}, b: [], c: false, d: 1 };
-    const expectedResult = [{ c: { newValue: false, oldValue: [] } }, { d: { newValue: 1, oldValue: {} } }];
+    const expectedResult = [
+      { a: { newValue: {}, oldValue: [] } },
+      { b: { newValue: [], oldValue: {} } },
+      { c: { newValue: false, oldValue: [] } },
+      { d: { newValue: 1, oldValue: {} } }
+    ];
 
     const result = getEditedPaths(oldStruct, newStruct);
 

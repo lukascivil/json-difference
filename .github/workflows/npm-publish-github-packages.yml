@@ -15,8 +15,20 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16
-      - run: yarn ci
-      - run: yarn test
+      - name: Install dependencies
+        run: yarn
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Check types
+        run: yarn check-types
+
+      - name: Test
+        run: yarn test
+
+      - name: Build
+        run: yarn build
 
   publish-gpr:
     needs: build

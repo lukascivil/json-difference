@@ -52,4 +52,18 @@ describe('GetDiff function', () => {
 
     expect(result).toEqual(expectedResult);
   });
+
+  test('Should return no diff when the structs has nested equal structures', () => {
+    const oldStruct = { a: [], b: {} };
+    const newStruct = { a: [], b: {} };
+    const expectedResult = {
+      edited: [],
+      new: {},
+      removed: {}
+    };
+
+    const result = getDiff(oldStruct, newStruct);
+
+    expect(result).toEqual(expectedResult);
+  });
 });

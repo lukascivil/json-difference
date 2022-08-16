@@ -7,6 +7,14 @@ export const getEditedPaths = (oldStructPaths: StructPaths, newStructPaths: Stru
 
   for (const key in oldStructPaths) {
     if (newStructPaths.hasOwnProperty(key)) {
+      if (
+        typeof oldStructPaths[key] === 'object' &&
+        typeof newStructPaths[key] === 'object' &&
+        JSON.stringify(newStructPaths[key]) === JSON.stringify(newStructPaths[key])
+      ) {
+        continue;
+      }
+
       if (oldStructPaths[key] !== newStructPaths[key]) {
         diff = {
           [key]: {
@@ -14,6 +22,7 @@ export const getEditedPaths = (oldStructPaths: StructPaths, newStructPaths: Stru
             newValue: newStructPaths[key]
           }
         };
+
         diffs.push(diff);
       }
     }

@@ -18,4 +18,13 @@ describe('GetStructPaths function', () => {
 
     expect(result).toEqual(expectedResult);
   });
+
+  test('Should return paths when the values are objects', () => {
+    const oldStruct = { a: [], b: {} };
+    const expectedResult = { a: [], b: {} };
+
+    const result = getStructPaths(oldStruct);
+
+    expect(result).toEqual(expectedResult);
+  });
 });

@@ -24,4 +24,24 @@ describe('GetEditedPaths function', () => {
 
     expect(result).toEqual(expectedResult);
   });
+
+  test('Should return empty when the structs has nested equal structures', () => {
+    const oldStruct = { a: [], b: {} };
+    const newStruct = { a: [], b: {} };
+    const expectedResult = Array();
+
+    const result = getEditedPaths(oldStruct, newStruct);
+
+    expect(result).toEqual(expectedResult);
+  });
+
+  test('Should compute the difference between structures with different object values', () => {
+    const oldStruct = { a: [], b: {}, c: [], d: {} };
+    const newStruct = { a: {}, b: [], c: false, d: 1 };
+    const expectedResult = [{ c: { newValue: false, oldValue: [] } }, { d: { newValue: 1, oldValue: {} } }];
+
+    const result = getEditedPaths(oldStruct, newStruct);
+
+    expect(result).toEqual(expectedResult);
+  });
 });

@@ -1,5 +1,5 @@
 // Packages
-import { getEditedPaths } from './get-edited-patch';
+import { getEditedPaths } from './get-edited-paths';
 import { getPathsDiff } from './get-paths-diff';
 import { getStructPaths } from './get-struct-paths';
 

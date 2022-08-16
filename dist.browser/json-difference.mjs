@@ -1,36 +1,40 @@
-const d = (n, t) => {
-  const o = [];
+const t = (f, n) => {
+  const i = [];
   let e = {};
-  for (const f in n)
-    t.hasOwnProperty(f) && n[f] !== t[f] && (e = {
-      [f]: {
-        oldValue: n[f],
-        newValue: t[f]
-      }
-    }, o.push(e));
-  return o;
-}, s = (n, t) => {
-  const o = {};
-  for (const e in n)
-    e in t || (o[e] = n[e]);
-  return o;
-}, i = (n, t = {}, o = "") => {
-  for (const e of Object.keys(n)) {
-    const f = o !== "" ? `${o}/${e}` : e;
-    typeof n[e] == "object" ? i(n[e], t, f) : t[f] = n[e];
+  for (const o in f)
+    if (n.hasOwnProperty(o)) {
+      if (typeof f[o] == "object" && typeof n[o] == "object" && JSON.stringify(n[o]) === JSON.stringify(n[o]))
+        continue;
+      f[o] !== n[o] && (e = {
+        [o]: {
+          oldValue: f[o],
+          newValue: n[o]
+        }
+      }, i.push(e));
+    }
+  return i;
+}, d = (f, n) => {
+  const i = {};
+  for (const e in f)
+    e in n || (i[e] = f[e]);
+  return i;
+}, y = (f, n = {}, i = "") => {
+  for (const e of Object.keys(f)) {
+    const o = i !== "" ? `${i}/${e}` : e;
+    typeof f[e] == "object" ? (Object.keys(f[e]).length === 0 && (n[o] = f[e]), y(f[e], n, o)) : n[o] = f[e];
   }
-  return t;
-}, c = (n, t) => {
-  const o = {
+  return n;
+}, s = (f, n) => {
+  const i = {
     new: {},
     removed: {},
     edited: []
-  }, e = i(n), f = i(t);
-  return o.removed = s(e, f), o.new = s(f, e), o.edited = d(e, f), o;
+  }, e = y(f), o = y(n);
+  return i.removed = d(e, o), i.new = d(o, e), i.edited = t(e, o), i;
 };
 export {
-  c as getDiff,
-  d as getEditedPaths,
-  s as getPathsDiff,
-  i as getStructPaths
+  s as getDiff,
+  t as getEditedPaths,
+  d as getPathsDiff,
+  y as getStructPaths
 };

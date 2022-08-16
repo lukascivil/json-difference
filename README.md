@@ -10,6 +10,8 @@
 
 Computes the difference between two objects and returns an intuitive result.
 
+The question you should ask is: Given my old structure what was changed, removed or added to the new structure?
+
 ## Example
 
 [Last release](http://jsondifference.lukascivil.com.br)
@@ -40,7 +42,7 @@ Method:
 
 `getDiff(oldStruct, newStruct)`
 
-Returns the structural diff between `oldStruct` and `newStruct`.
+Returns the structural difference between `oldStruct` and `newStruct`.
 
 Simple usage:
 

@@ -1,9 +1,9 @@
 // Models
-import { EditedPath, StructPaths } from '../models/jsondiffer.model';
+import { EditedPath, StructPaths } from '../models/jsondiffer.model'
 
 export const getEditedPaths = (oldStructPaths: StructPaths, newStructPaths: StructPaths): Array<EditedPath> => {
-  const diffs: Array<EditedPath> = [];
-  let diff: EditedPath = {};
+  const diffs: Array<EditedPath> = []
+  let diff: EditedPath = {}
 
   for (const key in oldStructPaths) {
     if (newStructPaths.hasOwnProperty(key)) {
@@ -12,18 +12,18 @@ export const getEditedPaths = (oldStructPaths: StructPaths, newStructPaths: Stru
         typeof newStructPaths[key] === 'object' &&
         JSON.stringify(oldStructPaths[key]) === JSON.stringify(newStructPaths[key])
       ) {
-        continue;
+        continue
       }
 
       if (oldStructPaths[key] !== newStructPaths[key]) {
         diff = {
           [key]: [oldStructPaths[key], newStructPaths[key]]
-        };
+        }
 
-        diffs.push(diff);
+        diffs.push(diff)
       }
     }
   }
 
-  return diffs;
-};
+  return diffs
+}

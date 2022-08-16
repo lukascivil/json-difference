@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "jest"],
+  "plugins": ["@typescript-eslint", "prettier", "jest"],
   "extends": ["plugin:@typescript-eslint/recommended"],
   "env": {
     "browser": true,
@@ -8,10 +8,15 @@
   },
   "overrides": [],
   "rules": {
-    "quotemark": ["error", "single"],
-    "object-literal-sort-keys": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "no-console": "off",
     "prefer-const": "error",
-    "@typescript-eslint/semi": ["off"]
+    "@typescript-eslint/semi": ["off"],
+    "@typescript-eslint/no-explicit-any": ["off"]
   }
 }

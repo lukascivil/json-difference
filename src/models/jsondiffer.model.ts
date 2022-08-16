@@ -1,4 +1,4 @@
-export type EditedPath = { [key: string]: { newValue: any; oldValue: any } };
+export type EditedPath = { [key: string]: [any, any] };
 
 export type StructPaths = Record<string, any>;
 

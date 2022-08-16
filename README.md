@@ -69,16 +69,10 @@ Output:
   },
   "edited": [
     {
-      "color/color1": {
-        "oldValue": "black",
-        "newValue": "red"
-      }
+      "color/color1": ["black", "red"]
     },
     {
-      "color/color2": {
-        "oldValue": "brown",
-        "newValue": "blue"
-      }
+      "color/color2": ["brown", "blue"]
     }
   ]
 }

@@ -8,7 +8,7 @@
 [![codecov](https://codecov.io/gh/lukascivil/jsondiffer/branch/master/graph/badge.svg)](https://codecov.io/gh/lukascivil/jsondiffer)
 [![MIT License](https://img.shields.io/npm/l/deep-object-diff.svg?style=flat)](https://github.com/lukascivil/jsondiffer/blob/master/LICENSE)
 
-Computes the difference between two objects and returns an intuitive result.
+Computes the difference between two objects and returns an intuitive result. No matter how big your JSON is, the diff will be returned pretty fast.
 
 The question you should ask is: Given my old structure what was changed, removed or added to the new structure?
 

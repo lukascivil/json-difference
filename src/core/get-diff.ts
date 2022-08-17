@@ -8,8 +8,8 @@ import { Delta } from '../models/jsondiffer.model'
 
 export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string, any>): Delta => {
   const delta: Delta = {
-    added: {},
-    removed: {},
+    added: [],
+    removed: [],
     edited: []
   }
   const oldStructPaths = getStructPaths(oldStruct)

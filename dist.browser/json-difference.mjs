@@ -1,38 +1,35 @@
-const y = (f, i) => {
+const t = (o, f) => {
   const n = [];
-  let o = {};
-  for (const e in f)
-    if (i.hasOwnProperty(e)) {
-      if (typeof f[e] == "object" && typeof i[e] == "object" && JSON.stringify(f[e]) === JSON.stringify(i[e]))
+  for (const e in o)
+    if (f.hasOwnProperty(e)) {
+      if (typeof o[e] == "object" && typeof f[e] == "object" && JSON.stringify(o[e]) === JSON.stringify(f[e]))
         continue;
-      f[e] !== i[e] && (o = {
-        [e]: [f[e], i[e]]
-      }, n.push(o));
+      o[e] !== f[e] && n.push([e, o[e], f[e]]);
     }
   return n;
-}, t = (f, i) => {
+}, y = (o, f) => {
   const n = [];
-  let o = 0;
-  for (const e in f)
-    e in i || (n[o] = [e, f[e]], o++);
+  let e = 0;
+  for (const i in o)
+    i in f || (n[e] = [i, o[i]], e++);
   return n;
-}, d = (f, i = {}, n = "") => {
-  for (const o of Object.keys(f)) {
-    const e = n !== "" ? `${n}/${o}` : o;
-    typeof f[o] == "object" ? (Object.keys(f[o]).length === 0 && (i[e] = f[o]), d(f[o], i, e)) : i[e] = f[o];
+}, d = (o, f = {}, n = "") => {
+  for (const e of Object.keys(o)) {
+    const i = n !== "" ? `${n}/${e}` : e;
+    typeof o[e] == "object" ? (Object.keys(o[e]).length === 0 && (f[i] = o[e]), d(o[e], f, i)) : f[i] = o[e];
   }
-  return i;
-}, s = (f, i) => {
+  return f;
+}, s = (o, f) => {
   const n = {
     added: [],
     removed: [],
     edited: []
-  }, o = d(f), e = d(i);
-  return n.removed = t(o, e), n.added = t(e, o), n.edited = y(o, e), n;
+  }, e = d(o), i = d(f);
+  return n.removed = y(e, i), n.added = y(i, e), n.edited = t(e, i), n;
 };
 export {
   s as getDiff,
-  y as getEditedPaths,
-  t as getPathsDiff,
+  t as getEditedPaths,
+  y as getPathsDiff,
   d as getStructPaths
 };

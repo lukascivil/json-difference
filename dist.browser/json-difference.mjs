@@ -14,7 +14,7 @@ const y = (f, i) => {
   const n = [];
   let o = 0;
   for (const e in f)
-    e in i || (n[o] = { [e]: f[e] }, o++);
+    e in i || (n[o] = [e, f[e]], o++);
   return n;
 }, d = (f, i = {}, n = "") => {
   for (const o of Object.keys(f)) {

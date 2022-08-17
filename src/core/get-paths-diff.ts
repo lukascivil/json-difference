@@ -7,7 +7,7 @@ export const getPathsDiff = (oldStructPaths: StructPaths, newStructPaths: Struct
 
   for (const key in oldStructPaths) {
     if (!(key in newStructPaths)) {
-      diff[index] = { [key]: oldStructPaths[key] }
+      diff[index] = [key, oldStructPaths[key]]
 
       index++
     }

@@ -16,7 +16,10 @@ describe('GetPathsDiff function', () => {
   test('Should return paths when the structs are different', () => {
     const oldStruct = { a: 1, 'b/b/b/b/b/b/b': '1', c: '0/0/2/0', '0/1/2/3/4/5/6/7/8/9': 3 }
     const newStruct = { a: 1, 'b/b/b/b/1/b/b': '1', c: '0/0/0/0', '9/8/7/6/5/4/3/2/1/0': 4 }
-    const expectedResult: Array<PathsDiff> = [{ 'b/b/b/b/b/b/b': '1' }, { '0/1/2/3/4/5/6/7/8/9': 3 }]
+    const expectedResult = [
+      ['b/b/b/b/b/b/b', '1'],
+      ['0/1/2/3/4/5/6/7/8/9', 3]
+    ]
 
     const result = getPathsDiff(oldStruct, newStruct)
 

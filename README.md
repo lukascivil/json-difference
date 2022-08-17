@@ -26,7 +26,7 @@ Or
 
 ```html
 <script type="module">
-  import { getDiff } from 'https://rawgit.com/lukascivil/jsondiffer/master/dist.browser/json-difference.mjs';
+  import { getDiff } from 'https://rawgit.com/lukascivil/jsondiffer/master/dist.browser/json-difference.mjs'
 </script>
 ```
 
@@ -47,33 +47,25 @@ Returns the structural difference between `oldStruct` and `newStruct`.
 Simple usage:
 
 ```ts
-import { getDiff } from 'json-difference';
+import { getDiff } from 'json-difference'
 
-const coffee = { color: { color1: 'black', color2: 'brown' }, special: true };
-const oil = { color: { color1: 'red', color2: 'blue' }, special2: false };
+const coffee = { color: { color1: 'black', color2: 'brown' }, special: true }
+const oil = { color: { color1: 'red', color2: 'blue' }, special2: false }
 
-let diff = getDiff(coffee, oil);
+let diff = getDiff(coffee, oil)
 
-console.log(diff);
+console.log(diff)
 ```
 
 Output:
 
 ```json
 {
-  "added": {
-    "special2": false
-  },
-  "removed": {
-    "special": true
-  },
+  "added": [["special2", false]],
+  "removed": [["special", true]],
   "edited": [
-    {
-      "color/color1": ["black", "red"]
-    },
-    {
-      "color/color2": ["brown", "blue"]
-    }
+    ["color/color1", "black", "red"],
+    ["color/color2", "brown", "blue"]
   ]
 }
 ```

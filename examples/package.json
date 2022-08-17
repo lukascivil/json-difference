@@ -11,7 +11,7 @@
   "author": "lukascivil",
   "license": "MIT",
   "dependencies": {
-    "json-difference": "^1.1.6"
+    "json-difference": "^1.6.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.12",

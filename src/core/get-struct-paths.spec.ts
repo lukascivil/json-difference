@@ -12,7 +12,14 @@ describe('GetStructPaths function', () => {
 
   test('Should return all paths from a basic containing Array property', () => {
     const oldStruct = { a: 1, b: [{ c1: [{ c3: { c5: [1, 2, { c6: 3 }] } }, { c4: 6 }] }, { c2: 2 }] }
-    const expectedResult = { a: 1, 'b/0/c1/0/c3/c5/0': 1, 'b/0/c1/0/c3/c5/1': 2, 'b/0/c1/0/c3/c5/2/c6': 3, 'b/0/c1/1/c4': 6, 'b/1/c2': 2 }
+    const expectedResult = {
+      a: 1,
+      'b/0[]/c1/0[]/c3/c5/0[]': 1,
+      'b/0[]/c1/0[]/c3/c5/1[]': 2,
+      'b/0[]/c1/0[]/c3/c5/2[]/c6': 3,
+      'b/0[]/c1/1[]/c4': 6,
+      'b/1[]/c2': 2
+    }
 
     const result = getStructPaths(oldStruct)
 
@@ -26,5 +33,31 @@ describe('GetStructPaths function', () => {
     const result = getStructPaths(oldStruct)
 
     expect(result).toEqual(expectedResult)
+  })
+
+  test('Should return different paths when containing object and array with same key value at root', () => {
+    const oldStruct = { '0': 0 }
+    const newStruct = [0]
+    const expectedOldStructPaths = { '0': 0 }
+    const expectedNewStructPaths = { '0[]': 0 }
+
+    const oldStructPaths = getStructPaths(oldStruct)
+    const newStructPaths = getStructPaths(newStruct)
+
+    expect(oldStructPaths).toEqual(expectedOldStructPaths)
+    expect(newStructPaths).toEqual(expectedNewStructPaths)
+  })
+
+  test('Should return different paths when containing object and array with same key value', () => {
+    const oldStruct = { '0': [{ '0': 1 }] }
+    const newStruct = { '0': { '0': [1] } }
+    const expectedOldStructPaths = { '0/0[]/0': 1 }
+    const expectedNewStructPaths = { '0/0/0[]': 1 }
+
+    const oldStructPaths = getStructPaths(oldStruct)
+    const newStructPaths = getStructPaths(newStruct)
+
+    expect(oldStructPaths).toEqual(expectedOldStructPaths)
+    expect(newStructPaths).toEqual(expectedNewStructPaths)
   })
 })

@@ -50,8 +50,9 @@ Simple usage:
 import { getDiff } from 'json-difference'
 
 const coffee = { color: { color1: 'black', color2: 'brown' }, special: true }
-const oil = { color: { color1: 'red', color2: 'blue' }, special2: false }
+const oil = { color: { color1: 'red', color2: 'blue' }, special2: false, especial3: [{}] }
 
+// Get JsonDiff delta
 let diff = getDiff(coffee, oil)
 
 console.log(diff)
@@ -61,7 +62,10 @@ Output:
 
 ```json
 {
-  "added": [["special2", false]],
+  "added": [
+    ["special2", false],
+    ["especial3/0[]", {}]
+  ],
   "removed": [["special", true]],
   "edited": [
     ["color/color1", "black", "red"],

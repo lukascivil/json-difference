@@ -21,7 +21,7 @@ describe('GetDiff function', () => {
     const expectedResult: Delta = {
       edited: [
         ['a', 1, 11],
-        ['b/1/c2', 2, 22]
+        ['b/1[]/c2', 2, 22]
       ],
       added: [],
       removed: []
@@ -38,7 +38,7 @@ describe('GetDiff function', () => {
     const expectedResult: Delta = {
       edited: [
         ['a', 1, 11],
-        ['b/0/c1/0/c3/c5/2/c6', 3, 4]
+        ['b/0[]/c1/0[]/c3/c5/2[]/c6', 3, 4]
       ],
       added: [],
       removed: []
@@ -95,6 +95,20 @@ describe('GetDiff function', () => {
     }
 
     const result = getDiff(oldStruct, newStruct)
+
+    expect(result).toEqual(expectedResult)
+  })
+
+  test('Should return the difference between two structures containing array and object with same key value', () => {
+    const struct1 = { '0': [{ '0': 1 }] }
+    const struct2 = { '0': { '0': [1] } }
+    const expectedResult: Delta = {
+      edited: [],
+      added: [['0/0/0[]', 1]],
+      removed: [['0/0[]/0', 1]]
+    }
+
+    const result = getDiff(struct1, struct2)
 
     expect(result).toEqual(expectedResult)
   })

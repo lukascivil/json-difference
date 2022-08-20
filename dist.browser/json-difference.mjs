@@ -1,35 +1,35 @@
-const t = (o, f) => {
-  const n = [];
-  for (const e in o)
-    if (f.hasOwnProperty(e)) {
-      if (typeof o[e] == "object" && typeof f[e] == "object" && JSON.stringify(o[e]) === JSON.stringify(f[e]))
+const t = (n, o) => {
+  const f = [];
+  for (const e in n)
+    if (o.hasOwnProperty(e)) {
+      if (typeof n[e] == "object" && typeof o[e] == "object" && JSON.stringify(n[e]) === JSON.stringify(o[e]))
         continue;
-      o[e] !== f[e] && n.push([e, o[e], f[e]]);
+      n[e] !== o[e] && f.push([e, n[e], o[e]]);
     }
-  return n;
-}, y = (o, f) => {
-  const n = [];
-  let e = 0;
-  for (const i in o)
-    i in f || (n[e] = [i, o[i]], e++);
-  return n;
-}, d = (o, f = {}, n = "") => {
-  for (const e of Object.keys(o)) {
-    const i = n !== "" ? `${n}/${e}` : e;
-    typeof o[e] == "object" ? (Object.keys(o[e]).length === 0 && (f[i] = o[e]), d(o[e], f, i)) : f[i] = o[e];
-  }
   return f;
-}, s = (o, f) => {
-  const n = {
+}, s = (n, o) => {
+  const f = [];
+  let e = 0;
+  for (const i in n)
+    i in o || (f[e] = [i, n[i]], e++);
+  return f;
+}, d = (n, o = {}, f = "") => {
+  for (const e of Object.keys(n)) {
+    const i = f !== "" ? `${f}/${e}` : e, y = Array.isArray(n) ? `${i}[]` : i;
+    typeof n[e] == "object" ? (Object.keys(n[e]).length === 0 && (o[i] = n[e]), d(n[e], o, y)) : o[y] = n[e];
+  }
+  return o;
+}, r = (n, o) => {
+  const f = {
     added: [],
     removed: [],
     edited: []
-  }, e = d(o), i = d(f);
-  return n.removed = y(e, i), n.added = y(i, e), n.edited = t(e, i), n;
+  }, e = d(n), i = d(o);
+  return f.removed = s(e, i), f.added = s(i, e), f.edited = t(e, i), f;
 };
 export {
-  s as getDiff,
+  r as getDiff,
   t as getEditedPaths,
-  y as getPathsDiff,
+  s as getPathsDiff,
   d as getStructPaths
 };

@@ -1,38 +1,55 @@
-const y = (f, i) => {
-  const n = [];
-  for (const e in f)
-    if (i.hasOwnProperty(e)) {
-      if (typeof f[e] == "object" && typeof i[e] == "object" && JSON.stringify(f[e]) === JSON.stringify(i[e]))
+const y = (n, f) => {
+  const t = [];
+  for (const e in n)
+    if (f.hasOwnProperty(e)) {
+      if (typeof n[e] == "object" && typeof f[e] == "object" && JSON.stringify(n[e]) === JSON.stringify(f[e]))
         continue;
-      f[e] !== i[e] && n.push([e, f[e], i[e]]);
+      n[e] !== f[e] && t.push([e, n[e], f[e]]);
     }
-  return n;
-}, d = (f, i) => {
-  const n = [];
+  return t;
+}, s = (n, f) => {
+  const t = [];
   let e = 0;
-  for (const o in f)
-    o in i || (n[e] = [o, f[o]], e++);
-  return n;
-}, g = (f, i, n, e) => {
-  const o = e ? f ? "[" : "." : "/", t = e ? f ? "]" : "" : f ? "[]" : "";
-  return i !== "" ? `${i}${o}${n}${t}` : `${e && f ? "[" : ""}${n}${t}`;
-}, c = (f, i = !1, n = {}, e = "") => {
-  for (const o of Object.keys(f)) {
-    const t = g(Array.isArray(f), e, o, i);
-    typeof f[o] == "object" ? (Object.keys(f[o]).length === 0 && (n[t] = f[o]), c(f[o], i, n, t)) : n[t] = f[o];
+  for (const o in n)
+    o in f || (t[e] = [o, n[o]], e++);
+  return t;
+}, d = (n, f, t, e) => {
+  const o = e ? n ? "[" : "." : "/", c = e ? n ? "]" : "" : n ? "[]" : "";
+  return f !== "" ? `${f}${o}${t}${c}` : `${e && n ? "[" : ""}${t}${c}`;
+}, r = (n, f = !1, t = {}, e = "") => {
+  for (const o of Object.keys(n)) {
+    const c = d(Array.isArray(n), e, o, f);
+    typeof n[o] == "object" ? (Object.keys(n[o]).length === 0 && (t[c] = n[o]), r(n[o], f, t, c)) : t[c] = n[o];
   }
-  return n;
-}, s = (f, i, n = !1) => {
+  return t;
+}, p = (n, f, t = !1) => {
   const e = {
     added: [],
     removed: [],
     edited: []
-  }, o = c(f, n), t = c(i, n);
-  return e.removed = d(o, t), e.added = d(t, o), e.edited = y(o, t), e;
+  }, o = r(n, t), c = r(f, t);
+  return e.removed = s(o, c), e.added = s(c, o), e.edited = y(o, c), e;
+}, g = (n, [f, t]) => {
+  const e = f.split("/");
+  let o = n;
+  const c = e.length - 1;
+  for (let l = 0; l < c; ++l) {
+    const i = e[l];
+    i in o || (console.log({ key: i }), i.includes("[]") && i.replace("[]", "")), o = o[i];
+  }
+  return o[e[c]] = t, n;
+}, a = (n, f) => {
+  let t = n;
+  return f.removed.forEach((e) => {
+    const o = e[0].replaceAll("\\/.*?\\[]", (c) => (console.log("entrei"), `[${c.replaceAll("/", "").replaceAll("[]", "")}]`));
+    console.log({ el: e, cafe: o });
+  }), t;
 };
 export {
-  s as getDiff,
+  g as addDynamicProperty,
+  a as applyDeltaDiff,
+  p as getDiff,
   y as getEditedPaths,
-  d as getPathsDiff,
-  c as getStructPaths
+  s as getPathsDiff,
+  r as getStructPaths
 };

@@ -6,7 +6,7 @@
     "declaration": true,
     "outDir": "./dist",
     "strict": true,
-    "lib": ["es6", "dom"]
+    "lib": ["es6", "dom", "es2021"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]

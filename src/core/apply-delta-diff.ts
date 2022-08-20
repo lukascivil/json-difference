@@ -1,14 +1,22 @@
 // Models
 import { Delta } from '../models/jsondiffer.model'
 import { addDynamicProperty } from './add-dynamic-property'
+import { unset } from 'lodash'
 
 export const applyDeltaDiff = (struct: any, delta: Delta): any => {
   let struct1 = struct
 
   // Remove added properties
   delta.removed.forEach((el) => {
-    console.log({ el })
-    // struct1 = filterObject(struct, el[0])
+    const cafe = el[0].replaceAll('\\/.*?\\[]', (matched) => {
+      console.log('entrei')
+      const value = matched.replaceAll('/', '').replaceAll('[]', '')
+
+      return `[${value}]`
+    })
+
+    console.log({ el, cafe })
+    // struct1 = unset(struct, el[0])
   })
 
   // Add removed properties

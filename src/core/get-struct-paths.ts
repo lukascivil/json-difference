@@ -4,7 +4,7 @@ import { StructPaths } from '../models/jsondiffer.model'
 const generatePath = (isArray: boolean, currentPath: string, newPath: string, lodashLike: boolean): string => {
   const prefix = lodashLike ? (isArray ? '[' : '.') : '/'
   const suffix = lodashLike ? (isArray ? ']' : '') : isArray ? '[]' : ''
-  const path = currentPath !== '' ? `${currentPath}${prefix}${newPath}${suffix}` : `${newPath}${suffix}`
+  const path = currentPath !== '' ? `${currentPath}${prefix}${newPath}${suffix}` : `${lodashLike && isArray ? '[' : ''}${newPath}${suffix}`
 
   return path
 }

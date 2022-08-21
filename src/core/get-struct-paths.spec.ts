@@ -58,7 +58,6 @@ describe('GetStructPaths function', () => {
 
     const oldStructPaths = getStructPaths(oldStruct)
     const newStructPaths = getStructPaths(newStruct)
-
     const oldStructLodashLikePaths = getStructPaths(oldStruct, true)
     const newStructLodashLikePaths = getStructPaths(newStruct, true)
 
@@ -72,12 +71,18 @@ describe('GetStructPaths function', () => {
     const oldStruct = { '0': [{ '0': 1 }] }
     const newStruct = { '0': { '0': [1] } }
     const expectedOldStructPaths = { '0/0[]/0': 1 }
+    const expectedOldStructLodashLikePaths = { '0[0].0': 1 }
     const expectedNewStructPaths = { '0/0/0[]': 1 }
+    const expectedNewStructLodashLikePaths = { '0.0[0]': 1 }
 
     const oldStructPaths = getStructPaths(oldStruct)
     const newStructPaths = getStructPaths(newStruct)
+    const oldStructLodashLikePaths = getStructPaths(oldStruct, true)
+    const newStructLodashLikePaths = getStructPaths(newStruct, true)
 
     expect(oldStructPaths).toEqual(expectedOldStructPaths)
     expect(newStructPaths).toEqual(expectedNewStructPaths)
+    expect(oldStructLodashLikePaths).toEqual(expectedOldStructLodashLikePaths)
+    expect(newStructLodashLikePaths).toEqual(expectedNewStructLodashLikePaths)
   })
 })

@@ -1,35 +1,38 @@
-const t = (n, o) => {
-  const f = [];
-  for (const e in n)
-    if (o.hasOwnProperty(e)) {
-      if (typeof n[e] == "object" && typeof o[e] == "object" && JSON.stringify(n[e]) === JSON.stringify(o[e]))
+const y = (f, i) => {
+  const n = [];
+  for (const e in f)
+    if (i.hasOwnProperty(e)) {
+      if (typeof f[e] == "object" && typeof i[e] == "object" && JSON.stringify(f[e]) === JSON.stringify(i[e]))
         continue;
-      n[e] !== o[e] && f.push([e, n[e], o[e]]);
+      f[e] !== i[e] && n.push([e, f[e], i[e]]);
     }
-  return f;
-}, s = (n, o) => {
-  const f = [];
+  return n;
+}, d = (f, i) => {
+  const n = [];
   let e = 0;
-  for (const i in n)
-    i in o || (f[e] = [i, n[i]], e++);
-  return f;
-}, d = (n, o = {}, f = "") => {
-  for (const e of Object.keys(n)) {
-    const i = f !== "" ? `${f}/${e}` : e, y = Array.isArray(n) ? `${i}[]` : i;
-    typeof n[e] == "object" ? (Object.keys(n[e]).length === 0 && (o[i] = n[e]), d(n[e], o, y)) : o[y] = n[e];
+  for (const o in f)
+    o in i || (n[e] = [o, f[o]], e++);
+  return n;
+}, g = (f, i, n, e) => {
+  const o = e ? f ? "[" : "." : "/", t = e ? f ? "]" : "" : f ? "[]" : "";
+  return i !== "" ? `${i}${o}${n}${t}` : `${e && f ? "[" : ""}${n}${t}`;
+}, c = (f, i = !1, n = {}, e = "") => {
+  for (const o of Object.keys(f)) {
+    const t = g(Array.isArray(f), e, o, i);
+    typeof f[o] == "object" ? (Object.keys(f[o]).length === 0 && (n[t] = f[o]), c(f[o], i, n, t)) : n[t] = f[o];
   }
-  return o;
-}, r = (n, o) => {
-  const f = {
+  return n;
+}, s = (f, i, n = !1) => {
+  const e = {
     added: [],
     removed: [],
     edited: []
-  }, e = d(n), i = d(o);
-  return f.removed = s(e, i), f.added = s(i, e), f.edited = t(e, i), f;
+  }, o = c(f, n), t = c(i, n);
+  return e.removed = d(o, t), e.added = d(t, o), e.edited = y(o, t), e;
 };
 export {
-  r as getDiff,
-  t as getEditedPaths,
-  s as getPathsDiff,
-  d as getStructPaths
+  s as getDiff,
+  y as getEditedPaths,
+  d as getPathsDiff,
+  c as getStructPaths
 };

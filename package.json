@@ -1,6 +1,6 @@
 {
   "name": "json-difference",
-  "version": "1.6.1",
+  "version": "1.8.0",
   "description": "json diff lib",
   "license": "MIT",
   "main": "dist/core",

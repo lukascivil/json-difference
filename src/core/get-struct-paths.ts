@@ -9,16 +9,16 @@ const generatePath = (isArray: boolean, currentPath: string, newPath: string, lo
   return path
 }
 
-export const getStructPaths = (struct: any, lodashLike = false, paths: { [key: string]: any } = {}, currentPath = ''): StructPaths => {
+export const getStructPaths = (struct: any, isLodashLike = false, paths: { [key: string]: any } = {}, currentPath = ''): StructPaths => {
   for (const key of Object.keys(struct)) {
-    const path = generatePath(Array.isArray(struct), currentPath, key, lodashLike)
+    const path = generatePath(Array.isArray(struct), currentPath, key, isLodashLike)
 
     if (typeof struct[key] === 'object') {
       if (Object.keys(struct[key]).length === 0) {
         paths[path] = struct[key]
       }
 
-      getStructPaths(struct[key], lodashLike, paths, path)
+      getStructPaths(struct[key], isLodashLike, paths, path)
     } else {
       paths[path] = struct[key]
     }

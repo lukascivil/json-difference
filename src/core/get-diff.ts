@@ -6,14 +6,14 @@ import { getStructPaths } from './get-struct-paths'
 // Models
 import { Delta } from '../models/jsondiffer.model'
 
-export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string, any>): Delta => {
+export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string, any>, isLodashLike = false): Delta => {
   const delta: Delta = {
     added: [],
     removed: [],
     edited: []
   }
-  const oldStructPaths = getStructPaths(oldStruct)
-  const newStructPaths = getStructPaths(newStruct)
+  const oldStructPaths = getStructPaths(oldStruct, isLodashLike)
+  const newStructPaths = getStructPaths(newStruct, isLodashLike)
 
   // A-B
   delta.removed = getPathsDiff(oldStructPaths, newStructPaths)

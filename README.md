@@ -54,8 +54,10 @@ const oil = { color: { color1: 'red', color2: 'blue' }, special2: false, especia
 
 // Get JsonDiff delta
 let diff = getDiff(coffee, oil)
+let diff2 = getDiff(coffee, oil, true)
 
 console.log(diff)
+console.log(diff2)
 ```
 
 Output:
@@ -70,6 +72,20 @@ Output:
   "edited": [
     ["color/color1", "black", "red"],
     ["color/color2", "brown", "blue"]
+  ]
+}
+```
+
+```json
+{
+  "added": [
+    ["special2", false],
+    ["especial3[0]", {}]
+  ],
+  "removed": [["special", true]],
+  "edited": [
+    ["color.color1", "black", "red"],
+    ["color.color2", "brown", "blue"]
   ]
 }
 ```

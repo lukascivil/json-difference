@@ -12,9 +12,9 @@ export const addDynamicProperty = (struct: any, [path, value]: [string, any]) =>
       if (key.includes('[]')) {
         const newKey = key.replace('[]', '')
 
-        // structRef[newKey] = []
+        structRef[newKey] = []
       } else {
-        // structRef[key] = {}
+        structRef[key] = {}
       }
     }
 

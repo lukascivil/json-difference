@@ -23,24 +23,18 @@ export const applyDeltaDiff = (struct: any, delta: Delta): any => {
 
     const parentValue = get(struct1, parentPartialPaths)
 
-    console.log({ ori: el[0].split('.'), parentPartialPaths, parentValue })
-
     if (typeof parentValue === 'object' && isEmpty(parentValue)) {
       unset(struct1, parentPartialPaths)
     }
 
-    console.log({ eaqui: el[0], valor: el[1], toPath: toPath(el[0]) })
-
-    setWith(struct1, el[0], el[1], (cafe) => {
-      console.log({ cafe })
-
+    setWith(struct1, el[0], el[1], (element) => {
       const isArrayChild = el[0].split('.').pop()
 
       if (isArrayChild && isArrayChild.includes('[')) {
         return []
       }
 
-      return cafe || {}
+      return element || {}
     })
   })
 

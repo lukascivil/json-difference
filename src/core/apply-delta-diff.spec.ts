@@ -46,7 +46,7 @@ describe('ApplyDeltaDiff function', () => {
   })
 
   test('Should resolve with complex struct', () => {
-    const struct1 = { '0': [3], 2: '' }
+    const struct1 = { '0': [3], '2': null }
     const struct2 = { '0': { '0': 1 }, 1: '' }
 
     const delta = getDiff(struct1, struct2, true)

@@ -13,7 +13,7 @@ export const getStructPaths = (struct: any, isLodashLike = false, paths: { [key:
   for (const key of Object.keys(struct)) {
     const path = generatePath(Array.isArray(struct), currentPath, key, isLodashLike)
 
-    if (typeof struct[key] === 'object') {
+    if (typeof struct[key] === 'object' && struct[key] !== null) {
       if (Object.keys(struct[key]).length === 0) {
         paths[path] = struct[key]
       }

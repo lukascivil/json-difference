@@ -89,3 +89,29 @@ Output:
   ]
 }
 ```
+
+`applyDeltaDiff(newStruct, delta)`
+
+Apply the delta to return the oldStruct structure.
+
+Simple usage:
+
+```ts
+import { applyDeltaDiff } from 'json-difference'
+
+const coffee = { color: { color1: 'black', color2: 'brown' }, special: true }
+const oil = { color: { color1: 'red', color2: 'blue' }, special2: false, especial3: [{}] }
+
+// Get JsonDiff delta and applyDeltaDiff
+let delta = getDiff(coffee, oil, true)
+const oldStruct = applyDeltaDiff(struct2, delta)
+
+console.log(oldStruct)
+```
+
+Output:
+
+```json
+// Coffee
+{ "color": { "color1": "black", "color2": "brown" }, "special": true }
+```

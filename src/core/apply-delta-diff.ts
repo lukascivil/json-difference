@@ -6,12 +6,13 @@ import set from 'lodash/set'
 import setWith from 'lodash/setWith'
 import isEmpty from 'lodash/isEmpty'
 import toPath from 'lodash/toPath'
+import { update, omitBy, compact } from 'lodash'
 
-const mountRequiredPaths = (value: string): Array<[string, 'ArrayValue' | 'ObjectValue']> => {
+const mountRequiredPaths = (value: string): Array<[string, 'ArrayValue' | 'ObjectValue', string]> => {
   const pathsByObject = value.split('.')
 
   const cafe = pathsByObject.reduce((prev, curr) => {
-    const cafe = curr.split('[')
+    const cafe = curr.split('[').map((el) => (el.includes(']') ? `[${el}` : el))
 
     return prev.concat(cafe)
   }, [] as Array<string>)
@@ -22,19 +23,59 @@ const mountRequiredPaths = (value: string): Array<[string, 'ArrayValue' | 'Objec
     if (hasToAnalyzeNext) {
       const nextType = array[index + 1].includes(']') ? 'ArrayValue' : 'ObjectValue'
 
-      return [value.replace(']', ''), nextType]
+      return [value.replace(']', '').replace('[', ''), nextType, value]
     }
 
-    return [value, 'ObjectValue']
+    return [value, 'ObjectValue', value]
   })
 }
 
+const fazAmagica = (object: any, path: string) => {
+  const parentPath = path.slice(0, path.lastIndexOf('.'))
+
+  unset(object, path)
+  update(object, parentPath, compact)
+}
+
 export const applyDeltaDiff = (struct: any, delta: Delta): any => {
-  const struct1 = JSON.parse(JSON.stringify(struct))
+  let struct1 = JSON.parse(JSON.stringify(struct))
 
   // Remove added properties
   delta.added.forEach((el) => {
+    console.log({ shouldRemove: el[0] })
     unset(struct1, el[0])
+
+    const parentPath = mountRequiredPaths(el[0])
+
+    console.log({ parentPath })
+
+    if (parentPath[parentPath.length - 2][1] === 'ArrayValue') {
+      const newParentPath = parentPath.map((el) => el[0])
+
+      newParentPath.pop()
+
+      update(struct1, newParentPath, compact)
+    }
+    // fazAmagica(struct1, el[0])
+    // struct1 = omitBy(struct1, (value, key) => {
+    //   console.log({ value, key })
+    // })
+
+    const parentPartialPaths = toPath(el[0])
+
+    parentPartialPaths.splice(-1)
+
+    const parentValue = get(struct1, parentPartialPaths)
+
+    // console.log({ parentValue, parentPartialPaths })
+
+    if (Array.isArray(parentValue)) {
+    }
+
+    // if ((typeof parentValue === 'object' && isEmpty(parentValue)) || JSON.stringify(parentValue) === JSON.stringify([null])) {
+    //   // unset(struct1, parentPartialPaths)
+    //   struct1 = omit(struct1, el[0])
+    // }
   })
 
   // Add removed properties
@@ -60,7 +101,7 @@ export const applyDeltaDiff = (struct: any, delta: Delta): any => {
         return element || {}
       }
 
-      return []
+      return element || []
     })
   })
 

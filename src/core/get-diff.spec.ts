@@ -1,5 +1,7 @@
 // Packages
 import { getDiff } from '.'
+import oldJson from '../assets/oldJson.json'
+import newJson from '../assets/newJson.json'
 
 // Models
 import { Delta } from '../models/jsondiffer.model'
@@ -169,4 +171,25 @@ describe('GetDiff function', () => {
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
   })
+
+  // test('Should return the difference between two structures containing array and object with same key value', () => {
+  //   const struct1 = oldJson
+  //   const struct2 = newJson
+  //   const expectedResult: Delta = {
+  //     edited: [],
+  //     added: [['0/0/0[]', 1]],
+  //     removed: [['0/0[]/0', 1]]
+  //   }
+  //   const expectedLodashResult: Delta = {
+  //     edited: [],
+  //     added: [['0.0[0]', 1]],
+  //     removed: [['0[0].0', 1]]
+  //   }
+
+  //   const result = getDiff(struct1, struct2)
+  //   const lodashResult = getDiff(struct1, struct2, true)
+
+  //   expect(result).toEqual(expectedResult)
+  //   expect(lodashResult).toEqual(expectedLodashResult)
+  // })
 })

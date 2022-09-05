@@ -48,8 +48,15 @@ describe.only('ApplyDeltaDiff function', () => {
   })
 
   test('Should resolve with complex struct', () => {
-    const struct1 = { '0': [3], '2': null, '3': [{ '10': [50] }], '4': [[[[[{}]]]]], '5': [[[[[{}]]]]], '6': [[[[[{}]]]]] }
-    const struct2 = { '0': { '0': 1 }, 1: '', '5': [[[[[{ '10': 11 }]]]]], '6': [[[[]]]] }
+    const struct1 = {
+      '0': [3],
+      '2': null,
+      '3': [{ '10': [50] }],
+      '4': [[[[[{}]]]]],
+      '5': [[[[[{}]]]]],
+      '6': [[1], [2]]
+    }
+    const struct2 = { '0': { '0': 1 }, 1: '', '5': [[[[[{ '10': 11 }]]]]], '6': [{}, [2], [3]] }
 
     const delta = getDiff(struct1, struct2, true)
     const newStruct = applyDeltaDiff(struct2, delta)

@@ -1,38 +1,38 @@
-const y = (f, i) => {
-  const n = [];
-  for (const e in f)
-    if (i.hasOwnProperty(e)) {
-      if (typeof f[e] == "object" && typeof i[e] == "object" && JSON.stringify(f[e]) === JSON.stringify(i[e]))
+const c = (e, i) => {
+  const o = [];
+  for (const n in e)
+    if (i.hasOwnProperty(n)) {
+      if (typeof e[n] == "object" && typeof i[n] == "object" && JSON.stringify(e[n]) === JSON.stringify(i[n]))
         continue;
-      f[e] !== i[e] && n.push([e, f[e], i[e]]);
+      e[n] !== i[n] && o.push([n, e[n], i[n]]);
     }
-  return n;
-}, d = (f, i) => {
-  const n = [];
-  let e = 0;
-  for (const o in f)
-    o in i || (n[e] = [o, f[o]], e++);
-  return n;
-}, g = (f, i, n, e) => {
-  const o = e ? f ? "[" : "." : "/", t = e ? f ? "]" : "" : f ? "[]" : "";
-  return i !== "" ? `${i}${o}${n}${t}` : `${e && f ? "[" : ""}${n}${t}`;
-}, c = (f, i = !1, n = {}, e = "") => {
-  for (const o of Object.keys(f)) {
-    const t = g(Array.isArray(f), e, o, i);
-    typeof f[o] == "object" ? (Object.keys(f[o]).length === 0 && (n[t] = f[o]), c(f[o], i, n, t)) : n[t] = f[o];
+  return o;
+}, y = (e, i) => {
+  const o = [];
+  let n = 0;
+  for (const f in e)
+    f in i || (o[n] = [f, e[f]], n++);
+  return o;
+}, g = (e, i, o, n) => {
+  const f = n ? e ? "[" : "." : "/", t = n ? e ? "]" : "" : e ? "[]" : "";
+  return i !== "" ? `${i}${f}${o}${t}` : `${n && e ? "[" : ""}${o}${t}`;
+}, d = (e, i = !1, o = {}, n = "") => {
+  for (const f of Object.keys(e)) {
+    const t = g(Array.isArray(e), n, f, i);
+    typeof e[f] == "object" && e[f] !== null ? (Object.keys(e[f]).length === 0 && (o[t] = e[f]), d(e[f], i, o, t)) : o[t] = e[f];
   }
-  return n;
-}, s = (f, i, n = !1) => {
-  const e = {
+  return o;
+}, $ = (e, i, o = !1) => {
+  const n = {
     added: [],
     removed: [],
     edited: []
-  }, o = c(f, n), t = c(i, n);
-  return e.removed = d(o, t), e.added = d(t, o), e.edited = y(o, t), e;
+  }, f = d(e, o), t = d(i, o);
+  return n.removed = y(f, t), n.added = y(t, f), n.edited = c(f, t), n;
 };
 export {
-  s as getDiff,
-  y as getEditedPaths,
-  d as getPathsDiff,
-  c as getStructPaths
+  $ as getDiff,
+  c as getEditedPaths,
+  y as getPathsDiff,
+  d as getStructPaths
 };

@@ -136,10 +136,10 @@ isarray@~1.0.0:
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==
 
-json-difference@^1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/json-difference/-/json-difference-1.9.0.tgz#735d510e8bfcf6654fc74d3c7f84d14792cac5e9"
-  integrity sha512-HSo5RX/b+dfMWNbUzSnZ8a71tN9So4TinbDOOr6qAK9iCn6NstLhbMrorhMpmYBw7jrGJqrQI94m8LNqvkmO4Q==
+json-difference@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/json-difference/-/json-difference-1.9.1.tgz#648aa806da2e3c4b7db24c34f6b04963b542fec2"
+  integrity sha512-5c2xaHKMkTq6T9KfCh4r3PVHQObpOyKMZzrySCAoYPBYJ0VqKDUW7dioddKLNS9z4Jey7yyMNSTH3bNF95Z1Nw==
 
 minimatch@^3.0.3, minimatch@^3.1.1:
   version "3.1.2"

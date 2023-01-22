@@ -156,4 +156,17 @@ describe('GetDiff function', () => {
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
   })
+
+  test('Should return the difference between two structures containing null', () => {
+    const struct1 = { 1: null }
+    const struct2 = { 1: '', 2: null }
+    const expectedResult: Delta = { edited: [['1', null, '']], added: [['2', null]], removed: [] }
+    const expectedLodashResult: Delta = { edited: [['1', null, '']], added: [['2', null]], removed: [] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, true)
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
 })

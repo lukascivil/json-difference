@@ -1,10 +1,10 @@
 {
   "name": "json-difference",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "json diff lib",
   "license": "MIT",
-  "main": "dist/core",
-  "types": "dist/core/index.d.ts",
+  "main": "dist",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=14.x"
   },

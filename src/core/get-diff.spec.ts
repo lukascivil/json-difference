@@ -12,7 +12,7 @@ describe('GetDiff function', () => {
     const expectedLodashResult: Delta = { edited: [['1.3.4', 6, 5]], added: [], removed: [['1.2', 7]] }
 
     const result = getDiff(struct1, struct2)
-    const lodashResult = getDiff(struct1, struct2, true)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
@@ -39,7 +39,7 @@ describe('GetDiff function', () => {
     }
 
     const result = getDiff(struct1, struct2)
-    const lodashResult = getDiff(struct1, struct2, true)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
@@ -66,7 +66,7 @@ describe('GetDiff function', () => {
     }
 
     const result = getDiff(struct1, struct2)
-    const lodashResult = getDiff(struct1, struct2, true)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
@@ -95,7 +95,7 @@ describe('GetDiff function', () => {
     }
 
     const result = getDiff(struct1, struct2)
-    const lodashResult = getDiff(struct1, struct2, true)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(expectedLodashResult).toEqual(lodashResult)
@@ -111,7 +111,7 @@ describe('GetDiff function', () => {
     }
 
     const result = getDiff(oldStruct, newStruct)
-    const lodashResult = getDiff(oldStruct, newStruct, true)
+    const lodashResult = getDiff(oldStruct, newStruct, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedResult)
@@ -132,7 +132,7 @@ describe('GetDiff function', () => {
     }
 
     const result = getDiff(oldStruct, newStruct)
-    const lodashResult = getDiff(oldStruct, newStruct, true)
+    const lodashResult = getDiff(oldStruct, newStruct, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedResult)
@@ -165,7 +165,7 @@ describe('GetDiff function', () => {
     }
 
     const result = getDiff(struct1, struct2)
-    const lodashResult = getDiff(struct1, struct2, true)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
@@ -178,7 +178,7 @@ describe('GetDiff function', () => {
     const expectedLodashResult: Delta = { edited: [['1', null, '']], added: [['2', null]], removed: [] }
 
     const result = getDiff(struct1, struct2)
-    const lodashResult = getDiff(struct1, struct2, true)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
@@ -195,7 +195,7 @@ describe('GetDiff function', () => {
     const expectedLodashResult: Delta = { edited: [['foo', {}, true]], added: [], removed: [['foo.1', true]] }
 
     const result = getDiff(struct1, struct2)
-    const lodashResult = getDiff(struct1, struct2, true)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
@@ -208,7 +208,7 @@ describe('GetDiff function', () => {
     const expectedLodashResult: Delta = { edited: [], added: [], removed: [['foo.bar', true]] }
 
     const result = getDiff(struct1, struct2)
-    const lodashResult = getDiff(struct1, struct2, true)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
@@ -245,7 +245,7 @@ describe('GetDiff function', () => {
     }
 
     const result = getDiff(struct1, struct2)
-    const lodashResult = getDiff(struct1, struct2, true)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)

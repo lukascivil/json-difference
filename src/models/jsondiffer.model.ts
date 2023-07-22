@@ -9,3 +9,7 @@ export interface Delta {
   removed: Array<PathsDiff>
   edited: Array<EditedPath>
 }
+
+export interface JsonDiffOptions {
+  isLodashLike?: boolean
+}

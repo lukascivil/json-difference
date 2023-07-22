@@ -24,15 +24,19 @@ describe('GetPathsDiff function', () => {
     expect(result).toEqual(expectedResult)
   })
 
-  test('Should return paths when the structs are different', () => {
+  /**
+   * Complementary tests without a specific case
+   */
+
+  test('Should return paths 1', () => {
     const oldStructPaths = {
-      '0': '@parent-with-children-[]',
-      '0/0[]': '@parent-with-children-{}',
+      '0': '@[]',
+      '0/0[]': '@{}',
       '0/0[]/0': 1
     }
     const newStructPaths = {
-      '0': '@parent-with-children-{}',
-      '0/0': '@parent-with-children-[]',
+      '0': '@{}',
+      '0/0': '@[]',
       '0/0/0[]': 1
     }
     const expectedRemoved = [

@@ -17,7 +17,7 @@ export const getStructPaths = (struct: any, isLodashLike = false, paths: { [key:
       if (Object.keys(struct[key]).length === 0) {
         paths[path] = struct[key]
       } else {
-        paths[path] = Array.isArray(struct[key]) ? '@parent-with-children-[]' : '@parent-with-children-{}'
+        paths[path] = Array.isArray(struct[key]) ? '@[]' : '@{}'
       }
 
       getStructPaths(struct[key], isLodashLike, paths, path)

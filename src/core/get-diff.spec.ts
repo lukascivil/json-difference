@@ -101,7 +101,7 @@ describe('GetDiff function', () => {
     expect(expectedLodashResult).toEqual(lodashResult)
   })
 
-  test('Should return no diff when the structs has nested equal structures', () => {
+  test('Should return no diff when the structs are equal', () => {
     const oldStruct = { a: [], b: {} }
     const newStruct = { a: [], b: {} }
     const expectedResult: Delta = {
@@ -117,7 +117,7 @@ describe('GetDiff function', () => {
     expect(lodashResult).toEqual(expectedResult)
   })
 
-  test('Should compute the difference between structures with different object values', () => {
+  test('Should return the difference between structures with different object values', () => {
     const oldStruct = { a: [], b: {}, c: [], d: {} }
     const newStruct = { a: {}, b: [], c: false, d: 1 }
     const expectedResult: Delta = {
@@ -184,7 +184,11 @@ describe('GetDiff function', () => {
     expect(lodashResult).toEqual(expectedLodashResult)
   })
 
-  test('Should return the difference between two structures containing null', () => {
+  /**
+   * Complementary tests without a specific case
+   */
+
+  test('Should return the difference 1', () => {
     const struct1 = { foo: { 1: true } }
     const struct2 = { foo: true }
     const expectedResult: Delta = { edited: [['foo', {}, true]], added: [], removed: [['foo/1', true]] }
@@ -197,11 +201,48 @@ describe('GetDiff function', () => {
     expect(lodashResult).toEqual(expectedLodashResult)
   })
 
-  test('Should return the difference between two structures containing null', () => {
+  test('Should return the difference 2', () => {
     const struct1 = { foo: { bar: true } }
     const struct2 = { foo: {} }
     const expectedResult: Delta = { edited: [], added: [], removed: [['foo/bar', true]] }
     const expectedLodashResult: Delta = { edited: [], added: [], removed: [['foo.bar', true]] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, true)
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  test.only('Should return the difference 3', () => {
+    const struct1 = { 1: [{ 1: [{}] }] }
+    const struct2 = { 1: { 1: [{ 1: {} }] } }
+    const expectedResult: Delta = {
+      edited: [['1', [], {}]],
+      added: [
+        ['1/1', []],
+        ['1/1/0[]', {}],
+        ['1/1/0[]/1', {}]
+      ],
+      removed: [
+        ['1/0[]', {}],
+        ['1/0[]/1', []],
+        ['1/0[]/1/0[]', {}]
+      ]
+    }
+    const expectedLodashResult: Delta = {
+      edited: [['1', [], {}]],
+      added: [
+        ['1.1', []],
+        ['1.1[0]', {}],
+        ['1.1[0].1', {}]
+      ],
+      removed: [
+        ['1[0]', {}],
+        ['1[0].1', []],
+        ['1[0].1[0]', {}]
+      ]
+    }
 
     const result = getDiff(struct1, struct2)
     const lodashResult = getDiff(struct1, struct2, true)

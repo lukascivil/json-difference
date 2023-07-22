@@ -285,4 +285,17 @@ describe('GetDiff function', () => {
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
   })
+
+  test.only('Should return the difference between two basic structures', () => {
+    const struct1 = { 1: { 2: 7, 3: { 4: 6 } } }
+    const struct2 = { 1: { 3: { 4: 5 } } }
+    const expectedResult: Delta = { edited: [['1/3/4', 6, 5]], added: [], removed: [['1/2', 7]] }
+    // const expectedLodashResult: Delta = { edited: [['1.3.4', 6, 5]], added: [], removed: [['1.2', 7]] }
+
+    const result = getDiff(struct1, struct2, { isObjectOutput: true })
+    // const lodashResult = getDiff(struct1, struct2, true)
+
+    expect(result).toEqual(expectedResult)
+    // expect(lodashResult).toEqual(expectedLodashResult)
+  })
 })

@@ -36,8 +36,8 @@ export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string
     removed: [],
     edited: []
   }
-  const oldStructPaths = getStructPaths(oldStruct, isLodashLike)
-  const newStructPaths = getStructPaths(newStruct, isLodashLike)
+  const oldStructPaths = getStructPaths(oldStruct, options.isLodashLike)
+  const newStructPaths = getStructPaths(newStruct, options.isLodashLike)
 
   // A-B
   delta.removed = getPathsDiff(oldStructPaths, newStructPaths)
@@ -47,6 +47,10 @@ export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string
 
   // a->b
   delta.edited = getEditedPaths(oldStructPaths, newStructPaths)
+
+  if (options.isObjectOutput) {
+    delta = transformDeltaToObject(delta)
+  }
 
   return delta
 }

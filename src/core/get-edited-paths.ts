@@ -15,7 +15,26 @@ export const getEditedPaths = (oldStructPaths: StructPaths, newStructPaths: Stru
       }
 
       if (oldStructPaths[key] !== newStructPaths[key]) {
-        diffs.push([key, oldStructPaths[key], newStructPaths[key]])
+        if (oldStructPaths[key] === '@parent-with-children-{}' || oldStructPaths[key] === '@parent-with-children-[]') {
+          const cafe =
+            newStructPaths[key] === '@parent-with-children-{}'
+              ? {}
+              : newStructPaths[key] === '@parent-with-children-[]'
+              ? []
+              : newStructPaths[key]
+
+          if (oldStructPaths[key] === '@parent-with-children-{}') {
+            if (JSON.stringify({}) !== JSON.stringify(newStructPaths[key])) {
+              diffs.push([key, {}, cafe])
+            }
+          } else {
+            if (JSON.stringify([]) !== JSON.stringify(newStructPaths[key])) {
+              diffs.push([key, [], cafe])
+            }
+          }
+        } else {
+          diffs.push([key, oldStructPaths[key], newStructPaths[key]])
+        }
       }
     }
   }

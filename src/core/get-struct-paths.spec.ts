@@ -3,7 +3,7 @@ import { getStructPaths } from '.'
 describe('GetStructPaths function', () => {
   test('Should return all paths from a basic structure', () => {
     const oldStruct = { 1: { 2: 7, 3: { 4: 6 } } }
-    const expectedResult = { '1/2': 7, '1/3/4': 6 }
+    const expectedResult = { '1': '@parent-with-children-{}', '1/2': 7, '1/3': '@parent-with-children-{}', '1/3/4': 6 }
 
     const result = getStructPaths(oldStruct)
 
@@ -14,18 +14,36 @@ describe('GetStructPaths function', () => {
     const oldStruct = { a: 1, b: [{ c1: [{ c3: { c5: [1, 2, { c6: 3 }] } }, { c4: 6 }] }, { c2: 2 }] }
     const expectedResult = {
       a: 1,
+      b: '@parent-with-children-[]',
+      'b/0[]': '@parent-with-children-{}',
+      'b/0[]/c1': '@parent-with-children-[]',
+      'b/0[]/c1/0[]': '@parent-with-children-{}',
+      'b/0[]/c1/0[]/c3': '@parent-with-children-{}',
+      'b/0[]/c1/0[]/c3/c5': '@parent-with-children-[]',
       'b/0[]/c1/0[]/c3/c5/0[]': 1,
       'b/0[]/c1/0[]/c3/c5/1[]': 2,
+      'b/0[]/c1/0[]/c3/c5/2[]': '@parent-with-children-{}',
       'b/0[]/c1/0[]/c3/c5/2[]/c6': 3,
+      'b/0[]/c1/1[]': '@parent-with-children-{}',
       'b/0[]/c1/1[]/c4': 6,
+      'b/1[]': '@parent-with-children-{}',
       'b/1[]/c2': 2
     }
     const expectedLodashLikeResult = {
       a: 1,
+      b: '@parent-with-children-[]',
+      'b[0]': '@parent-with-children-{}',
+      'b[0].c1': '@parent-with-children-[]',
+      'b[0].c1[0]': '@parent-with-children-{}',
+      'b[0].c1[0].c3': '@parent-with-children-{}',
+      'b[0].c1[0].c3.c5': '@parent-with-children-[]',
       'b[0].c1[0].c3.c5[0]': 1,
       'b[0].c1[0].c3.c5[1]': 2,
+      'b[0].c1[0].c3.c5[2]': '@parent-with-children-{}',
       'b[0].c1[0].c3.c5[2].c6': 3,
+      'b[0].c1[1]': '@parent-with-children-{}',
       'b[0].c1[1].c4': 6,
+      'b[1]': '@parent-with-children-{}',
       'b[1].c2': 2
     }
 
@@ -70,10 +88,26 @@ describe('GetStructPaths function', () => {
   test('Should return different paths when containing object and array with same key value', () => {
     const oldStruct = { '0': [{ '0': 1 }] }
     const newStruct = { '0': { '0': [1] } }
-    const expectedOldStructPaths = { '0/0[]/0': 1 }
-    const expectedOldStructLodashLikePaths = { '0[0].0': 1 }
-    const expectedNewStructPaths = { '0/0/0[]': 1 }
-    const expectedNewStructLodashLikePaths = { '0.0[0]': 1 }
+    const expectedOldStructPaths = {
+      '0': '@parent-with-children-[]',
+      '0/0[]': '@parent-with-children-{}',
+      '0/0[]/0': 1
+    }
+    const expectedOldStructLodashLikePaths = {
+      '0': '@parent-with-children-[]',
+      '0[0]': '@parent-with-children-{}',
+      '0[0].0': 1
+    }
+    const expectedNewStructPaths = {
+      '0': '@parent-with-children-{}',
+      '0/0': '@parent-with-children-[]',
+      '0/0/0[]': 1
+    }
+    const expectedNewStructLodashLikePaths = {
+      '0': '@parent-with-children-{}',
+      '0.0': '@parent-with-children-[]',
+      '0.0[0]': 1
+    }
 
     const oldStructPaths = getStructPaths(oldStruct)
     const newStructPaths = getStructPaths(newStruct)

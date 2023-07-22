@@ -78,17 +78,19 @@ describe('GetDiff function', () => {
     const expectedResult: Delta = {
       edited: [
         ['a', 1, '1'],
+        ['b', {}, 2],
         ['c', 3, true]
       ],
-      added: [['b', 2]],
+      added: [],
       removed: [['b/c1', 2]]
     }
     const expectedLodashResult: Delta = {
       edited: [
         ['a', 1, '1'],
+        ['b', {}, 2],
         ['c', 3, true]
       ],
-      added: [['b', 2]],
+      added: [],
       removed: [['b.c1', 2]]
     }
 
@@ -140,14 +142,26 @@ describe('GetDiff function', () => {
     const struct1 = { '0': [{ '0': 1 }] }
     const struct2 = { '0': { '0': [1] } }
     const expectedResult: Delta = {
-      edited: [],
-      added: [['0/0/0[]', 1]],
-      removed: [['0/0[]/0', 1]]
+      edited: [['0', [], {}]],
+      added: [
+        ['0/0', []],
+        ['0/0/0[]', 1]
+      ],
+      removed: [
+        ['0/0[]', {}],
+        ['0/0[]/0', 1]
+      ]
     }
     const expectedLodashResult: Delta = {
-      edited: [],
-      added: [['0.0[0]', 1]],
-      removed: [['0[0].0', 1]]
+      edited: [['0', [], {}]],
+      added: [
+        ['0.0', []],
+        ['0.0[0]', 1]
+      ],
+      removed: [
+        ['0[0]', {}],
+        ['0[0].0', 1]
+      ]
     }
 
     const result = getDiff(struct1, struct2)
@@ -162,6 +176,32 @@ describe('GetDiff function', () => {
     const struct2 = { 1: '', 2: null }
     const expectedResult: Delta = { edited: [['1', null, '']], added: [['2', null]], removed: [] }
     const expectedLodashResult: Delta = { edited: [['1', null, '']], added: [['2', null]], removed: [] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, true)
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  test('Should return the difference between two structures containing null', () => {
+    const struct1 = { foo: { 1: true } }
+    const struct2 = { foo: true }
+    const expectedResult: Delta = { edited: [['foo', {}, true]], added: [], removed: [['foo/1', true]] }
+    const expectedLodashResult: Delta = { edited: [['foo', {}, true]], added: [], removed: [['foo.1', true]] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, true)
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  test('Should return the difference between two structures containing null', () => {
+    const struct1 = { foo: { bar: true } }
+    const struct2 = { foo: {} }
+    const expectedResult: Delta = { edited: [], added: [], removed: [['foo/bar', true]] }
+    const expectedLodashResult: Delta = { edited: [], added: [], removed: [['foo.bar', true]] }
 
     const result = getDiff(struct1, struct2)
     const lodashResult = getDiff(struct1, struct2, true)

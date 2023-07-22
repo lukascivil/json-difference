@@ -11,6 +11,9 @@ const defaultOptions: JsonDiffOptions = {
 }
 
 /**
+ * This method returns a delta object containing all the information needed to understand what happened during
+ * the transition from the original object to the modified one.
+ *
  * @param oldStruct Original structure to be investigated
  * @param newStruct Modified structure to be investigated
  * @param options Options for changing result behavior

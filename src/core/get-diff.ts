@@ -21,10 +21,13 @@ const defaultOptions: JsonDiffOptions = {
  *
  *
  * @example
- *  const original = { 1: null }
- *  const modified = { 1: "coffee" }
+ *  const oldStruct = { 1: null }
+ *  const newStruct = { 1: "coffee" }
  *
- *  const result = getDiff(original, modified)
+ *  const result = getDiff(oldStruct, newStruct)
+ *
+ *  console.log(result)
+ *  // Output: {"edited": [["1", null, "coffee"]], added: [], removed: []}
  */
 export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string, any>, options?: JsonDiffOptions): Delta => {
   const { isLodashLike } = options ?? defaultOptions

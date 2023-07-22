@@ -214,7 +214,7 @@ describe('GetDiff function', () => {
     expect(lodashResult).toEqual(expectedLodashResult)
   })
 
-  test.only('Should return the difference 3', () => {
+  test('Should return the difference 3', () => {
     const struct1 = { 1: [{ 1: [{}] }] }
     const struct2 = { 1: { 1: [{ 1: {} }] } }
     const expectedResult: Delta = {
@@ -241,6 +241,41 @@ describe('GetDiff function', () => {
         ['1[0]', {}],
         ['1[0].1', []],
         ['1[0].1[0]', {}]
+      ]
+    }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  test('Should return the difference 4', () => {
+    const struct1 = { color: { color1: 'black', color2: 'brown' }, special: true }
+    const struct2 = { color: { color1: 'red', color2: 'blue' }, special2: false, especial3: [{}] }
+    const expectedResult: Delta = {
+      added: [
+        ['special2', false],
+        ['especial3', []],
+        ['especial3/0[]', {}]
+      ],
+      removed: [['special', true]],
+      edited: [
+        ['color/color1', 'black', 'red'],
+        ['color/color2', 'brown', 'blue']
+      ]
+    }
+    const expectedLodashResult: Delta = {
+      added: [
+        ['special2', false],
+        ['especial3', []],
+        ['especial3[0]', {}]
+      ],
+      removed: [['special', true]],
+      edited: [
+        ['color.color1', 'black', 'red'],
+        ['color.color2', 'brown', 'blue']
       ]
     }
 

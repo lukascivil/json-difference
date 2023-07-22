@@ -53,8 +53,8 @@ const coffee = { color: { color1: 'black', color2: 'brown' }, special: true }
 const oil = { color: { color1: 'red', color2: 'blue' }, special2: false, especial3: [{}] }
 
 // Get JsonDiff delta
-let diff = getDiff(coffee, oil)
-let diff2 = getDiff(coffee, oil, true)
+const diff = getDiff(coffee, oil)
+const diff2 = getDiff(coffee, oil, { isLodashLike: true })
 
 console.log(diff)
 console.log(diff2)
@@ -66,6 +66,7 @@ Output:
 {
   "added": [
     ["special2", false],
+    ["especial3", []],
     ["especial3/0[]", {}]
   ],
   "removed": [["special", true]],
@@ -80,6 +81,7 @@ Output:
 {
   "added": [
     ["special2", false],
+    ["especial3", []],
     ["especial3[0]", {}]
   ],
   "removed": [["special", true]],

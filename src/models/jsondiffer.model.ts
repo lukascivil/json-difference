@@ -10,6 +10,13 @@ export interface Delta {
   edited: Array<EditedPath>
 }
 
+export interface DeltaObject {
+  added: Array<any>
+  removed: Array<any>
+  edited: Array<any>
+}
+
 export interface JsonDiffOptions {
   isLodashLike?: boolean
+  isObjectOutput?: boolean
 }

@@ -6,7 +6,7 @@ import { JsonPatch } from '../models/jsondiffer.model'
 import { generateJsonPatch } from './generate-json-patch'
 
 describe('GenerateJsonPatch function', () => {
-  test('Should return the difference between two basic structures', () => {
+  test('Should generate JSON Patch operations from delta', () => {
     const struct1 = { '0': [{ '0': 1 }] }
     const struct2 = { '0': { '0': [1] } }
     const expectedResult: Array<JsonPatch> = [
@@ -22,7 +22,7 @@ describe('GenerateJsonPatch function', () => {
     expect(result).toEqual(expectedResult)
   })
 
-  test('Should return the difference between two basic structures', () => {
+  test('Should generate JSON Patch operations from delta', () => {
     const struct1 = {
       baz: 'qux',
       foo: 'bar'

@@ -11,16 +11,21 @@ const newJsonExample = `{ "foo": { } }`
 const App = () => {
   const [oldJson, setOldJson] = useState('{}')
   const [newJson, setNewJson] = useState('{}')
-  const delta = useMemo(() => {
+  const result = useMemo(() => {
     try {
       const oldJsonParsed = JSON.parse(oldJson)
       const newJsonParsed = JSON.parse(newJson)
 
       const delta = getDiff(oldJsonParsed, newJsonParsed)
 
-      return JSON.stringify(delta, null, 2)
+      return {
+        delta: JSON.stringify(delta, null, 2),
+        added: Object.keys(delta.added).length,
+        removed: Object.keys(delta.removed).length,
+        edited: Object.keys(delta.edited).length
+      }
     } catch (error) {
-      return JSON.stringify(error, null, 2)
+      return
     }
   }, [oldJson, newJson])
 
@@ -37,8 +42,8 @@ const App = () => {
   return (
     <>
       <Container maxW={'12xl'}>
-        <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 12 }} py={{ base: 20, md: 4 }}>
-          <Heading fontWeight={600} fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }} lineHeight={'110%'}>
+        <Stack as={Box} spacing={{ base: 8, md: 12 }} py={{ base: 20, md: 4 }}>
+          <Heading fontWeight={600} textAlign={'center'} fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }} lineHeight={'110%'}>
             Make Diff with
             <br />
             <Text as={'span'} color={'green.400'}>
@@ -47,15 +52,28 @@ const App = () => {
           </Heading>
           <Grid templateColumns="repeat(2, 1fr)" gap="1">
             <GridItem w="100%">
-              <Editor width="100%" height="350" language="json" theme="vs-dark" onChange={setOldJson} value={oldJson} />
+              <Text>Original JSON</Text>
+              <Editor width="100%" height="300" language="json" theme="vs-dark" onChange={setOldJson} value={oldJson} />
             </GridItem>
             <GridItem w="100%">
-              <Editor width="100%" height="350" language="json" theme="vs-dark" onChange={setNewJson} value={newJson} />
+              <Text>Modified JSON</Text>
+              <Editor width="100%" height="300" language="json" theme="vs-dark" onChange={setNewJson} value={newJson} />
             </GridItem>
             <GridItem w="100%">
-              <Textarea rows={12} value={delta} placeholder="Here is a sample placeholder" />
+              <Stack direction={['row']} spacing="12px">
+                <Box w="100%">
+                  <Text>Delta</Text>
+                  <Textarea rows={12} value={result?.delta ?? ''} placeholder="Here is a sample placeholder" />
+                </Box>
+                <Box w="100%">
+                  <Text>Summary</Text>
+                  {result
+                    ? `${result?.added} fields were added, ${result?.removed} removed and ${result?.edited} edited!`
+                    : 'Add a struct to start.'}
+                </Box>
+              </Stack>
             </GridItem>
-            <GridItem w="100%">
+            <GridItem w="100%" textAlign={'center'}>
               <Box pt={6}>
                 <Button
                   leftIcon={<AddIcon />}

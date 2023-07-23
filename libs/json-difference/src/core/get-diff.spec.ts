@@ -4,7 +4,7 @@ import { join } from 'path'
 import { getDiff } from '.'
 
 // Models
-import { Delta } from '../models/jsondiffer.model'
+import { Delta } from '../models/json-difference.model'
 
 const FIXTURE_DIR = join(__dirname, '..', '..', 'fixture')
 const loadFixture = (name: string): any => JSON.parse(readFileSync(join(FIXTURE_DIR, name), 'utf8'))

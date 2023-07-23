@@ -3,6 +3,7 @@
   "version": "1.9.1",
   "description": "json diff lib",
   "license": "MIT",
+  "private": true,
   "main": "dist",
   "types": "dist/index.d.ts",
   "engines": {
@@ -17,11 +18,13 @@
     "check-types": "tsc --noemit -p tsconfig.json",
     "test": "jest --config jestconfig.json --coverage",
     "test:local": "jest --watchAll --config jestconfig.json",
-    "example": "echo Use {simple} or {stress} as example param && cd ./examples && yarn",
     "build": "tsc && vite build",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "yarn build",
-    "prepublishOnly": "yarn test"
+    "prepublishOnly": "yarn test",
+    "example": "echo Use {simple} or {stress} as example param && cd ./packages/examples && yarn",
+    "start-gh-pages": "yarn --cwd apps/json-difference-gh-pages dev",
+    "build-gh-pages": "yarn --cwd apps/json-difference-gh-pages build"
   },
   "repository": {
     "type": "git",
@@ -50,5 +53,8 @@
     "typescript": "5.1.6",
     "vite": "^4.4.6",
     "vite-tsconfig-paths": "^4.2.0"
-  }
+  },
+  "workspaces": [
+    "apps/*"
+  ]
 }

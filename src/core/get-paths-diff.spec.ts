@@ -44,7 +44,7 @@ describe('GetPathsDiff function', () => {
       ['0/0[]/0', 1]
     ]
     const expectedAdded = [
-      ['0/0', []], // Errado
+      ['0/0', []],
       ['0/0/0[]', 1]
     ]
     const removed = getPathsDiff(oldStructPaths, newStructPaths)

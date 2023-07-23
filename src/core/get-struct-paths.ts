@@ -18,12 +18,16 @@ const generatePath = (isArray: boolean, currentPath: string, newPath: string, lo
  *
  *
  * @example
- * const struct = { 1: null  }
+ * const struct = { 1: { 2: null }  }
  *
- * const result = getStructPaths(struct)
+ * const result1 = getStructPaths(struct)
+ * const result2 = getStructPaths(struct, { isLodashLike: true }})
  *
  *  console.log(result)
- *  // Output: {"1": null}
+ *  // Output: {"1": "@{}","1/2": null}
+ *
+ * console.log(result)
+ *  // Output: {"1": "@{}","1.2": null}
  */
 export const getStructPaths = (struct: any, isLodashLike = false, paths: { [key: string]: any } = {}, currentPath = ''): StructPaths => {
   for (const key of Object.keys(struct)) {

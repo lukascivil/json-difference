@@ -10,13 +10,13 @@ import { PathsDiff, StructPaths } from '../models/jsondiffer.model'
  *
  *
  * @example
- * const oldStruct = { 1: null  }
+ * const oldStruct = { 1: null, 2: "tea"  }
  * const newStruct = { 1: "coffee" }
  *
  * const result = getPathsDiff(oldStruct, newStruct)
  *
  *  console.log(result)
- *  // Output: {"1": "coffee"}
+ *  // Output: ["2": "tea"]
  */
 export const getPathsDiff = (oldStructPaths: StructPaths, newStructPaths: StructPaths): Array<PathsDiff> => {
   const diff: Array<PathsDiff> = []

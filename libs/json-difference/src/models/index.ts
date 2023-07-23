@@ -1,1 +1,1 @@
-export * from './jsondiffer.model'
+export * from './json-difference.model'

@@ -2,7 +2,7 @@
 import { getDiff } from '.'
 
 // Models
-import { JsonPatch } from '../models/jsondiffer.model'
+import { JsonPatch } from '../models/json-difference.model'
 import { generateJsonPatch } from './generate-json-patch'
 
 describe('GenerateJsonPatch function', () => {

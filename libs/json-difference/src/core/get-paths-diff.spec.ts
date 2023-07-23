@@ -1,6 +1,6 @@
 // Packages
 import { getPathsDiff } from '.'
-import { PathsDiff } from '../models/jsondiffer.model'
+import { PathsDiff } from '../models/json-difference.model'
 
 describe('GetPathsDiff function', () => {
   test('Should return empty when there is no key difference', () => {

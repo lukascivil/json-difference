@@ -1,5 +1,5 @@
 // Models
-import { Delta, JsonPatch } from '../models/jsondiffer.model'
+import { Delta, JsonPatch } from '../models/json-difference.model'
 
 export const generateJsonPatch = (delta: Delta): Array<JsonPatch> => {
   const operations: Array<JsonPatch> = []

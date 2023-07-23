@@ -2,7 +2,7 @@
 import { getDiff } from '.'
 
 // Models
-import { Delta } from '../models/jsondiffer.model'
+import { Delta } from '../models/json-difference.model'
 
 describe('GetDiff function', () => {
   test('Should return the difference between two basic structures', () => {

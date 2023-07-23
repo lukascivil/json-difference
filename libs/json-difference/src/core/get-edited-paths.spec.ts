@@ -1,5 +1,5 @@
 import { getEditedPaths } from '.'
-import { EditedPath } from '../models/jsondiffer.model'
+import { EditedPath } from '../models/json-difference.model'
 
 describe('GetEditedPaths function', () => {
   test('Should return empty when there is no edited value', () => {

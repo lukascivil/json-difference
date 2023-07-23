@@ -1,38 +1,47 @@
-const c = (e, i) => {
+const p = (f, i) => {
   const o = [];
-  for (const n in e)
-    if (i.hasOwnProperty(n)) {
-      if (typeof e[n] == "object" && typeof i[n] == "object" && JSON.stringify(e[n]) === JSON.stringify(i[n]))
+  for (const e in f)
+    if (i.hasOwnProperty(e)) {
+      if (typeof f[e] == "object" && typeof i[e] == "object" && JSON.stringify(f[e]) === JSON.stringify(i[e]) || f[e] === i[e])
         continue;
-      e[n] !== i[n] && o.push([n, e[n], i[n]]);
+      if (f[e] === "@{}" || f[e] === "@[]") {
+        const n = i[e] === "@{}" ? {} : i[e] === "@[]" ? [] : i[e];
+        f[e] === "@{}" ? JSON.stringify(i[e]) !== "{}" && o.push([e, {}, n]) : JSON.stringify(i[e]) !== "[]" && o.push([e, [], n]);
+      } else
+        o.push([e, f[e], i[e]]);
     }
   return o;
-}, y = (e, i) => {
+}, d = (f, i) => {
   const o = [];
-  let n = 0;
-  for (const f in e)
-    f in i || (o[n] = [f, e[f]], n++);
+  let e = 0;
+  for (const n in f)
+    if (!(n in i)) {
+      const y = f[n] === "@{}" ? {} : f[n] === "@[]" ? [] : f[n];
+      o[e] = [n, y], e++;
+    }
   return o;
-}, g = (e, i, o, n) => {
-  const f = n ? e ? "[" : "." : "/", t = n ? e ? "]" : "" : e ? "[]" : "";
-  return i !== "" ? `${i}${f}${o}${t}` : `${n && e ? "[" : ""}${o}${t}`;
-}, d = (e, i = !1, o = {}, n = "") => {
-  for (const f of Object.keys(e)) {
-    const t = g(Array.isArray(e), n, f, i);
-    typeof e[f] == "object" && e[f] !== null ? (Object.keys(e[f]).length === 0 && (o[t] = e[f]), d(e[f], i, o, t)) : o[t] = e[f];
+}, O = (f, i, o, e) => {
+  const n = e ? f ? "[" : "." : "/", y = e ? f ? "]" : "" : f ? "[]" : "";
+  return i !== "" ? `${i}${n}${o}${y}` : `${e && f ? "[" : ""}${o}${y}`;
+}, g = (f, i = !1, o = {}, e = "") => {
+  for (const n of Object.keys(f)) {
+    const y = O(Array.isArray(f), e, n, i);
+    typeof f[n] == "object" && f[n] !== null ? (Object.keys(f[n]).length === 0 ? o[y] = f[n] : o[y] = Array.isArray(f[n]) ? "@[]" : "@{}", g(f[n], i, o, y)) : o[y] = f[n];
   }
   return o;
-}, $ = (e, i, o = !1) => {
-  const n = {
+}, $ = {
+  isLodashLike: !1
+}, b = (f, i, o) => {
+  const { isLodashLike: e } = o ?? $, n = {
     added: [],
     removed: [],
     edited: []
-  }, f = d(e, o), t = d(i, o);
-  return n.removed = y(f, t), n.added = y(t, f), n.edited = c(f, t), n;
+  }, y = g(f, e), s = g(i, e);
+  return n.removed = d(y, s), n.added = d(s, y), n.edited = p(y, s), n;
 };
 export {
-  $ as getDiff,
-  c as getEditedPaths,
-  y as getPathsDiff,
-  d as getStructPaths
+  b as getDiff,
+  p as getEditedPaths,
+  d as getPathsDiff,
+  g as getStructPaths
 };

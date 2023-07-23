@@ -8,8 +8,9 @@ const newJson = JSON.parse(fs.readFileSync(path.join(__dirname, './assets/newJso
 
 const start: any = new Date()
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const delta: Delta = getDiff(oldJson, newJson)
+
+console.log('diff', JSON.stringify(delta))
 
 const end: any = new Date()
 const diffTime = end - start

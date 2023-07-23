@@ -4,9 +4,33 @@ import { getPathsDiff } from './get-paths-diff'
 import { getStructPaths } from './get-struct-paths'
 
 // Models
-import { Delta } from '../models/jsondiffer.model'
+import { Delta, JsonDiffOptions } from '../models/jsondiffer.model'
 
-export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string, any>, isLodashLike = false): Delta => {
+const defaultOptions: JsonDiffOptions = {
+  isLodashLike: false
+}
+
+/**
+ * This method returns a delta object containing all the information needed to understand what happened during
+ * the transition from the original object to the modified one.
+ *
+ * @param oldStruct Original structure to be investigated
+ * @param newStruct Modified structure to be investigated
+ * @param options Options for changing result behavior
+ * @returns returns a JSON diference delta
+ *
+ *
+ * @example
+ *  const oldStruct = { 1: null }
+ *  const newStruct = { 1: "coffee" }
+ *
+ *  const result = getDiff(oldStruct, newStruct)
+ *
+ *  console.log(result)
+ *  // Output: {"edited": [["1", null, "coffee"]], added: [], removed: []}
+ */
+export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string, any>, options?: JsonDiffOptions): Delta => {
+  const { isLodashLike } = options ?? defaultOptions
   const delta: Delta = {
     added: [],
     removed: [],

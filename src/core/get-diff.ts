@@ -2,12 +2,14 @@
 import { getEditedPaths } from './get-edited-paths'
 import { getPathsDiff } from './get-paths-diff'
 import { getStructPaths } from './get-struct-paths'
+import transformDeltaToObject from './transform-delta-into-object'
 
 // Models
 import { Delta, JsonDiffOptions } from '../models/jsondiffer.model'
 
 const defaultOptions: JsonDiffOptions = {
-  isLodashLike: false
+  isLodashLike: false,
+  isObjectOutput: false
 }
 
 /**
@@ -30,14 +32,14 @@ const defaultOptions: JsonDiffOptions = {
  *  // Output: {"edited": [["1", null, "coffee"]], added: [], removed: []}
  */
 export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string, any>, options?: JsonDiffOptions): Delta => {
-  const { isLodashLike } = options ?? defaultOptions
-  const delta: Delta = {
+  const { isLodashLike, isObjectOutput } = options ?? defaultOptions
+  let delta: Delta = {
     added: [],
     removed: [],
     edited: []
   }
-  const oldStructPaths = getStructPaths(oldStruct, options.isLodashLike)
-  const newStructPaths = getStructPaths(newStruct, options.isLodashLike)
+  const oldStructPaths = getStructPaths(oldStruct, isLodashLike)
+  const newStructPaths = getStructPaths(newStruct, isLodashLike)
 
   // A-B
   delta.removed = getPathsDiff(oldStructPaths, newStructPaths)
@@ -48,7 +50,7 @@ export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string
   // a->b
   delta.edited = getEditedPaths(oldStructPaths, newStructPaths)
 
-  if (options.isObjectOutput) {
+  if (isObjectOutput) {
     delta = transformDeltaToObject(delta)
   }
 

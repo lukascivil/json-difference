@@ -23,8 +23,8 @@
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",
     "example": "echo Use {simple} or {stress} as example param && cd ./apps/examples && yarn",
-    "start-gh-pages": "yarn --cwd apps/json-difference-gh-pages dev",
-    "build-gh-pages": "yarn --cwd apps/json-difference-gh-pages build"
+    "start-playground": "yarn --cwd apps/playground dev",
+    "build-playground": "yarn --cwd apps/playground build"
   },
   "repository": {
     "type": "git",

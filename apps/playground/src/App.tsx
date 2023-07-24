@@ -44,7 +44,7 @@ const App = () => {
       <Container maxW={'12xl'}>
         <Stack as={Box} spacing={{ base: 8, md: 12 }} py={{ base: 20, md: 4 }}>
           <Heading fontWeight={600} textAlign={'center'} fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }} lineHeight={'110%'}>
-            Make Diff with
+            Make Diff with Playground
             <br />
             <Text as={'span'} color={'green.400'}>
               JSON Difference

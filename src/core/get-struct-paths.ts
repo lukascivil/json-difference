@@ -5,7 +5,7 @@ const generatePath = (isArray: boolean, currentPath: string, newPath: string, lo
   const prefix = lodashLike ? (isArray ? '[' : '.') : '/'
   const suffix = lodashLike ? (isArray ? ']' : '') : isArray ? '[]' : ''
   const path =
-    currentPath !== '__start__' ? `${currentPath}${prefix}${newPath}${suffix}` : `${lodashLike && isArray ? '[' : ''}${newPath}${suffix}`
+    currentPath === '__start__' ? `${lodashLike && isArray ? '[' : ''}${newPath}${suffix}` : `${currentPath}${prefix}${newPath}${suffix}`
 
   return path
 }

@@ -1,47 +1,48 @@
-const p = (f, i) => {
+const O = (f, n) => {
   const o = [];
   for (const e in f)
-    if (i.hasOwnProperty(e)) {
-      if (typeof f[e] == "object" && typeof i[e] == "object" && JSON.stringify(f[e]) === JSON.stringify(i[e]) || f[e] === i[e])
+    if (n.hasOwnProperty(e)) {
+      if (typeof f[e] == "object" && typeof n[e] == "object" && JSON.stringify(f[e]) === JSON.stringify(n[e]) || f[e] === n[e])
         continue;
       if (f[e] === "@{}" || f[e] === "@[]") {
-        const n = i[e] === "@{}" ? {} : i[e] === "@[]" ? [] : i[e];
-        f[e] === "@{}" ? JSON.stringify(i[e]) !== "{}" && o.push([e, {}, n]) : JSON.stringify(i[e]) !== "[]" && o.push([e, [], n]);
+        const i = n[e] === "@{}" ? {} : n[e] === "@[]" ? [] : n[e];
+        f[e] === "@{}" ? JSON.stringify(n[e]) !== "{}" && o.push([e, {}, i]) : JSON.stringify(n[e]) !== "[]" && o.push([e, [], i]);
       } else
-        o.push([e, f[e], i[e]]);
+        o.push([e, f[e], n[e]]);
     }
   return o;
-}, d = (f, i) => {
+}, g = (f, n) => {
   const o = [];
   let e = 0;
-  for (const n in f)
-    if (!(n in i)) {
-      const y = f[n] === "@{}" ? {} : f[n] === "@[]" ? [] : f[n];
-      o[e] = [n, y], e++;
+  for (const i in f)
+    if (!(i in n)) {
+      const y = f[i] === "@{}" ? {} : f[i] === "@[]" ? [] : f[i];
+      o[e] = [i, y], e++;
     }
   return o;
-}, O = (f, i, o, e) => {
-  const n = e ? f ? "[" : "." : "/", y = e ? f ? "]" : "" : f ? "[]" : "";
-  return i !== "" ? `${i}${n}${o}${y}` : `${e && f ? "[" : ""}${o}${y}`;
-}, g = (f, i = !1, o = {}, e = "") => {
-  for (const n of Object.keys(f)) {
-    const y = O(Array.isArray(f), e, n, i);
-    typeof f[n] == "object" && f[n] !== null ? (Object.keys(f[n]).length === 0 ? o[y] = f[n] : o[y] = Array.isArray(f[n]) ? "@[]" : "@{}", g(f[n], i, o, y)) : o[y] = f[n];
+}, p = (f, n, o, e) => {
+  const i = e ? f ? "[" : "." : "/", y = e ? f ? "]" : "" : f ? "[]" : "";
+  return n !== "" ? `${n}${i}${o}${y}` : `${e && f ? "[" : ""}${o}${y}`;
+}, d = (f, n = !1, o, e = "") => {
+  o === void 0 && (o = Array.isArray(f) ? { "": "@[]" } : { "": "@{}" });
+  for (const i of Object.keys(f)) {
+    const y = p(Array.isArray(f), e, i, n);
+    typeof f[i] == "object" && f[i] !== null ? (Object.keys(f[i]).length === 0 ? o[y] = f[i] : o[y] = Array.isArray(f[i]) ? "@[]" : "@{}", d(f[i], n, o, y)) : o[y] = f[i];
   }
   return o;
 }, $ = {
   isLodashLike: !1
-}, b = (f, i, o) => {
-  const { isLodashLike: e } = o ?? $, n = {
+}, b = (f, n, o) => {
+  const { isLodashLike: e } = o ?? $, i = {
     added: [],
     removed: [],
     edited: []
-  }, y = g(f, e), s = g(i, e);
-  return n.removed = d(y, s), n.added = d(s, y), n.edited = p(y, s), n;
+  }, y = d(f, e), s = d(n, e);
+  return i.removed = g(y, s), i.added = g(s, y), i.edited = O(y, s), i;
 };
 export {
   b as getDiff,
-  p as getEditedPaths,
-  d as getPathsDiff,
-  g as getStructPaths
+  O as getEditedPaths,
+  g as getPathsDiff,
+  d as getStructPaths
 };

@@ -29,7 +29,11 @@ const generatePath = (isArray: boolean, currentPath: string, newPath: string, lo
  * console.log(result)
  *  // Output: {"1": "@{}","1.2": null}
  */
-export const getStructPaths = (struct: any, isLodashLike = false, paths: { [key: string]: any } = {}, currentPath = ''): StructPaths => {
+export const getStructPaths = (struct: any, isLodashLike = false, paths?: { [key: string]: any }, currentPath = ''): StructPaths => {
+  if (paths === undefined) {
+    paths = Array.isArray(struct) ? { '': '@[]' } : { '': '@{}' }
+  }
+
   for (const key of Object.keys(struct)) {
     const path = generatePath(Array.isArray(struct), currentPath, key, isLodashLike)
 

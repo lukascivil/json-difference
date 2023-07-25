@@ -98,7 +98,7 @@ describe('GetStructPaths function', () => {
     expect(lodashLikeResult).toEqual(expectedLodashLikeResult)
   })
 
-  test.only('Should return paths when nested empty keys', () => {
+  test('Should return paths when nested empty keys', () => {
     const oldStruct = { '': { '': 'cafe' } }
     const expectedResult = { __root__: '@{}', '': '@{}', '/': 'cafe' }
     const expectedLodashLikeResult = { __root__: '@{}', '': '@{}', '.': 'cafe' }

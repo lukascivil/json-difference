@@ -1,4 +1,4 @@
-const O = (f, n) => {
+const g = (f, n) => {
   const o = [];
   for (const e in f)
     if (n.hasOwnProperty(e)) {
@@ -11,7 +11,7 @@ const O = (f, n) => {
         o.push([e, f[e], n[e]]);
     }
   return o;
-}, g = (f, n) => {
+}, d = (f, n) => {
   const o = [];
   let e = 0;
   for (const i in f)
@@ -20,29 +20,29 @@ const O = (f, n) => {
       o[e] = [i, y], e++;
     }
   return o;
-}, p = (f, n, o, e) => {
+}, r = (f, n, o, e) => {
   const i = e ? f ? "[" : "." : "/", y = e ? f ? "]" : "" : f ? "[]" : "";
-  return n !== "" ? `${n}${i}${o}${y}` : `${e && f ? "[" : ""}${o}${y}`;
-}, d = (f, n = !1, o, e = "") => {
-  o === void 0 && (o = Array.isArray(f) ? { "": "@[]" } : { "": "@{}" });
+  return n === "__start__" ? `${e && f ? "[" : ""}${o}${y}` : `${n}${i}${o}${y}`;
+}, s = (f, n = !1, o, e = "__start__") => {
+  o === void 0 && (o = Array.isArray(f) ? { __root__: "@[]" } : { __root__: "@{}" });
   for (const i of Object.keys(f)) {
-    const y = p(Array.isArray(f), e, i, n);
-    typeof f[i] == "object" && f[i] !== null ? (Object.keys(f[i]).length === 0 ? o[y] = f[i] : o[y] = Array.isArray(f[i]) ? "@[]" : "@{}", d(f[i], n, o, y)) : o[y] = f[i];
+    const y = r(Array.isArray(f), e, i, n);
+    typeof f[i] == "object" && f[i] !== null ? (Object.keys(f[i]).length === 0 ? o[y] = f[i] : o[y] = Array.isArray(f[i]) ? "@[]" : "@{}", s(f[i], n, o, y)) : o[y] = f[i];
   }
   return o;
-}, $ = {
+}, O = {
   isLodashLike: !1
-}, b = (f, n, o) => {
-  const { isLodashLike: e } = o ?? $, i = {
+}, p = (f, n, o) => {
+  const { isLodashLike: e } = o ?? O, i = {
     added: [],
     removed: [],
     edited: []
-  }, y = d(f, e), s = d(n, e);
-  return i.removed = g(y, s), i.added = g(s, y), i.edited = O(y, s), i;
+  }, y = s(f, e), _ = s(n, e);
+  return i.removed = d(y, _), i.added = d(_, y), i.edited = g(y, _), i;
 };
 export {
-  b as getDiff,
-  O as getEditedPaths,
-  g as getPathsDiff,
-  d as getStructPaths
+  p as getDiff,
+  g as getEditedPaths,
+  d as getPathsDiff,
+  s as getStructPaths
 };

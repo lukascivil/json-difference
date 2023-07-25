@@ -21,8 +21,47 @@ describe('GetDiff function', () => {
   test('Should return the difference between [] and {}', () => {
     const struct1 = [] as any
     const struct2 = {}
-    const expectedResult: Delta = { edited: [['', [], {}]], added: [], removed: [] }
-    const expectedLodashResult: Delta = { edited: [['', [], {}]], added: [], removed: [] }
+    const expectedResult: Delta = { edited: [['__root__', [], {}]], added: [], removed: [] }
+    const expectedLodashResult: Delta = { edited: [['__root__', [], {}]], added: [], removed: [] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  test('Should return the difference between [] and {} with nested elements', () => {
+    const struct1 = [{}] as any
+    const struct2 = { a: {} }
+    const expectedResult: Delta = { edited: [['__root__', [], {}]], added: [['a', {}]], removed: [['0[]', {}]] }
+    const expectedLodashResult: Delta = { edited: [['__root__', [], {}]], added: [['a', {}]], removed: [['[0]', {}]] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  test('Should return the difference between [] and {} with empty key', () => {
+    const struct1 = [{}] as any
+    const struct2 = { '': {} }
+    const expectedResult: Delta = { edited: [['__root__', [], {}]], added: [['', {}]], removed: [['0[]', {}]] }
+    const expectedLodashResult: Delta = { edited: [['__root__', [], {}]], added: [['', {}]], removed: [['[0]', {}]] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  test('Should return the difference between when many empty keys', () => {
+    const struct1 = { '': { '': '', a: { '': 'b' } } }
+    const struct2 = { '': { a: { '': '' } } }
+    const expectedResult: Delta = { edited: [['/a/', 'b', '']], added: [], removed: [['/', '']] }
+    const expectedLodashResult: Delta = { edited: [['.a.', 'b', '']], added: [], removed: [['.', '']] }
 
     const result = getDiff(struct1, struct2)
     const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })

@@ -4,7 +4,8 @@ import { StructPaths } from '../models/jsondiffer.model'
 const generatePath = (isArray: boolean, currentPath: string, newPath: string, lodashLike: boolean): string => {
   const prefix = lodashLike ? (isArray ? '[' : '.') : '/'
   const suffix = lodashLike ? (isArray ? ']' : '') : isArray ? '[]' : ''
-  const path = currentPath !== '' ? `${currentPath}${prefix}${newPath}${suffix}` : `${lodashLike && isArray ? '[' : ''}${newPath}${suffix}`
+  const path =
+    currentPath === '__start__' ? `${lodashLike && isArray ? '[' : ''}${newPath}${suffix}` : `${currentPath}${prefix}${newPath}${suffix}`
 
   return path
 }
@@ -29,9 +30,14 @@ const generatePath = (isArray: boolean, currentPath: string, newPath: string, lo
  * console.log(result)
  *  // Output: {"1": "@{}","1.2": null}
  */
-export const getStructPaths = (struct: any, isLodashLike = false, paths?: { [key: string]: any }, currentPath = ''): StructPaths => {
+export const getStructPaths = (
+  struct: any,
+  isLodashLike = false,
+  paths?: { [key: string]: any },
+  currentPath = '__start__'
+): StructPaths => {
   if (paths === undefined) {
-    paths = Array.isArray(struct) ? { '': '@[]' } : { '': '@{}' }
+    paths = Array.isArray(struct) ? { __root__: '@[]' } : { __root__: '@{}' }
   }
 
   for (const key of Object.keys(struct)) {

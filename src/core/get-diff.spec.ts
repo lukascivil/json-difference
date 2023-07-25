@@ -57,7 +57,7 @@ describe('GetDiff function', () => {
     expect(lodashResult).toEqual(expectedLodashResult)
   })
 
-  test('Should return the difference between with many empty keys', () => {
+  test('Should return the difference between when many empty keys', () => {
     const struct1 = { '': { '': '', a: { '': 'b' } } }
     const struct2 = { '': { a: { '': '' } } }
     const expectedResult: Delta = { edited: [['/a/', 'b', '']], added: [], removed: [['/', '']] }

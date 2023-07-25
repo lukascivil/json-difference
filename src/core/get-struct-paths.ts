@@ -31,7 +31,7 @@ const generatePath = (isArray: boolean, currentPath: string, newPath: string, lo
  */
 export const getStructPaths = (struct: any, isLodashLike = false, paths?: { [key: string]: any }, currentPath = ''): StructPaths => {
   if (paths === undefined) {
-    paths = Array.isArray(struct) ? { '': '@[]' } : { '': '@{}' }
+    paths = Array.isArray(struct) ? { __root__: '@[]' } : { __root__: '@{}' }
   }
 
   for (const key of Object.keys(struct)) {

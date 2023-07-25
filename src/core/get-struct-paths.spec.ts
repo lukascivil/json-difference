@@ -101,13 +101,13 @@ describe('GetStructPaths function', () => {
   test.only('Should return paths when nested empty keys', () => {
     const oldStruct = { '': { '': 'cafe' } }
     const expectedResult = { __root__: '@{}', '': '@{}', '/': 'cafe' }
-    // const expectedLodashLikeResult = { __root__: '@{}', '': 'cafe' }
+    const expectedLodashLikeResult = { __root__: '@{}', '': '@{}', '.': 'cafe' }
 
     const result = getStructPaths(oldStruct)
-    // const lodashLikeResult = getStructPaths(oldStruct, true)
+    const lodashLikeResult = getStructPaths(oldStruct, true)
 
     expect(result).toEqual(expectedResult)
-    // expect(lodashLikeResult).toEqual(expectedLodashLikeResult)
+    expect(lodashLikeResult).toEqual(expectedLodashLikeResult)
   })
 
   test('Should return different paths when containing object and array with same key value at root', () => {

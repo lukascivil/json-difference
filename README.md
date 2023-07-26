@@ -12,9 +12,10 @@ Computes the difference between two objects and returns an intuitive result. No 
 
 The question you should ask is: Given my old structure what was changed, removed or added to the new structure?
 
-## Example
+## Live Demo
 
-[Last release](http://jsondifference.lukascivil.com.br)
+[Master deprecated](http://jsondifference.lukascivil.com.br)
+[Latest release](https://lukascivil.github.io/json-difference/)
 
 ## Installation
 

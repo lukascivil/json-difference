@@ -14,8 +14,8 @@ The question you should ask is: Given my old structure what was changed, removed
 
 ## Live Demo
 
-[Master deprecated](http://jsondifference.lukascivil.com.br)
-[Latest release](https://lukascivil.github.io/json-difference/)
+[Master (deprecated link)](http://jsondifference.lukascivil.com.br)
+[Latest release (new)](https://lukascivil.github.io/json-difference/)
 
 ## Installation
 

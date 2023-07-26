@@ -96,7 +96,7 @@ Output:
 
 ### Some operations
 
-| Json original |  Json modified  | Delta                                |
+| JSON original |  JSON modified  | Delta                                |
 | ------------- |:---------------:| ------------------------------------:|
 | {}            | []              | "edited": [ [ "__root__", {}, [] ] ] |
 | []            | {}              | "edited": [ [ "__root__", [], {} ] ] |

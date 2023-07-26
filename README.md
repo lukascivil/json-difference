@@ -94,6 +94,16 @@ Output:
 }
 ```
 
+### Delta
+The delta is an object that contains three properties that follow a pattern. This pattern will be shown below:
+
+| Operation     |  Pattern                                 |
+| ------------- |:----------------------------------------:|
+| "edited"      | [path_to_the_key, old_value, new_value]  |
+| "added"       | [path_to_the_key, value]                 |
+| "removed"     | [path_to_the_key, old_value]             |
+
+
 ### Some operations
 
 | JSON original |  JSON modified  | Delta                                |

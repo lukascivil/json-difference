@@ -104,6 +104,12 @@ The delta is an object that contains three properties that follow a pattern. Thi
 | "added"       | [path_to_the_key, value]                 |
 | "removed"     | [path_to_the_key, old_value]             |
 
+| value        |  Explanation                                               |
+| ------------ |:----------------------------------------------------------:|
+| "__root__"   | Indicates the root of the object                           |
+| "@{}"        | Indicates that the key is a non-leaf node of type Object   |
+| "@[]"        | Indicates that the key is a non-leaf node of type Array    |
+
 
 ### Some operations
 

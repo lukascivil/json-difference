@@ -236,6 +236,19 @@ describe('GetDiff function', () => {
     expect(lodashResult).toEqual(expectedLodashResult)
   })
 
+  test('Should return the difference sanitized', () => {
+    const struct1 = [{}]
+    const struct2 = [{ '': '' }]
+    const expectedResult: Delta = { edited: [], added: [['0[]/', '']], removed: [] }
+    const expectedLodashResult: Delta = { edited: [], added: [['[0].', '']], removed: [] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
   /**
    * Complementary tests without a specific case
    */
@@ -330,6 +343,32 @@ describe('GetDiff function', () => {
         ['color.color2', 'brown', 'blue']
       ]
     }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  test('Should return the difference 5', () => {
+    const struct1 = { a: 'b' }
+    const struct2 = { a: { c: 1 } }
+    const expectedResult: Delta = { edited: [['a', 'b', {}]], added: [['a/c', 1]], removed: [] }
+    const expectedLodashResult: Delta = { edited: [['a', 'b', {}]], added: [['a.c', 1]], removed: [] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  test('Should return the difference 6', () => {
+    const struct1 = { a: 'b' }
+    const struct2 = { a: [1] }
+    const expectedResult: Delta = { edited: [['a', 'b', []]], added: [['a/0[]', 1]], removed: [] }
+    const expectedLodashResult: Delta = { edited: [['a', 'b', []]], added: [['a[0]', 1]], removed: [] }
 
     const result = getDiff(struct1, struct2)
     const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })

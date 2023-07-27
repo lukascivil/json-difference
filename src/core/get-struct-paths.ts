@@ -24,6 +24,11 @@ const generatePath = (isArray: boolean, currentPath: string, newPath: string, lo
  * const result1 = getStructPaths(struct)
  * const result2 = getStructPaths(struct, { isLodashLike: true }})
  *
+ *
+ * The values "@{}" and "@[]" are used internally to represent objects and arrays respectively.
+ * But they have a particular meaning, where the key is parent, that is, it must have children.
+ * ("@{}" !== "{}" && "@[]" !== "[]") => true
+ *
  *  console.log(result)
  *  // Output: {"1": "@{}","1/2": null}
  *

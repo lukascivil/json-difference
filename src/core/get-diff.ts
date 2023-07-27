@@ -5,6 +5,7 @@ import { getStructPaths } from './get-struct-paths'
 
 // Models
 import { Delta, JsonDiffOptions } from '../models/jsondiffer.model'
+import sanitizeDelta from '../helpers/sanitize-delta'
 
 const defaultOptions: JsonDiffOptions = {
   isLodashLike: false
@@ -48,5 +49,8 @@ export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string
   // a->b
   delta.edited = getEditedPaths(oldStructPaths, newStructPaths)
 
-  return delta
+  // Sanitize Delta to remove unnecessary paths
+  const sanitizedDelta = sanitizeDelta(delta)
+
+  return sanitizedDelta
 }

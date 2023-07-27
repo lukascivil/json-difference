@@ -10,6 +10,16 @@ describe('GetStructPaths function', () => {
     expect(result).toEqual(expectedResult)
   })
 
+  test('Should return unnecessary path', () => {
+    const oldStruct = [{ '': '' }]
+    const unnecessaryPath = { '0[]': '@{}' }
+    const expectedResult = { __root__: '@[]', ...unnecessaryPath, '0[]/': '' }
+
+    const result = getStructPaths(oldStruct)
+
+    expect(result).toEqual(expectedResult)
+  })
+
   test('Should return path for root []', () => {
     const oldStruct = [] as any
     const expectedResult = { __root__: '@[]' }

@@ -30,15 +30,21 @@ const defaultOptions: JsonDiffOptions = {
  *  console.log(result)
  *  // Output: {"edited": [["1", null, "coffee"]], added: [], removed: []}
  */
-export const getDiff = (oldStruct: Record<string, any>, newStruct: Record<string, any>, options?: JsonDiffOptions): Delta => {
+export const getDiff = (
+  oldStruct: Record<string, any> | string,
+  newStruct: Record<string, any> | string,
+  options?: JsonDiffOptions
+): Delta => {
   const { isLodashLike } = options ?? defaultOptions
   const delta: Delta = {
     added: [],
     removed: [],
     edited: []
   }
-  const oldStructPaths = getStructPaths(oldStruct, isLodashLike)
-  const newStructPaths = getStructPaths(newStruct, isLodashLike)
+  const preparedOldStruct = typeof oldStruct === 'string' ? JSON.parse(oldStruct) : oldStruct
+  const preparedNewStruct = typeof newStruct === 'string' ? JSON.parse(newStruct) : newStruct
+  const oldStructPaths = getStructPaths(preparedOldStruct, isLodashLike)
+  const newStructPaths = getStructPaths(preparedNewStruct, isLodashLike)
 
   // A-B
   delta.removed = getPathsDiff(oldStructPaths, newStructPaths)

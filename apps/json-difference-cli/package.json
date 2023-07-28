@@ -1,12 +1,13 @@
 {
   "name": "json-difference-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "json-difference cli",
   "main": "bin/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "keywords": [
+    "json",
+    "difference",
+    "cli"
+  ],
   "author": "Lucas Cordeiro da Silva",
   "license": "MIT",
   "bin": {

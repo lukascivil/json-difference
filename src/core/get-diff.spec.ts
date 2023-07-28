@@ -18,6 +18,19 @@ describe('GetDiff function', () => {
     expect(lodashResult).toEqual(expectedLodashResult)
   })
 
+  test('Should return the difference between two JSON string', () => {
+    const struct1 = JSON.stringify({ 1: { 2: 7, 3: { 4: 6 } } })
+    const struct2 = JSON.stringify({ 1: { 3: { 4: 5 } } })
+    const expectedResult: Delta = { edited: [['1/3/4', 6, 5]], added: [], removed: [['1/2', 7]] }
+    const expectedLodashResult: Delta = { edited: [['1.3.4', 6, 5]], added: [], removed: [['1.2', 7]] }
+
+    const result = getDiff(struct1, struct2)
+    const lodashResult = getDiff(struct1, struct2, { isLodashLike: true })
+
+    expect(result).toEqual(expectedResult)
+    expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
   test('Should return the difference between [] and {}', () => {
     const struct1 = [] as any
     const struct2 = {}

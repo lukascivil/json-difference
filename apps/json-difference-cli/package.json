@@ -1,0 +1,19 @@
+{
+  "name": "json-difference-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Lucas Cordeiro da Silva",
+  "license": "MIT",
+  "bin": {
+    "json-difference": "./bin/index.js"
+  },
+  "dependencies": {
+    "json-difference": "^1.9.1",
+    "yargs": "^17.7.2"
+  }
+}

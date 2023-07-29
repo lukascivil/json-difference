@@ -4,8 +4,11 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "nx": "nx",
-    "start": "nx serve"
+    "serve": "yarn nx run playground --target=serve",
+    "test": "yarn nx run-many --target=test",
+    "build": "yarn nx run-many --target=build",
+    "graph": "yarn nx graph",
+    "graph:affected": "yarn nx graph --affected"
   },
   "devDependencies": {
     "@types/jest": "^29.5.3",
@@ -23,7 +26,8 @@
     "ts-jest": "^29.1.1",
     "typescript": "5.1.6",
     "vite": "^4.4.6",
-    "vite-tsconfig-paths": "^4.2.0"
+    "vite-tsconfig-paths": "^4.2.0",
+    "nx": "16.5.5"
   },
   "workspaces": [
     "./libs/*",

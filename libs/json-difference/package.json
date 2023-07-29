@@ -35,8 +35,5 @@
     "diff"
   ],
   "author": "lukascivil",
-  "homepage": "https://github.com/lukascivil/jsondiffer#readme",
-  "workspaces": [
-    "apps/*"
-  ]
+  "homepage": "https://github.com/lukascivil/jsondiffer#readme"
 }

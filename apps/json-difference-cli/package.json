@@ -1,0 +1,20 @@
+{
+  "name": "json-difference-cli",
+  "version": "1.0.0",
+  "description": "json-difference cli",
+  "main": "bin/index.js",
+  "keywords": [
+    "json",
+    "difference",
+    "cli"
+  ],
+  "author": "Lucas Cordeiro da Silva",
+  "license": "MIT",
+  "bin": {
+    "json-difference": "./bin/index.js"
+  },
+  "dependencies": {
+    "json-difference": "^1.9.1",
+    "yargs": "^17.7.2"
+  }
+}

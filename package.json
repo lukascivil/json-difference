@@ -8,6 +8,7 @@
     "test": "yarn nx run-many --target=test",
     "lint": "yarn nx run-many --target=lint",
     "build": "yarn nx run-many --target=build",
+    "check-types": "yarn nx run-many --target=check-types",
     "graph": "yarn nx graph",
     "graph:affected": "yarn nx graph --affected"
   },

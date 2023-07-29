@@ -1,0 +1,42 @@
+{
+  "name": "json-difference",
+  "version": "1.9.1",
+  "description": "json diff lib",
+  "license": "MIT",
+  "private": true,
+  "main": "dist",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=16.16.x"
+  },
+  "files": [
+    "dist",
+    "dist.browser"
+  ],
+  "scripts": {
+    "lint": "eslint --ext .ts",
+    "check-types": "tsc --noemit -p tsconfig.json",
+    "test": "jest --config jestconfig.json --coverage",
+    "test:local": "jest --watchAll --config jestconfig.json",
+    "build": "tsc && vite build",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test",
+    "example": "echo Use {simple} or {stress} as example param && cd ./apps/examples && yarn",
+    "start-playground": "yarn --cwd apps/playground dev",
+    "build-playground": "yarn --cwd apps/playground build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukascivil/jsondiffer.git"
+  },
+  "keywords": [
+    "json",
+    "diff"
+  ],
+  "author": "lukascivil",
+  "homepage": "https://github.com/lukascivil/jsondiffer#readme",
+  "workspaces": [
+    "apps/*"
+  ]
+}

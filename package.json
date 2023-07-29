@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "yarn nx run playground --target=serve",
     "test": "yarn nx run-many --target=test",
+    "lint": "yarn nx run-many --target=lint",
     "build": "yarn nx run-many --target=build",
     "graph": "yarn nx graph",
     "graph:affected": "yarn nx graph --affected"

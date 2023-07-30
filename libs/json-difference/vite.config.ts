@@ -17,11 +17,7 @@ export default defineConfig({
       entry: 'src/index.ts',
       name: 'json-difference',
       fileName: 'index',
-      formats: ['es', 'cjs']
+      formats: ['es', 'cjs', 'umd']
     }
   }
-  // build: {
-  //   lib: { entry: resolve(__dirname, 'src/index.ts'), name: 'json-difference', fileName: 'index', formats: ['es'] }
-  //   // outDir: './dist.browser'
-  // },
 })

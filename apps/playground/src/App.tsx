@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react'
 import { Box, Heading, Container, Text, Button, Stack, Grid, GridItem, Textarea } from '@chakra-ui/react'
 import Editor from 'react-monaco-editor'
-import { getDiff } from 'json-difference'
+import { getDiff } from '@monorepo/json-difference'
 import { DeleteIcon, AddIcon } from '@chakra-ui/icons'
 
 const oldJsonExample = `{ "foo": { "bar": "true" } }`

@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "check-types": "tsc --noemit -p tsconfig.json",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -20,7 +21,8 @@
     "monaco-editor": "^0.40.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-monaco-editor": "^0.53.0"
+    "react-monaco-editor": "^0.53.0",
+    "vite-tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

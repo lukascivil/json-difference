@@ -13,6 +13,8 @@
     "graph:affected": "yarn nx graph --affected"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.1",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.4",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
@@ -26,6 +28,7 @@
     "jest": "^29.6.1",
     "nx": "16.5.5",
     "prettier": "^3.0.0",
+    "replace-json-property": "^1.9.0",
     "ts-jest": "^29.1.1",
     "typescript": "5.1.6",
     "vite": "^4.4.6",

@@ -25,7 +25,7 @@
     "example": "echo Use {simple} or {stress} as example param && cd ./apps/examples && yarn",
     "start-playground": "yarn --cwd apps/playground dev",
     "build-playground": "yarn --cwd apps/playground build",
-    "release": "npx semantic-release --debug --extends=.release.config.js",
+    "release": "npx semantic-release --debug --extends=../../.release.config.js",
     "update-deps": "PACKAGE_NAME=$PACKAGE_NAME VERSION=$VERSION npx nx run-many -t update-depss",
     "update-depss": "npx rjp ./dist/libs/bar/package.json $PACKAGE_NAME $VERSION"
   },

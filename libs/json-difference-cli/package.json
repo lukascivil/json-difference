@@ -9,7 +9,7 @@
     "cli"
   ],
   "scripts": {
-    "release": "npx semantic-release --debug --extends=.release.config.js",
+    "release": "npx semantic-release --debug --extends=../../.release.config.js",
     "update-deps": "PACKAGE_NAME=$PACKAGE_NAME VERSION=$VERSION npx nx run-many -t update-depss",
     "update-depss": "npx rjp ./dist/libs/bar/package.json $PACKAGE_NAME $VERSION"
   },

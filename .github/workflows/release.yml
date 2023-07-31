@@ -14,6 +14,8 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         id: setSHAs
         uses: nrwl/nx-set-shas@v3
+        with:
+          error-on-no-successful-workflow: ''
 
       - run: |
           echo "BASE: ${{ steps.setSHAs.outputs.base }}"

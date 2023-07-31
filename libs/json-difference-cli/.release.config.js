@@ -1,11 +1,11 @@
-const libName = 'bar'
+const libName = 'json-difference-cli'
 const libPath = `libs/${libName}`
-const importPath = `@my-org/${libName}`
+const importPath = `monorepo/${libName}`
 
 module.exports = {
   name: libName,
   pkgRoot: `dist/${libPath}`,
-  tagFormat: artifactName + '-v${version}',
+  tagFormat: libName + '-v${version}',
   commitPaths: [`${libPath}/*`],
   assets: [`${libPath}/README.md`, `${libPath}/CHANGELOG.md`],
   plugins: [

@@ -30,7 +30,7 @@ jobs:
           echo "HEAD: ${{ steps.setSHAs.outputs.head }}"
 
       - name: Release It
-        run: yarn nx run-many release --parallel=1
+        run: yarn nx run-many -t=release --parallel=1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

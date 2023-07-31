@@ -7,7 +7,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": ">=16.16.x"
+    "node": ">=18.17.x"
   },
   "files": [
     "dist",

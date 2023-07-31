@@ -25,6 +25,7 @@ jobs:
         with:
           main-branch-name: 'master'
 
+      - run: ls
       - run: |
           echo "BASE: ${{ steps.setSHAs.outputs.base }}"
           echo "HEAD: ${{ steps.setSHAs.outputs.head }}"

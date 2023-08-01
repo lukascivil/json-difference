@@ -1,8 +1,13 @@
 {
-  "name": "json-difference-cli",
+  "name": "@monorepo/json-difference-cli",
   "version": "1.0.0",
   "description": "json-difference cli",
   "main": "bin/index.js",
+  "release": {
+    "branches": [
+      "master"
+    ]
+  },
   "keywords": [
     "json",
     "difference",
@@ -11,7 +16,7 @@
   "scripts": {
     "release": "npx semantic-release --debug --extends=./.release.config.js",
     "update-deps": "PACKAGE_NAME=$PACKAGE_NAME VERSION=$VERSION npx nx run-many -t update-depss",
-    "update-depss": "npx rjp ./dist/libs/bar/package.json $PACKAGE_NAME $VERSION"
+    "update-depss": "npx rjp ./package.json $PACKAGE_NAME $VERSION"
   },
   "author": "Lucas Cordeiro da Silva",
   "license": "MIT",

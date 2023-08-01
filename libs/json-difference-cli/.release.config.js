@@ -4,7 +4,7 @@ const importPath = `@monorepo/${libName}`
 
 module.exports = {
   name: libName,
-  pkgRoot: `dist/${libPath}`,
+  pkgRoot: `./`,
   tagFormat: libName + '-v${version}',
   commitPaths: [`${libPath}/*`],
   assets: [`${libPath}/README.md`, `${libPath}/CHANGELOG.md`],

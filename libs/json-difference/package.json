@@ -32,12 +32,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lukascivil/jsondiffer.git"
+    "url": "git+https://github.com/lukascivil/json-difference.git"
   },
   "keywords": [
     "json",
     "diff"
   ],
   "author": "lukascivil",
-  "homepage": "https://github.com/lukascivil/jsondiffer#readme"
+  "homepage": "https://github.com/lukascivil/json-difference#readme"
 }

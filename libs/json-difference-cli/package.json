@@ -8,6 +8,10 @@
       "master"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukascivil/json-difference.git"
+  },
   "keywords": [
     "json",
     "difference",
@@ -15,7 +19,7 @@
   ],
   "scripts": {
     "release": "npx semantic-release --extends=./.release.config.js",
-    "update-deps": "PACKAGE_NAME=$PACKAGE_NAME VERSION=$VERSION npx nx run-many -t update-depss",
+    "update-deps": "PACKAGE_NAME=$PACKAGE_NAME VERSION=$VERSION yarn run -t update-depss",
     "update-depss": "npx rjp ./package.json $PACKAGE_NAME $VERSION",
     "bump-version": "rjp package.json version $VERSION"
   },

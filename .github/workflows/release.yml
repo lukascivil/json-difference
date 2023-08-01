@@ -17,7 +17,7 @@ jobs:
           node-version: '18.17.0'
 
       - name: Yarn Install
-        run: yarn install --immutable
+        run: yarn install
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         id: setSHAs

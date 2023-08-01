@@ -2443,6 +2443,7 @@ __metadata:
     "@types/jest": ^29.5.3
     "@types/node": ^20.4.4
     "@typescript-eslint/eslint-plugin": ^6.1.0
+    conventional-changelog-conventionalcommits: ^6.1.0
     eslint: ^8.45.0
     eslint-config-standard-with-typescript: ^37.0.0
     eslint-plugin-import: ^2.27.5
@@ -4844,6 +4845,15 @@ __metadata:
   dependencies:
     compare-func: ^2.0.0
   checksum: ddc59ead53a45b817d83208200967f5340866782b8362d5e2e34105fdfa3d3a31585ebbdec7750bdb9de53da869f847e8ca96634a9801f51e27ecf4e7ffe2bad
+  languageName: node
+  linkType: hard
+
+"conventional-changelog-conventionalcommits@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "conventional-changelog-conventionalcommits@npm:6.1.0"
+  dependencies:
+    compare-func: ^2.0.0
+  checksum: 4383a35cdf72f5964e194a1146e7f78276e301f73bd993b71627bb93586b6470d411b9613507ceb37e0fed0b023199c95e941541fa47172b4e6a7916fc3a53ff
   languageName: node
   linkType: hard
 

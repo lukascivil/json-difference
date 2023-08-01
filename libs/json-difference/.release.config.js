@@ -21,7 +21,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: ` PACKAGE_NAME=${importPath} VERSION=\${nextRelease.version} npm run update-deps && VERSION=\${nextRelease.version} npm run bump-version:${libName}`
+        prepareCmd: ` PACKAGE_NAME=${importPath} VERSION=\${nextRelease.version} yarn run update-deps && VERSION=\${nextRelease.version} yarn run bump-version`
       }
     ],
     [

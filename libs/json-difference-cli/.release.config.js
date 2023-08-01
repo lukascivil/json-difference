@@ -17,7 +17,7 @@ module.exports = {
         changelogFile: `${libPath}/CHANGELOG.md`
       }
     ],
-    'semantic-release-yarn',
+    ['semantic-release-yarn', { pkgRoot: '.', mainWorkspace: '@monorepo/root' }],
     [
       '@semantic-release/exec',
       {

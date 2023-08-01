@@ -1,5 +1,5 @@
 const libName = 'json-difference'
-const libPath = `libs/${libName}`
+const libPath = `.`
 const importPath = `@monorepo/${libName}`
 
 module.exports = {

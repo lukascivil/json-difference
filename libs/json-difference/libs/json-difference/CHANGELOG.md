@@ -1,3 +1,15 @@
+## [1.1.0](https://github.com/lukascivil/json-difference/compare/json-difference-v1.0.0...json-difference-v1.1.0) (2023-08-01)
+
+
+### Features
+
+* improve ([b3ef07f](https://github.com/lukascivil/json-difference/commit/b3ef07f2395534e0e01e7ab15fb79df9f7572169))
+
+
+### Chores
+
+* fix lib path ([9d751c4](https://github.com/lukascivil/json-difference/commit/9d751c4cb58f910235f9e801d9c22b5ba2f04293))
+
 ## 1.0.0 (2023-08-01)
 
 

@@ -51,5 +51,8 @@
       "apps/*"
     ]
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.1",
+  "dependencies": {
+    "@yarnpkg/plugin-version": "^4.0.0-rc.48"
+  }
 }

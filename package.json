@@ -23,6 +23,7 @@
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.4",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@yarnpkg/plugin-version": "^4.0.0-rc.48",
     "conventional-changelog-conventionalcommits": "^6.1.0",
     "eslint": "^8.45.0",
     "eslint-config-standard-with-typescript": "^37.0.0",
@@ -51,8 +52,5 @@
       "apps/*"
     ]
   },
-  "packageManager": "yarn@3.6.1",
-  "dependencies": {
-    "@yarnpkg/plugin-version": "^4.0.0-rc.48"
-  }
+  "packageManager": "yarn@3.6.1"
 }

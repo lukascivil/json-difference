@@ -17,7 +17,7 @@ module.exports = {
         changelogFile: `${libPath}/CHANGELOG.md`
       }
     ],
-    '@semantic-release/npm',
+    'semantic-release-yarn',
     [
       '@semantic-release/exec',
       {

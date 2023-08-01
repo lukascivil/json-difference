@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "release": "npx semantic-release --extends=./.release.config.js",
-    "update-deps": "PACKAGE_NAME=$PACKAGE_NAME VERSION=$VERSION yarn run -t update-depss",
+    "update-deps": "PACKAGE_NAME=$PACKAGE_NAME VERSION=$VERSION yarn run update-depss",
     "update-depss": "npx rjp ./package.json $PACKAGE_NAME $VERSION",
     "bump-version": "rjp package.json version $VERSION"
   },

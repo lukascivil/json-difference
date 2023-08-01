@@ -1,7 +1,9 @@
 {
   "name": "@monorepo/json-difference",
   "version": "1.4.0",
-  "description": "json diff lib",
+  "author": "lukascivil",
+  "homepage": "https://github.com/lukascivil/json-difference#readme",
+  "description": "json difference lib",
   "license": "MIT",
   "private": true,
   "main": "dist/index.js",
@@ -12,6 +14,14 @@
   "files": [
     "dist",
     "dist.browser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukascivil/json-difference.git"
+  },
+  "keywords": [
+    "json",
+    "diff"
   ],
   "scripts": {
     "lint": "eslint --ext .ts",
@@ -29,15 +39,5 @@
     "update-deps": "PACKAGE_NAME=$PACKAGE_NAME VERSION=$VERSION yarn run -t update-depss",
     "update-depss": "npx rjp ./package.json $PACKAGE_NAME $VERSION",
     "bump-version": "rjp package.json version $VERSION"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lukascivil/json-difference.git"
-  },
-  "keywords": [
-    "json",
-    "diff"
-  ],
-  "author": "lukascivil",
-  "homepage": "https://github.com/lukascivil/json-difference#readme"
+  }
 }

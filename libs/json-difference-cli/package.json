@@ -1,13 +1,12 @@
 {
   "name": "@monorepo/json-difference-cli",
   "version": "1.0.0",
-  "description": "json-difference cli",
+  "author": "lukascivil",
+  "homepage": "https://github.com/lukascivil/json-difference#readme",
+  "description": "json-difference cli lib",
+  "license": "MIT",
+  "private": true,
   "main": "bin/index.js",
-  "release": {
-    "branches": [
-      "master"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukascivil/json-difference.git"
@@ -23,8 +22,6 @@
     "update-depss": "npx rjp ./package.json $PACKAGE_NAME $VERSION",
     "bump-version": "rjp package.json version $VERSION"
   },
-  "author": "Lucas Cordeiro da Silva",
-  "license": "MIT",
   "bin": {
     "json-difference": "./bin/index.js"
   },

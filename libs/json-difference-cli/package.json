@@ -17,10 +17,7 @@
     "cli"
   ],
   "scripts": {
-    "release": "npx semantic-release --extends=./.release.config.js",
-    "update-deps": "PACKAGE_NAME=$PACKAGE_NAME VERSION=$VERSION yarn run update-depss",
-    "update-depss": "npx rjp ./package.json $PACKAGE_NAME $VERSION",
-    "bump-version": "rjp package.json version $VERSION"
+    "release": "yarn nx run --target=version"
   },
   "bin": {
     "json-difference": "./bin/index.js"

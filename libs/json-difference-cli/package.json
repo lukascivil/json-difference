@@ -16,9 +16,6 @@
     "difference",
     "cli"
   ],
-  "scripts": {
-    "release": "npx nx run json-difference-cli:version"
-  },
   "bin": {
     "json-difference": "./bin/index.js"
   },

@@ -34,7 +34,6 @@
     "prepublishOnly": "yarn test",
     "example": "echo Use {simple} or {stress} as example param && cd ./apps/examples && yarn",
     "start-playground": "yarn --cwd apps/playground dev",
-    "build-playground": "yarn --cwd apps/playground build",
-    "release": "npx nx run json-difference:version"
+    "build-playground": "yarn --cwd apps/playground build"
   }
 }

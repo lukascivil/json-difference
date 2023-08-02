@@ -11,7 +11,7 @@
     "check-types": "yarn nx run-many --target=check-types",
     "graph": "yarn nx graph",
     "graph:affected": "yarn nx graph --affected",
-    "release": "yarn nx run-many -t=release --parallel=1"
+    "release": "yarn nx affected --target=release --parallel=1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",

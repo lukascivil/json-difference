@@ -17,7 +17,7 @@
     "cli"
   ],
   "scripts": {
-    "release": "npx nx run --target=version"
+    "release": "npx nx run json-difference:version"
   },
   "bin": {
     "json-difference": "./bin/index.js"

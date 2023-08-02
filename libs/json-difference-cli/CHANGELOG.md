@@ -1,3 +1,15 @@
+## [1.4.0](https://github.com/lukascivil/json-difference/compare/json-difference-cli-v1.3.0...json-difference-cli-v1.4.0) (2023-08-02)
+
+
+### Features
+
+* add semver ([be93e65](https://github.com/lukascivil/json-difference/commit/be93e659d0c53933364a2ccce851bbffc05ec446))
+
+
+### Chores
+
+* **release:** json-difference-v1.8.0 [skip ci] ([7009f66](https://github.com/lukascivil/json-difference/commit/7009f665ac3c28bd71a88880af27b5afec2135b4)), closes [#52](https://github.com/lukascivil/json-difference/issues/52) [#29](https://github.com/lukascivil/json-difference/issues/29) [#10](https://github.com/lukascivil/json-difference/issues/10) [#40](https://github.com/lukascivil/json-difference/issues/40) [#53](https://github.com/lukascivil/json-difference/issues/53) [#46](https://github.com/lukascivil/json-difference/issues/46) [#51](https://github.com/lukascivil/json-difference/issues/51) [#48](https://github.com/lukascivil/json-difference/issues/48) [#45](https://github.com/lukascivil/json-difference/issues/45) [#27](https://github.com/lukascivil/json-difference/issues/27) [#30](https://github.com/lukascivil/json-difference/issues/30) [#47](https://github.com/lukascivil/json-difference/issues/47) [#36](https://github.com/lukascivil/json-difference/issues/36) [#55](https://github.com/lukascivil/json-difference/issues/55) [#52](https://github.com/lukascivil/json-difference/issues/52) [#29](https://github.com/lukascivil/json-difference/issues/29) [#10](https://github.com/lukascivil/json-difference/issues/10) [#40](https://github.com/lukascivil/json-difference/issues/40) [#53](https://github.com/lukascivil/json-difference/issues/53) [#46](https://github.com/lukascivil/json-difference/issues/46) [#51](https://github.com/lukascivil/json-difference/issues/51) [#48](https://github.com/lukascivil/json-difference/issues/48) [#45](https://github.com/lukascivil/json-difference/issues/45) [#27](https://github.com/lukascivil/json-difference/issues/27) [#30](https://github.com/lukascivil/json-difference/issues/30) [#47](https://github.com/lukascivil/json-difference/issues/47) [#36](https://github.com/lukascivil/json-difference/issues/36) [#55](https://github.com/lukascivil/json-difference/issues/55) [#56](https://github.com/lukascivil/json-difference/issues/56) [#37](https://github.com/lukascivil/json-difference/issues/37) [#35](https://github.com/lukascivil/json-difference/issues/35) [#44](https://github.com/lukascivil/json-difference/issues/44) [#49](https://github.com/lukascivil/json-difference/issues/49) [#56](https://github.com/lukascivil/json-difference/issues/56) [#37](https://github.com/lukascivil/json-difference/issues/37) [#35](https://github.com/lukascivil/json-difference/issues/35) [#44](https://github.com/lukascivil/json-difference/issues/44) [#49](https://github.com/lukascivil/json-difference/issues/49)
+
 ## [1.3.0](https://github.com/lukascivil/json-difference/compare/json-difference-cli-v1.2.0...json-difference-cli-v1.3.0) (2023-08-02)
 
 

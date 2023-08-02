@@ -40,5 +40,6 @@ jobs:
           echo "BASE: ${{ steps.setSHAs.outputs.base }}"
           echo "HEAD: ${{ steps.setSHAs.outputs.head }}"
 
-      - name: Release It
+      - name: Version
+        shell: bash
         run: yarn release

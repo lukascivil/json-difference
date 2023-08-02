@@ -1,6 +1,6 @@
 {
   "name": "@monorepo/json-difference",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "author": "lukascivil",
   "homepage": "https://github.com/lukascivil/json-difference#readme",
   "description": "json difference lib",

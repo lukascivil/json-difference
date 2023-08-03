@@ -4,7 +4,10 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "postTargets": ["json-difference:github"]
+        "postTargets": ["json-difference:github"],
+        "baseBranch": "master",
+        "syncVersions": false,
+        "push": true
       }
     },
     "github": {

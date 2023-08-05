@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.13.0](https://github.com/lukascivil/json-difference/compare/json-difference-1.12.0...json-difference-1.13.0) (2023-08-05)
+
+
+### Features
+
+* remove dry run options ([d6180eb](https://github.com/lukascivil/json-difference/commit/d6180eb7d728f9e806874cf9e750c2bbb0e5d2f8))
+
+
+
 # [1.12.0](https://github.com/lukascivil/json-difference/compare/json-difference-1.11.0...json-difference-1.12.0) (2023-08-05)
 
 

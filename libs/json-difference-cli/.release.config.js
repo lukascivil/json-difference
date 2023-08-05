@@ -1,6 +1,6 @@
 const libName = 'json-difference-cli'
 const libPath = `.`
-const importPath = `@monorepo/${libName}`
+const importPath = `${libName}`
 
 module.exports = {
   name: libName,
@@ -17,7 +17,7 @@ module.exports = {
         changelogFile: `${libPath}/CHANGELOG.md`
       }
     ],
-    ['semantic-release-yarn', { pkgRoot: '.', mainWorkspace: '@monorepo/root' }],
+    ['semantic-release-yarn', { pkgRoot: '.', mainWorkspace: 'root' }],
     [
       '@semantic-release/exec',
       {

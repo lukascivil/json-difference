@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/root",
+  "name": "root",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",

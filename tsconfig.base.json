@@ -21,7 +21,7 @@
     "noEmit": true,
     "baseUrl": "./",
     "paths": {
-      "@monorepo/json-difference": ["libs/json-difference/src/index.ts"]
+      "@json-difference": ["libs/json-difference/src/index.ts"]
     }
   },
   "include": ["src"],

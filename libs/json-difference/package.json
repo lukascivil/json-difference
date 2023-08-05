@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/json-difference",
+  "name": "json-difference",
   "version": "1.13.0",
   "author": "lukascivil",
   "homepage": "https://github.com/lukascivil/json-difference#readme",

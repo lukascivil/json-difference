@@ -2453,9 +2453,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@monorepo/root@workspace:.":
+"root@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@monorepo/root@workspace:."
+  resolution: "root@workspace:."
   dependencies:
     "@jscutlery/semver": ^3.1.0
     "@nx/devkit": ^16.6.0

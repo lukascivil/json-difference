@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.1.0](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.0.1...json-difference-cli-1.1.0) (2023-08-05)
+
+
+### Features
+
+* adjust json-difference-cli ([3bd862a](https://github.com/lukascivil/json-difference/commit/3bd862ae3c59f7af80f6c35315da3ef94be0c0a3))
+
+
+
 ## [1.0.1](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.0.0...json-difference-cli-1.0.1) (2023-08-03)
 
 

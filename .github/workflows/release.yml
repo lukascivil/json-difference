@@ -48,3 +48,7 @@ jobs:
       - name: Version
         shell: bash
         run: yarn release
+
+      - name: Tag last-release
+        shell: bash
+        run: git tag -f last-release

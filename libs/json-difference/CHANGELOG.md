@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.12.0](https://github.com/lukascivil/json-difference/compare/json-difference-1.11.0...json-difference-1.12.0) (2023-08-05)
+
+
+### Features
+
+* adjust npm publish ([a3aff8f](https://github.com/lukascivil/json-difference/commit/a3aff8f881b8bb0d7bfc07b0884e67677ae2e485))
+
+
+
 # [1.11.0](https://github.com/lukascivil/json-difference/compare/json-difference-1.10.0...json-difference-1.11.0) (2023-08-05)
 
 

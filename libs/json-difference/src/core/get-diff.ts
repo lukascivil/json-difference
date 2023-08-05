@@ -27,8 +27,8 @@ const defaultOptions: JsonDiffOptions = {
  *
  *  const result = getDiff(oldStruct, newStruct)
  *
- *  // Output: {"edited": [["1", null, "coffee"]], added: [], removed: []}
  *  console.log(result)
+ *  // Output: {"edited": [["1", null, "coffee"]], added: [], removed: []}
  */
 export const getDiff = (
   oldStruct: Record<string, any> | string,

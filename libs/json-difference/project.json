@@ -4,7 +4,7 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "postTargets": ["json-difference:github"],
+        "postTargets": ["json-difference:github", "json-difference:npm"],
         "baseBranch": "master",
         "syncVersions": false,
         "push": true
@@ -15,6 +15,13 @@
       "options": {
         "tag": "${tag}",
         "notes": "${notes}"
+      }
+    },
+    "npm": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "dryRun": "${dryRun}"
       }
     }
   }

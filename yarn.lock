@@ -2478,6 +2478,7 @@ __metadata:
     eslint-plugin-prettier: ^5.0.0
     eslint-plugin-promise: ^6.0.0
     jest: ^29.6.1
+    ngx-deploy-npm: ^6.0.0
     nx: 16.5.5
     prettier: ^3.0.0
     replace-json-property: ^1.9.0
@@ -9441,6 +9442,16 @@ __metadata:
   version: 1.0.0
   resolution: "nerf-dart@npm:1.0.0"
   checksum: 0e5508d83eae21a6ed0bd32b3a048c849741023811f06efa972800f4ad55eaa8205442e81c406ad051771f232c4ed3d3ee262f6c850bbcad9660f54a6471a4b9
+  languageName: node
+  linkType: hard
+
+"ngx-deploy-npm@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "ngx-deploy-npm@npm:6.0.0"
+  peerDependencies:
+    "@nx/devkit": ^16.0.0
+    tslib: 2.5.0
+  checksum: eb29beb81aed775063ad15c2979b55755c386cee5ca10e936a43b257025281f3030d51e6d5f78c9fefc9147c49875713eceb543dc6aa96b9624fab6f112889f8
   languageName: node
   linkType: hard
 

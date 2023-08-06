@@ -1,5 +1,11 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "build": {
+    "executor": "nx:run-commands",
+    "options": {
+      "command": "yarn build"
+    }
+  },
   "targets": {
     "version": {
       "executor": "@jscutlery/semver:version",

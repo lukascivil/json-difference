@@ -16,6 +16,8 @@
   "devDependencies": {
     "@jscutlery/semver": "^3.1.0",
     "@nx/devkit": "^16.6.0",
+    "@nx/js": "^16.6.0",
+    "@nx/vite": "^16.6.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^10.0.1",
     "@semantic-release/exec": "^6.0.3",
@@ -44,7 +46,7 @@
     "semantic-release-yarn": "^2.0.0",
     "ts-jest": "^29.1.1",
     "typescript": "5.1.6",
-    "vite": "^4.4.6",
+    "vite": "^4.4.8",
     "vite-plugin-dts": "~2.3.0",
     "vite-plugin-static-copy": "^0.17.0",
     "vite-tsconfig-paths": "^4.2.0"

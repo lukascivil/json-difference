@@ -4,6 +4,7 @@
     "module": "commonjs",
     "target": "ES6",
     "outDir": "bin",
+    "baseUrl": "./",
     "types": []
   },
   "include": ["src/**/*.ts"],

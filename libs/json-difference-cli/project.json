@@ -1,12 +1,14 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "build": {
-    "executor": "nx:run-commands",
-    "options": {
-      "command": "yarn build"
-    }
-  },
   "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "outputPath": "libs/json-difference-cli/bin",
+        "main": "libs/json-difference-cli/src/index.ts",
+        "tsConfig": "libs/json-difference-cli/tsconfig.lib.json"
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {

@@ -2,9 +2,9 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "targets": {
     "build": {
-      "executor": "nx:run-commands",
+      "executor": "@nx/vite:build",
       "options": {
-        "command": "yarn build"
+        "outputPath": "libs/json-difference/dist"
       }
     },
     "version": {

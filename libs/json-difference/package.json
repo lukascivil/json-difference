@@ -28,7 +28,6 @@
     "check-types": "tsc --noemit -p tsconfig.json",
     "test": "jest --config jestconfig.json --coverage",
     "test:local": "jest --watchAll --config jestconfig.json",
-    "build": "tsc && vite build",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test",

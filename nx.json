@@ -31,5 +31,6 @@
   },
   "affected": {
     "defaultBase": "master"
-  }
+  },
+  "packageManager": "yarn"
 }

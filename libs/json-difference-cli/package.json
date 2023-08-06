@@ -7,9 +7,6 @@
   "license": "MIT",
   "private": true,
   "main": "bin/index.js",
-  "scripts": {
-    "build": "tsc -p tsconfig.lib.json"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukascivil/json-difference.git"

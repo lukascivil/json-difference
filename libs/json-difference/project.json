@@ -30,7 +30,8 @@
       "options": {
         "access": "public",
         "distFolderPath": "libs/json-difference",
-        "registry": "https://npm.pkg.github.com/"
+        "registry": "https://npm.pkg.github.com/",
+        "buildTarget": "json-difference:build"
       }
     }
   }

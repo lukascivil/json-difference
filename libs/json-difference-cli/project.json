@@ -29,7 +29,8 @@
       "executor": "ngx-deploy-npm:deploy",
       "access": "public",
       "distFolderPath": "libs/json-difference-cli",
-      "registry": "https://npm.pkg.github.com/"
+      "registry": "https://npm.pkg.github.com/",
+      "buildTarget": "json-difference-cli:build"
     }
   }
 }

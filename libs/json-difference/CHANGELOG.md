@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.15.0](https://github.com/lukascivil/json-difference/compare/json-difference-1.14.0...json-difference-1.15.0) (2023-08-06)
+
+
+### Features
+
+* add json-difference nx build ([a4c0e62](https://github.com/lukascivil/json-difference/commit/a4c0e62769bb0b852d6010df218594e2f3a13f01))
+
 ## [1.14.0](https://github.com/lukascivil/json-difference/compare/json-difference-1.13.0...json-difference-1.14.0) (2023-08-05)
 
 

@@ -28,7 +28,6 @@
     "test": "jest --config jestconfig.json --coverage",
     "test:local": "jest --watchAll --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "prepublishOnly": "yarn test",
     "example": "echo Use {simple} or {stress} as example param && cd ./apps/examples && yarn",
     "start-playground": "yarn --cwd apps/playground dev",
     "build-playground": "yarn --cwd apps/playground build"

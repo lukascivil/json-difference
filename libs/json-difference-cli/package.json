@@ -5,7 +5,6 @@
   "homepage": "https://github.com/lukascivil/json-difference#readme",
   "description": "json-difference cli lib",
   "license": "MIT",
-  "private": true,
   "main": "bin/src/index.js",
   "repository": {
     "type": "git",

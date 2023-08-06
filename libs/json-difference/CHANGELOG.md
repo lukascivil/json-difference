@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.15.7](https://github.com/lukascivil/json-difference/compare/json-difference-1.15.6...json-difference-1.15.7) (2023-08-06)
+
+
+### Bug Fixes
+
+* adjust npmrc ([d68e5f1](https://github.com/lukascivil/json-difference/commit/d68e5f17d954295135eb0f274cb55f0236a0a055))
+* wrong npm registry ([ee42a79](https://github.com/lukascivil/json-difference/commit/ee42a79076a34d23fed2acc7ac6e84dbaa20cc74))
+
 ## [1.15.6](https://github.com/lukascivil/json-difference/compare/json-difference-1.15.5...json-difference-1.15.6) (2023-08-06)
 
 

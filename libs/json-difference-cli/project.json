@@ -27,9 +27,8 @@
     },
     "npm": {
       "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public"
-      }
+      "access": "public",
+      "distFolderPath": "libs/json-difference-cli"
     }
   }
 }

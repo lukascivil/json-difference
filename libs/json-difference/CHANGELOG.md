@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.15.5](https://github.com/lukascivil/json-difference/compare/json-difference-1.15.4...json-difference-1.15.5) (2023-08-06)
+
+
+### Bug Fixes
+
+* not publishable packages ([4e28e4a](https://github.com/lukascivil/json-difference/commit/4e28e4a3376af5506a6ad83fb4e6e0262b983a4b))
+
 ## [1.15.4](https://github.com/lukascivil/json-difference/compare/json-difference-1.15.3...json-difference-1.15.4) (2023-08-06)
 
 

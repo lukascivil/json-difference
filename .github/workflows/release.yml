@@ -3,6 +3,7 @@ name: Release
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 on:
   push:
@@ -47,8 +48,6 @@ jobs:
 
       - name: Check npm credentials
         run: npm whoami
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Version And Publishment
         shell: bash

@@ -11,7 +11,7 @@
     "check-types": "yarn nx run-many --target=check-types",
     "graph": "yarn nx graph",
     "graph:affected": "yarn nx graph --affected",
-    "release": "yarn nx affected --target=version --parallel=1"
+    "release": "npx nx affected --target=version --parallel=1"
   },
   "devDependencies": {
     "@jscutlery/semver": "^3.1.0",

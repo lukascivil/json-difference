@@ -10,4 +10,4 @@ const options = yargs
 
 const delta = getDiff((options as any)?.original, (options as any).modified)
 
-console.log('delta ->', delta)
+console.log('delta -->', delta)

@@ -15,8 +15,8 @@ import { EditedPath, StructPaths } from '../models/jsondiffer.model'
  *
  * const result = getEditedPaths(oldStruct, newStruct)
  *
- *  console.log(result)
  *  // Output: [1, null ,"coffee"]
+ *  console.log(result)
  */
 export const getEditedPaths = (oldStructPaths: StructPaths, newStructPaths: StructPaths): Array<EditedPath> => {
   const diffs: Array<EditedPath> = []

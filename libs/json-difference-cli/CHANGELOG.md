@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.6.4](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.6.3...json-difference-cli-1.6.4) (2023-08-06)
+
+
+### Bug Fixes
+
+* cli console flexa ([bfe6328](https://github.com/lukascivil/json-difference/commit/bfe6328d23c04a72468991361cf79b67121c659a))
+
+
+
 ## [1.6.3](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.6.2...json-difference-cli-1.6.3) (2023-08-06)
 
 

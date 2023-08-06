@@ -1,6 +1,6 @@
 {
   "name": "json-difference-cli",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "author": "lukascivil",
   "homepage": "https://github.com/lukascivil/json-difference#readme",
   "description": "json-difference cli lib",

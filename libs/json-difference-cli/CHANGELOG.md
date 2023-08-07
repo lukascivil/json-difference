@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.6.8](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.6.7...json-difference-cli-1.6.8) (2023-08-07)
+
+
+### Bug Fixes
+
+* jd cli was not working ([ae7165e](https://github.com/lukascivil/json-difference/commit/ae7165eec4297966d33b5ae89015b083e9dc0812))
+
+
+
 ## [1.6.7](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.6.6...json-difference-cli-1.6.7) (2023-08-06)
 
 

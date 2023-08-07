@@ -66,7 +66,7 @@ jobs:
 
       - name: Version And Publishment
         shell: bash
-        run: yarn release ${{ github.event.inputs.name }}
+        run: yarn release ${{ github.event.inputs.name == 'all' && '--all' || '--projects=' }}${{ github.event.inputs.name == 'all' && '' || github.event.inputs.name }}
 
       - name: Tag last-release
         shell: bash

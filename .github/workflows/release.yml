@@ -14,7 +14,7 @@ on:
         options:
           - json-difference
           - json-difference-cli
-      message:
+          - all
         required: true
 
 jobs:
@@ -62,7 +62,7 @@ jobs:
 
       - name: Version And Publishment
         shell: bash
-        run: yarn release ${{ github.event.inputs.message }}
+        run: yarn release ${{ github.event.inputs.name }}
 
       - name: Tag last-release
         shell: bash

@@ -12,18 +12,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.17.x]
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Setup Node environment
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '18.17.0'
+          cache: 'yarn'
+          cache-dependency-path: |
+            .yarn
+            yarn.lock
 
       - name: Install dependencies
         run: yarn

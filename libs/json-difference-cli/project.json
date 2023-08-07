@@ -2,11 +2,25 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "targets": {
     "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx run json-difference-cli:pre-build", "nx run json-difference-cli:pos-build"],
+        "parallel": false
+      }
+    },
+    "pre-build": {
       "executor": "@nx/js:tsc",
       "options": {
         "outputPath": "libs/json-difference-cli/bin",
         "main": "libs/json-difference-cli/src/index.ts",
         "tsConfig": "libs/json-difference-cli/tsconfig.lib.json"
+      }
+    },
+    "pos-build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["mv libs/json-difference-cli/bin/src/* libs/json-difference-cli/bin/", "rm -R libs/json-difference-cli/bin/src"],
+        "parallel": false
       }
     },
     "version": {
@@ -30,6 +44,13 @@
       "access": "public",
       "distFolderPath": "libs/json-difference-cli",
       "buildTarget": "json-difference-cli:build"
+    },
+    "install-local": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx run json-difference-cli:build", "sudo npm install -g libs/json-difference-cli/."],
+        "parallel": false
+      }
     }
   }
 }

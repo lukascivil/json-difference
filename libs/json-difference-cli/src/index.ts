@@ -3,6 +3,11 @@
 import yargs from 'yargs'
 import { getDiff } from 'json-difference'
 
+/**
+ * @description This is a cli tool to get the difference between two json files
+ * @example
+ * jd -o "{}" -m "[]"
+ */
 const options = yargs
   .usage('Usage: -o <original> -m <modified>')
   .option('o', { alias: 'original', describe: 'Json 1', type: 'string', demandOption: true })

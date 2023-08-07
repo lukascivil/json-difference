@@ -9859,7 +9859,7 @@ __metadata:
     json-difference: ^1.9.1
     yargs: ^17.7.2
   bin:
-    json-difference: ./bin/index.js
+    jd: ./bin/index.js
   languageName: unknown
   linkType: soft
 

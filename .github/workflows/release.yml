@@ -6,9 +6,17 @@ env:
   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 on:
-  push:
-    branches:
-      - 'master'
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: Which package to release?
+        options:
+          - json-difference
+          - json-difference-cli
+      message:
+        required: true
+
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -54,7 +62,7 @@ jobs:
 
       - name: Version And Publishment
         shell: bash
-        run: yarn release
+        run: yarn release ${{ github.event.inputs.message }}
 
       - name: Tag last-release
         shell: bash

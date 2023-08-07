@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.9.0](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.8.0...json-difference-cli-1.9.0) (2023-08-07)
+
+
+### Features
+
+* adjust cli flecha ([3251682](https://github.com/lukascivil/json-difference/commit/3251682c6c2161a4e745d2999d73421b90b18937))
+
+
+
 # [1.8.0](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.7.0...json-difference-cli-1.8.0) (2023-08-07)
 
 

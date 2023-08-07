@@ -19,7 +19,7 @@
     "jd": "./bin/index.js"
   },
   "dependencies": {
-    "json-difference": "^1.9.1",
+    "json-difference": "workspace:^",
     "yargs": "^17.7.2"
   }
 }

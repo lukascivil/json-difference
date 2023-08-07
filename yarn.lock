@@ -9856,14 +9856,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "json-difference-cli@workspace:libs/json-difference-cli"
   dependencies:
-    json-difference: ^1.9.1
+    json-difference: "workspace:^"
     yargs: ^17.7.2
   bin:
     jd: ./bin/index.js
   languageName: unknown
   linkType: soft
 
-"json-difference@*, json-difference@^1.9.1, json-difference@workspace:libs/json-difference":
+"json-difference@*, json-difference@workspace:^, json-difference@workspace:libs/json-difference":
   version: 0.0.0-use.local
   resolution: "json-difference@workspace:libs/json-difference"
   languageName: unknown

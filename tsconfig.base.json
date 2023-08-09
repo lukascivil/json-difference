@@ -21,7 +21,8 @@
     "noEmit": true,
     "baseUrl": "./",
     "paths": {
-      "@json-difference": ["libs/json-difference/src/index.ts"]
+      "@json-difference": ["libs/json-difference/src/index.ts"],
+      "buidable": ["dist/libs/buidable"]
     }
   },
   "include": ["src"],

@@ -25,7 +25,7 @@ This repository contains two npm packages, json-difference and its cli version (
 yarn add json-difference
 
 
-// If you want to play with the terminal version
+# If you want to play with the terminal version
 yarn add json-difference-cli
 ```
 

@@ -11,7 +11,7 @@
   "author": "lukascivil",
   "license": "MIT",
   "dependencies": {
-    "json-difference": "*",
+    "json-difference": "workspace:*",
     "typescript": "5.1.6"
   },
   "devDependencies": {

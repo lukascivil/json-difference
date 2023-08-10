@@ -7610,7 +7610,7 @@ __metadata:
   dependencies:
     "@types/node": ^12.12.12
     copyfiles: ^2.1.1
-    json-difference: "*"
+    json-difference: "workspace:*"
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -9863,7 +9863,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"json-difference@*, json-difference@workspace:libs/json-difference":
+"json-difference@npm:*, json-difference@npm:1.15.7":
+  version: 1.15.7
+  resolution: "json-difference@npm:1.15.7"
+  checksum: d088d385825be7ed39012726a1c382e791b963d07272b4a1b4be55b5bbf5d37bb7ffdf61ce00e41ce83bfacdde0a3c74864072a237ae8f9ff96980291daebb0b
+  languageName: node
+  linkType: hard
+
+"json-difference@workspace:*, json-difference@workspace:libs/json-difference":
   version: 0.0.0-use.local
   resolution: "json-difference@workspace:libs/json-difference"
   languageName: unknown
@@ -11924,7 +11931,7 @@ __metadata:
     eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-react-refresh: ^0.4.3
     framer-motion: ^10.13.0
-    json-difference: "*"
+    json-difference: 1.15.7
     monaco-editor: ^0.40.0
     react: ^18.2.0
     react-dom: ^18.2.0

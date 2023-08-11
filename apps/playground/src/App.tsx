@@ -4,6 +4,8 @@ import { Box, Heading, Container, Text, Button, Stack, Grid, GridItem, Textarea 
 import Editor from 'react-monaco-editor'
 import { getDiff } from '@json-difference'
 import { DeleteIcon, AddIcon } from '@chakra-ui/icons'
+// import { buidable } from '../../../dist/libs/buidable'
+import { buidable } from 'buidable'
 
 const oldJsonExample = `{ "foo": { "bar": "true" } }`
 const newJsonExample = `{ "foo": { } }`
@@ -52,7 +54,7 @@ const App = () => {
           </Heading>
           <Grid templateColumns="repeat(2, 1fr)" gap="1">
             <GridItem w="100%">
-              <Text>Original JSON</Text>
+              <Text>cafe = {buidable()} = Original JSON </Text>
               <Editor width="100%" height="300" language="json" theme="vs-dark" onChange={setOldJson} value={oldJson} />
             </GridItem>
             <GridItem w="100%">

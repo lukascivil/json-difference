@@ -23,7 +23,8 @@
       "dependsOn": ["^check-types"]
     },
     "test": {
-      "dependsOn": ["^test"]
+      "dependsOn": ["^test"],
+      "inputs": ["default", "^default"]
     },
     "build-playground": {
       "dependsOn": ["^build-playground"]

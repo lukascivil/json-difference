@@ -1,0 +1,31 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "targets": {
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development"
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "playground:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/playground/**/*.{js,ts,json}"],
+        "maxWarnings": 0
+      }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn tsc --noEmit --project {projectRoot}/tsconfig.json"
+      }
+    }
+  },
+  "tags": ["scope:playground", "type:app"]
+}

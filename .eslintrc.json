@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier", "jest"],
+  "plugins": ["@typescript-eslint", "prettier", "jest", "@nx"],
   "extends": ["plugin:@typescript-eslint/recommended"],
   "env": {
     "browser": true,
@@ -17,6 +17,25 @@
     "no-console": "off",
     "prefer-const": "error",
     "@typescript-eslint/semi": ["off"],
-    "@typescript-eslint/no-explicit-any": ["off"]
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "@nx/enforce-module-boundaries": [
+      "error",
+      {
+        "depConstraints": [
+          {
+            "sourceTag": "scope:shared",
+            "onlyDependOnLibsWithTags": ["scope:shared"]
+          },
+          {
+            "sourceTag": "scope:playground",
+            "onlyDependOnLibsWithTags": []
+          },
+          {
+            "sourceTag": "scope:example",
+            "onlyDependOnLibsWithTags": ["scope:shared"]
+          }
+        ]
+      }
+    ]
   }
 }

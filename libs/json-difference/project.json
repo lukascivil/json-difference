@@ -32,6 +32,29 @@
         "distFolderPath": "libs/json-difference",
         "buildTarget": "json-difference:build"
       }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/json-difference/**/*.{js,ts,json}"],
+        "maxWarnings": 0
+      }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn tsc --noEmit --project {projectRoot}/tsconfig.lib.json"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "{projectRoot}/jestconfig.json",
+        "passWithNoTests": true
+      },
+      "outputs": ["{projectRoot}/coverage"]
     }
-  }
+  },
+  "tags": ["scope:shared", "type:lib"]
 }

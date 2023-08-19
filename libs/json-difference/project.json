@@ -44,7 +44,7 @@
     "type-check": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn tsc --noEmit --project ./tsconfig.lib.json"
+        "command": "yarn tsc --noEmit --project {projectRoot}/tsconfig.lib.json"
       }
     },
     "format-check": {

@@ -29,7 +29,7 @@
     "format-check": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn prettier --check 'apps/playground/**/*.{js,ts,md,json}'"
+        "command": "yarn prettier --check '{projectRoot}/**/*.{js,ts,md,json}'"
       }
     }
   },

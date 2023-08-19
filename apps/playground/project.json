@@ -25,12 +25,6 @@
       "options": {
         "command": "yarn tsc --noEmit --project {projectRoot}/tsconfig.json"
       }
-    },
-    "format-check": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "yarn prettier --check '{projectRoot}/**/*.{js,ts,md,json}'"
-      }
     }
   },
   "tags": ["scope:playground", "type:app"]

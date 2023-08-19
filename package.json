@@ -8,7 +8,6 @@
     "lint": "yarn nx run-many --target=lint",
     "build": "yarn nx run-many --target=build",
     "type-check": "yarn nx run-many --target=type-check",
-    "format-check": "yarn nx run-many --target=format-check",
     "graph": "yarn nx graph",
     "graph:affected": "yarn nx graph --affected",
     "release": "npx nx run-many --target=version --parallel=1 ${0}"

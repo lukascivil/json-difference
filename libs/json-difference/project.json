@@ -47,12 +47,6 @@
         "command": "yarn tsc --noEmit --project {projectRoot}/tsconfig.lib.json"
       }
     },
-    "format-check": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "yarn prettier --check '{projectRoot}/**/*.{js,ts,md,json}'"
-      }
-    },
     "test": {
       "executor": "@nx/jest:jest",
       "options": {

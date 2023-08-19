@@ -50,7 +50,7 @@
     "test": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "{projectRoot}/jestconfig.ts",
+        "jestConfig": "{projectRoot}/jestconfig.json",
         "passWithNoTests": true
       },
       "outputs": ["{projectRoot}/coverage"]

@@ -28,11 +28,11 @@
           },
           {
             "sourceTag": "scope:playground",
-            "onlyDependOnLibsWithTags": []
+            "onlyDependOnLibsWithTags": ["scope:shared", "scope:playground"]
           },
           {
             "sourceTag": "scope:example",
-            "onlyDependOnLibsWithTags": ["scope:shared"]
+            "onlyDependOnLibsWithTags": ["scope:shared", "scope:example"]
           }
         ]
       }

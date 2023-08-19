@@ -1,5 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
@@ -56,5 +57,5 @@
       "outputs": ["{projectRoot}/coverage"]
     }
   },
-  "tags": ["scope:shared", "type:lib"]
+  "tags": ["scope:shared", "type:feature"]
 }

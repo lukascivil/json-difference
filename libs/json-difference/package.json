@@ -23,11 +23,8 @@
     "diff"
   ],
   "scripts": {
-    "lint": "eslint --ext .ts",
-    "check-types": "tsc --noemit -p tsconfig.json",
     "test": "jest --config jestconfig.json --coverage",
     "test:local": "jest --watchAll --config jestconfig.json",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "example": "echo Use {simple} or {stress} as example param && cd ./apps/examples && yarn",
     "start-playground": "yarn --cwd apps/playground dev",
     "build-playground": "yarn --cwd apps/playground build"

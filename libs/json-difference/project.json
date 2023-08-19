@@ -33,10 +33,24 @@
         "buildTarget": "json-difference:build"
       }
     },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/json-difference/**/*.{js,ts,json}"],
+        "maxWarnings": 0
+      }
+    },
     "type-check": {
       "executor": "nx:run-commands",
       "options": {
         "command": "yarn tsc --noEmit --project ./tsconfig.lib.json"
+      }
+    },
+    "format-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn prettier --check 'libs/json-difference/**/*.{js,ts,md,json}'"
       }
     }
   },

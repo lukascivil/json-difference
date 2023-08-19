@@ -61,7 +61,7 @@
     "format-check": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn prettier --check 'libs/json-difference-cli/**/*.{js,ts,md,json}'"
+        "command": "yarn prettier --check '{projectRoot}/**/*.{js,ts,md,json}'"
       }
     }
   },

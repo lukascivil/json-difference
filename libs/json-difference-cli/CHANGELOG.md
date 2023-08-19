@@ -4,39 +4,27 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 # [1.9.0](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.8.0...json-difference-cli-1.9.0) (2023-08-07)
 
-
 ### Features
 
-* adjust cli flecha ([3251682](https://github.com/lukascivil/json-difference/commit/3251682c6c2161a4e745d2999d73421b90b18937))
-
-
+- adjust cli flecha ([3251682](https://github.com/lukascivil/json-difference/commit/3251682c6c2161a4e745d2999d73421b90b18937))
 
 # [1.8.0](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.7.0...json-difference-cli-1.8.0) (2023-08-07)
 
-
 ### Features
 
-* change cli version ([e8c8fa5](https://github.com/lukascivil/json-difference/commit/e8c8fa5cda5a89925bdf7d8cec9d51e1ab7e5d57))
-
-
+- change cli version ([e8c8fa5](https://github.com/lukascivil/json-difference/commit/e8c8fa5cda5a89925bdf7d8cec9d51e1ab7e5d57))
 
 # [1.7.0](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.6.9...json-difference-cli-1.7.0) (2023-08-07)
 
-
 ### Features
 
-* adjust json difference cli ([5bb71b6](https://github.com/lukascivil/json-difference/commit/5bb71b64f58feb87b3f7af22010af430308b5508))
-
-
+- adjust json difference cli ([5bb71b6](https://github.com/lukascivil/json-difference/commit/5bb71b64f58feb87b3f7af22010af430308b5508))
 
 ## [1.6.9](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.6.8...json-difference-cli-1.6.9) (2023-08-07)
 
-
 ### Bug Fixes
 
-* wrong import in cli ([73d1ac0](https://github.com/lukascivil/json-difference/commit/73d1ac04f2511437ea00501b7f3c4f50588edd8c))
-
-
+- wrong import in cli ([73d1ac0](https://github.com/lukascivil/json-difference/commit/73d1ac04f2511437ea00501b7f3c4f50588edd8c))
 
 ## [1.6.8](https://github.com/lukascivil/json-difference/compare/json-difference-cli-1.6.7...json-difference-cli-1.6.8) (2023-08-07)
 

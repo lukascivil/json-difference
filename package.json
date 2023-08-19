@@ -4,11 +4,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "serve": "yarn nx run playground --target=serve",
     "test": "yarn nx run-many --target=test",
     "lint": "yarn nx run-many --target=lint",
     "build": "yarn nx run-many --target=build",
-    "check-types": "yarn nx run-many --target=check-types",
+    "type-check": "yarn nx run-many --target=type-check",
     "graph": "yarn nx graph",
     "graph:affected": "yarn nx graph --affected",
     "release": "npx nx run-many --target=version --parallel=1 ${0}"

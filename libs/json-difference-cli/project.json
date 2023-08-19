@@ -51,6 +51,12 @@
         "commands": ["nx run json-difference-cli:build", "sudo npm install -g libs/json-difference-cli/."],
         "parallel": false
       }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn tsc --noEmit --project ./tsconfig.lib.json"
+      }
     }
   },
   "tags": ["scope:shared", "type:lib"]

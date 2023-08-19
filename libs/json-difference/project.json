@@ -32,6 +32,12 @@
         "distFolderPath": "libs/json-difference",
         "buildTarget": "json-difference:build"
       }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn tsc --noEmit --project ./tsconfig.lib.json"
+      }
     }
   },
   "tags": ["scope:shared", "type:lib"]

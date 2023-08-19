@@ -50,8 +50,16 @@
     "format-check": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn prettier --check 'libs/json-difference/**/*.{js,ts,md,json}'"
+        "command": "yarn prettier --check '{projectRoot}/**/*.{js,ts,md,json}'"
       }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "{projectRoot}/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["{projectRoot}/coverage"]
     }
   },
   "tags": ["scope:shared", "type:lib"]

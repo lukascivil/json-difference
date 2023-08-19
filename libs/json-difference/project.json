@@ -33,5 +33,6 @@
         "buildTarget": "json-difference:build"
       }
     }
-  }
+  },
+  "tags": ["scope:shared", "type:lib"]
 }

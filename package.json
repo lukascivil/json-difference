@@ -15,6 +15,7 @@
   "devDependencies": {
     "@jscutlery/semver": "^3.1.0",
     "@nx/devkit": "^16.6.0",
+    "@nx/eslint-plugin": "^16.7.2",
     "@nx/js": "^16.6.0",
     "@nx/linter": "^16.7.2",
     "@nx/vite": "^16.6.0",

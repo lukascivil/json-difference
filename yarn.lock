@@ -3222,7 +3222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/reporters@npm:^29.6.2":
+"@jest/reporters@npm:^29.4.1, @jest/reporters@npm:^29.6.2":
   version: 29.6.2
   resolution: "@jest/reporters@npm:29.6.2"
   dependencies:
@@ -3279,7 +3279,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/test-result@npm:^29.6.2":
+"@jest/test-result@npm:^29.4.1, @jest/test-result@npm:^29.6.2":
   version: 29.6.2
   resolution: "@jest/test-result@npm:29.6.2"
   dependencies:
@@ -3694,6 +3694,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/jest@npm:16.7.2":
+  version: 16.7.2
+  resolution: "@nrwl/jest@npm:16.7.2"
+  dependencies:
+    "@nx/jest": 16.7.2
+  checksum: 0cae44ea5d935eaa41461601558d699a463061cd873ae91bdfe1cf3ed753a8129bc79d1a7ec4797597c200ba178fba425b3e0810fd3cd18a8a695049ffca57de
+  languageName: node
+  linkType: hard
+
 "@nrwl/js@npm:16.7.2":
   version: 16.7.2
   resolution: "@nrwl/js@npm:16.7.2"
@@ -3780,6 +3789,28 @@ __metadata:
     eslint-config-prettier:
       optional: true
   checksum: cc06b65ade6e832e3333c075e772609ccf65e537bb59cb475e1cdc066df7d2765e4baeddc5dc4be7fbcaae0cb61e3b1ad0d5e1ab7e1299e2c6f3a2b4dce29a66
+  languageName: node
+  linkType: hard
+
+"@nx/jest@npm:16.7.2, @nx/jest@npm:^16.7.2":
+  version: 16.7.2
+  resolution: "@nx/jest@npm:16.7.2"
+  dependencies:
+    "@jest/reporters": ^29.4.1
+    "@jest/test-result": ^29.4.1
+    "@nrwl/jest": 16.7.2
+    "@nx/devkit": 16.7.2
+    "@nx/js": 16.7.2
+    "@phenomnomnominal/tsquery": ~5.0.1
+    chalk: ^4.1.0
+    dotenv: ~16.3.1
+    identity-obj-proxy: 3.0.0
+    jest-config: ^29.4.1
+    jest-resolve: ^29.4.1
+    jest-util: ^29.4.1
+    resolve.exports: 1.1.0
+    tslib: ^2.3.0
+  checksum: 00076fea34b2968f5eee036cb3472c1164626bdb4745fe2bbfb6fd316778d09ac6f033c3d82da283ae05b1b6a47b58dc2ad143c4130703e723a068ae2d9c74fd
   languageName: node
   linkType: hard
 
@@ -8450,6 +8481,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"harmony-reflect@npm:^1.4.6":
+  version: 1.6.2
+  resolution: "harmony-reflect@npm:1.6.2"
+  checksum: 2e5bae414cd2bfae5476147f9935dc69ee9b9a413206994dcb94c5b3208d4555da3d4313aff6fd14bd9991c1e3ef69cdda5c8fac1eb1d7afc064925839339b8c
+  languageName: node
+  linkType: hard
+
 "has-bigints@npm:^1.0.1, has-bigints@npm:^1.0.2":
   version: 1.0.2
   resolution: "has-bigints@npm:1.0.2"
@@ -8653,6 +8691,15 @@ __metadata:
   dependencies:
     safer-buffer: ">= 2.1.2 < 3.0.0"
   checksum: 3f60d47a5c8fc3313317edfd29a00a692cc87a19cac0159e2ce711d0ebc9019064108323b5e493625e25594f11c6236647d8e256fbe7a58f4a3b33b89e6d30bf
+  languageName: node
+  linkType: hard
+
+"identity-obj-proxy@npm:3.0.0":
+  version: 3.0.0
+  resolution: "identity-obj-proxy@npm:3.0.0"
+  dependencies:
+    harmony-reflect: ^1.4.6
+  checksum: 97559f8ea2aeaa1a880d279d8c49550dce01148321e00a2102cda5ddf9ce622fa1d7f3efc7bed63458af78889de888fdaebaf31c816312298bb3fdd0ef8aaf2c
   languageName: node
   linkType: hard
 
@@ -9401,7 +9448,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-config@npm:^29.6.2":
+"jest-config@npm:^29.4.1, jest-config@npm:^29.6.2":
   version: 29.6.2
   resolution: "jest-config@npm:29.6.2"
   dependencies:
@@ -9596,7 +9643,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-resolve@npm:^29.6.2":
+"jest-resolve@npm:^29.4.1, jest-resolve@npm:^29.6.2":
   version: 29.6.2
   resolution: "jest-resolve@npm:29.6.2"
   dependencies:
@@ -9700,7 +9747,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-util@npm:^29.0.0, jest-util@npm:^29.6.2":
+"jest-util@npm:^29.0.0, jest-util@npm:^29.4.1, jest-util@npm:^29.6.2":
   version: 29.6.2
   resolution: "jest-util@npm:29.6.2"
   dependencies:
@@ -12537,6 +12584,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"resolve.exports@npm:1.1.0":
+  version: 1.1.0
+  resolution: "resolve.exports@npm:1.1.0"
+  checksum: 52865af8edb088f6c7759a328584a5de6b226754f004b742523adcfe398cfbc4559515104bc2ae87b8e78b1e4de46c9baec400b3fb1f7d517b86d2d48a098a2d
+  languageName: node
+  linkType: hard
+
 "resolve.exports@npm:^2.0.0":
   version: 2.0.2
   resolution: "resolve.exports@npm:2.0.2"
@@ -12659,6 +12713,7 @@ __metadata:
     "@jscutlery/semver": ^3.1.0
     "@nx/devkit": ^16.7.2
     "@nx/eslint-plugin": ^16.7.2
+    "@nx/jest": ^16.7.2
     "@nx/js": ^16.7.2
     "@nx/linter": ^16.7.2
     "@nx/vite": ^16.7.2

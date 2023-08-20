@@ -33,6 +33,10 @@
           {
             "sourceTag": "scope:example",
             "onlyDependOnLibsWithTags": ["scope:shared", "scope:example"]
+          },
+          {
+            "sourceTag": "type:feature",
+            "onlyDependOnLibsWithTags": ["type:feature"]
           }
         ]
       }

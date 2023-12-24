@@ -14,12 +14,12 @@
     "monaco-editor": "^0.40.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-monaco-editor": "^0.53.0",
+    "react-monaco-editor": "^0.55.0",
     "vite-tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
@@ -27,6 +27,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^5.0.10"
   }
 }

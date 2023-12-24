@@ -2,20 +2,6 @@
   "name": "example",
   "version": "1.0.0",
   "description": "example to test jsondiffer",
-  "scripts": {
-    "build": "tsc -p tsconfig.json && yarn copy-files",
-    "simple": "yarn build && node dist/simple.js",
-    "stress": "yarn build && node dist/stress.js",
-    "copy-files": "copyfiles -u 1 src/**/*.json dist"
-  },
   "author": "lukascivil",
-  "license": "MIT",
-  "dependencies": {
-    "json-difference": "workspace:*",
-    "typescript": "5.1.6"
-  },
-  "devDependencies": {
-    "@types/node": "^12.12.12",
-    "copyfiles": "^2.1.1"
-  }
+  "license": "MIT"
 }

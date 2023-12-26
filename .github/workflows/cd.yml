@@ -44,7 +44,7 @@ jobs:
         with:
           branch: chore/gh-pages
           target-folder: apps/playground/dist
-          folder: /
+          folder: .
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy Browser dist 🚀
@@ -52,5 +52,5 @@ jobs:
         with:
           branch: chore/gh-pages
           target-folder: libs/json-difference/dist
-          folder: /modules
+          folder: ./modules
           token: ${{ secrets.GITHUB_TOKEN }}

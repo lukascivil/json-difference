@@ -1,12 +1,8 @@
 name: CI
 
 on:
-  push:
-    branches: [master]
   pull_request:
     branches: [master]
-
-  workflow_dispatch:
 
 jobs:
   build:
@@ -29,16 +25,16 @@ jobs:
         run: yarn install --immutable
 
       - name: Lint
-        run: yarn lint
+        run: yarn nx run-many --target=lint
 
       - name: Type check
-        run: yarn type-check
+        run: yarn nx run-many --target=type-check
 
       - name: Test
-        run: yarn test
+        run: yarn nx run-many --target=test
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
 
       - name: Build
-        run: yarn build
+        run: yarn nx run-many --target=build

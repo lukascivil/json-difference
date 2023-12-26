@@ -1,0 +1,56 @@
+name: CD
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.17.0'
+          cache: 'yarn'
+          cache-dependency-path: |
+            .yarn
+            yarn.lock
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Lint
+        run: yarn nx run-many --target=lint
+
+      - name: Type check
+        run: yarn nx run-many --target=type-check
+
+      - name: Test
+        run: yarn nx run-many --target=test
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+
+      - name: Build
+        run: yarn yarn nx run-many --target=build --projects=playground,json-difference
+
+      - name: Deploy Playground 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: chore/gh-pages
+          target-folder: apps/playground/dist
+          folder: /
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy Browser dist 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: chore/gh-pages
+          target-folder: libs/json-difference/dist
+          folder: /modules
+          token: ${{ secrets.GITHUB_TOKEN }}

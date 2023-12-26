@@ -1,4 +1,6 @@
 node_modules
+
+# Outputs
 /dist
 /coverage
 /libs/**/dist
@@ -12,3 +14,6 @@ node_modules
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# NX
+.nx

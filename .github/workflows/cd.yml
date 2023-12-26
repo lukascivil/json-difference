@@ -50,7 +50,7 @@ jobs:
       - name: Deploy Browser dist 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: chore/gh-pages
+          branch: chore/cdn
           target-folder: ./modules
           folder: libs/json-difference/dist
           token: ${{ secrets.GITHUB_TOKEN }}

@@ -51,6 +51,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: chore/gh-pages
-          target-folder: dist.browser
+          target-folder: libs/json-difference/dist
           folder: /modules
           token: ${{ secrets.GITHUB_TOKEN }}

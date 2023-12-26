@@ -37,7 +37,7 @@ jobs:
         uses: codecov/codecov-action@v1
 
       - name: Build
-        run: yarn yarn nx run-many --target=build --projects=playground,json-difference
+        run: yarn nx run-many --target=build --projects=playground,json-difference
 
       - name: Deploy Playground 🚀
         uses: JamesIves/github-pages-deploy-action@v4

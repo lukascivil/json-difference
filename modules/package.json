@@ -1,0 +1,28 @@
+{
+  "name": "json-difference",
+  "version": "1.15.7",
+  "author": "lukascivil",
+  "homepage": "https://github.com/lukascivil/json-difference#readme",
+  "description": "json difference lib",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=18.17.x"
+  },
+  "files": [
+    "dist",
+    "dist.browser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukascivil/json-difference.git"
+  },
+  "keywords": [
+    "json",
+    "diff"
+  ],
+  "scripts": {
+    "example": "echo Use {simple} or {stress} as example param && cd ./apps/examples && yarn"
+  }
+}

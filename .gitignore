@@ -4,7 +4,8 @@ node_modules
 /dist
 /coverage
 /libs/**/dist
-/libs/**/dist.browser-*
+/libs/**/dist.browser
+/libs/**/dist.browser-s3
 /libs/**/coverage
 
 # Yarn 3 files

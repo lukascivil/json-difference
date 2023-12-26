@@ -15,7 +15,7 @@
         "configFile": "libs/json-difference/vite.config.browser.ts"
       }
     },
-    "prepare-to-s3": {
+    "build-to-s3": {
       "executor": "nx:run-commands",
       "options": {
         "command": "yarn tsx {projectRoot}/prepare-to-s3.ts"

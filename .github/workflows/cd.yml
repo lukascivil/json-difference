@@ -47,7 +47,7 @@ jobs:
           folder: apps/playground/dist
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy Json Difference to Cloudflare Pages 🚀
+      - name: Deploy Json Difference  to Cloudflare Pages 🚀
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

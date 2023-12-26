@@ -1,4 +1,4 @@
-name: Release
+name: Release and Publish
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

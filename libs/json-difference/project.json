@@ -35,10 +35,10 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/json-difference/**/*.{js,ts,json}"],
+        "lintFilePatterns": ["libs/json-difference/**/*.{js,ts}", "libs/json-difference/package.json"],
         "maxWarnings": 0
       }
     },

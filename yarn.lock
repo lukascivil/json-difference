@@ -4198,7 +4198,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx/eslint@npm:17.2.7":
+"@nx/eslint@npm:17.2.7, @nx/eslint@npm:^17.2.7":
   version: 17.2.7
   resolution: "@nx/eslint@npm:17.2.7"
   dependencies:
@@ -4283,7 +4283,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx/linter@npm:17.2.7, @nx/linter@npm:^17.2.7":
+"@nx/linter@npm:17.2.7":
   version: 17.2.7
   resolution: "@nx/linter@npm:17.2.7"
   dependencies:
@@ -8086,6 +8086,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-jsonc@npm:^2.11.2":
+  version: 2.11.2
+  resolution: "eslint-plugin-jsonc@npm:2.11.2"
+  dependencies:
+    "@eslint-community/eslint-utils": "npm:^4.2.0"
+    eslint-compat-utils: "npm:^0.1.2"
+    espree: "npm:^9.6.1"
+    graphemer: "npm:^1.4.0"
+    jsonc-eslint-parser: "npm:^2.0.4"
+    natural-compare: "npm:^1.4.0"
+  peerDependencies:
+    eslint: ">=6.0.0"
+  checksum: a7e8ff0e5d5598e89ecbe1e673d7c5ccf51fefc6b6acb6ac88d95017a9d85daa1df3e35e4951ddfc88ac1fc7564932a5d0afd5990831b89f45a7d486ba768212
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-n@npm:^16.5.0":
   version: 16.5.0
   resolution: "eslint-plugin-n@npm:16.5.0"
@@ -11160,6 +11176,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsonc-eslint-parser@npm:^2.0.4, jsonc-eslint-parser@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "jsonc-eslint-parser@npm:2.4.0"
+  dependencies:
+    acorn: "npm:^8.5.0"
+    eslint-visitor-keys: "npm:^3.0.0"
+    espree: "npm:^9.0.0"
+    semver: "npm:^7.3.5"
+  checksum: bd1d41c852c3488414605a1754617aa7c240ed6730a25a7fd7fb76473e92efdc5ba1728ad3f08f8069de3a19abf1fd275c2b145eb51e2f7f6ca293c8105e1ffe
+  languageName: node
+  linkType: hard
+
 "jsonc-eslint-parser@npm:^2.1.0":
   version: 2.3.0
   resolution: "jsonc-eslint-parser@npm:2.3.0"
@@ -13922,10 +13950,10 @@ __metadata:
     "@emotion/styled": "npm:^11.11.0"
     "@jscutlery/semver": "npm:^4.2.0"
     "@nx/devkit": "npm:^17.2.7"
+    "@nx/eslint": "npm:^17.2.7"
     "@nx/eslint-plugin": "npm:^17.2.7"
     "@nx/jest": "npm:^17.2.7"
     "@nx/js": "npm:^17.2.7"
-    "@nx/linter": "npm:^17.2.7"
     "@nx/vite": "npm:^17.2.7"
     "@nx/workspace": "npm:17.2.7"
     "@semantic-release/changelog": "npm:^6.0.3"
@@ -13948,6 +13976,7 @@ __metadata:
     eslint-config-standard-with-typescript: "npm:^43.0.0"
     eslint-plugin-import: "npm:^2.29.1"
     eslint-plugin-jest: "npm:^27.6.0"
+    eslint-plugin-jsonc: "npm:^2.11.2"
     eslint-plugin-n: "npm:^16.5.0"
     eslint-plugin-prettier: "npm:^5.1.2"
     eslint-plugin-promise: "npm:^6.1.1"
@@ -13956,6 +13985,7 @@ __metadata:
     framer-motion: "npm:^10.13.0"
     jest: "npm:^29.7.0"
     json-difference: "npm:1.15.7"
+    jsonc-eslint-parser: "npm:^2.4.0"
     monaco-editor: "npm:^0.40.0"
     ngx-deploy-npm: "npm:^7.1.0"
     nx: "npm:^17.2.7"

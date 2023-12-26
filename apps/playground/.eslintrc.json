@@ -1,0 +1,19 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2020": true },
+  "extends": ["../../.eslintrc.base.json", "eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react-hooks/recommended"],
+  "ignorePatterns": ["!**/*"],
+  "plugins": ["react-refresh"],
+  "rules": {
+    "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }]
+  },
+  "overrides": [
+    {
+      "files": ["package.json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": "error"
+      }
+    }
+  ]
+}

@@ -50,7 +50,7 @@ jobs:
       - name: Deploy Json Difference to Amazon S3 🚀
         uses: reggionick/s3-deploy@v4
         with:
-          folder: libs/json-difference/dist
+          folder: libs/json-difference/dist.browser-*
           bucket: ${{ secrets.AWS_S3_BUCKET }}
           bucket-region: ${{ secrets.S3_BUCKET_REGION }}
           delete-removed: true

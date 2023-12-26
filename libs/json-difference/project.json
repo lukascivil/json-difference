@@ -8,6 +8,20 @@
         "outputPath": "libs/json-difference/dist"
       }
     },
+    "build-browser": {
+      "executor": "@nx/vite:build",
+      "options": {
+        "outputPath": "libs/json-difference/dist.browser",
+        "configFile": "libs/json-difference/vite.config.browser.ts"
+      }
+    },
+    "prepare-to-s3": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn tsx {projectRoot}/prepare-to-s3.ts"
+      },
+      "dependsOn": ["build-browser"]
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
@@ -35,10 +49,10 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/json-difference/**/*.{js,ts,json}"],
+        "lintFilePatterns": ["libs/json-difference/**/*.{js,ts}", "libs/json-difference/package.json"],
         "maxWarnings": 0
       }
     },

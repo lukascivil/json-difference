@@ -1,0 +1,13 @@
+{
+  "extends": "../../.eslintrc.base.json",
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["package.json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": "error"
+      }
+    }
+  ]
+}

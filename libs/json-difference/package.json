@@ -11,8 +11,7 @@
     "node": ">=18.17.x"
   },
   "files": [
-    "dist",
-    "dist.browser"
+    "dist"
   ],
   "repository": {
     "type": "git",

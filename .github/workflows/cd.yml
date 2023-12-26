@@ -47,12 +47,13 @@ jobs:
           folder: apps/playground/dist
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy Json Difference to Cloudflare Pages 🚀
-        uses: cloudflare/pages-action@v1
+      - name: Deploy Json Difference to Amazon S3 🚀
+        uses: jakejarvis/s3-sync-action@master
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
-          directory: libs/json-difference/dist
-          wranglerVersion: '3'
-          branch: master
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-east-1'
+          SOURCE_DIR: 'libs/json-difference/dist'

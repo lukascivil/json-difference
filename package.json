@@ -1,0 +1,7 @@
+{
+  "name": "playground",
+  "homepage": "https://lukascivil.github.io/json-difference/",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module"
+}

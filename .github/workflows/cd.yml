@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: yarn nx run-many --target=build --projects=playground,json-difference
 
-      - name: Deploy Playground 🚀
+      - name: Deploy Playground to Github Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: chore/gh-pages
@@ -47,10 +47,13 @@ jobs:
           folder: apps/playground/dist
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy Browser dist 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy Json Difference to Cloudflare Pages 🚀
+        uses: cloudflare/pages-action@v1
         with:
-          branch: chore/cdn
-          target-folder: ./modules
-          folder: libs/json-difference/dist
-          token: ${{ secrets.GITHUB_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: json-difference
+          directory: libs/json-difference/dist
+          branch: master
+          workingDirectory: libs/json-difference/dist
+          wranglerVersion: '3'

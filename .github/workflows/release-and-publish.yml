@@ -29,7 +29,7 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -74,11 +74,6 @@ jobs:
       - name: Tag last-release
         shell: bash
         run: git tag -f last-release
-
-      - name: CheckOut after bot commit and release
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Build Apps to S3
         if: github.event.inputs.name == 'json-difference' || github.event.inputs.name == 'all'

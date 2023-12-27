@@ -39,7 +39,6 @@ jobs:
       - name: Build
         run: |
           yarn nx run-many --target=build --projects=playground
-          yarn nx run-many --target=build-to-s3 --projects=json-difference
 
       - name: Deploy Playground to Github Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
@@ -48,17 +47,3 @@ jobs:
           target-folder: .
           folder: apps/playground/dist
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Deploy Json Difference to Amazon S3 🚀
-        uses: reggionick/s3-deploy@v4
-        with:
-          folder: libs/json-difference/dist.browser-s3
-          bucket: ${{ secrets.AWS_S3_BUCKET }}
-          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-          delete-removed: true
-          no-cache: true
-          private: true
-          files-to-include: '{.*/**,**}'
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

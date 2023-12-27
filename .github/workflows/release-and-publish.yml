@@ -10,7 +10,10 @@ on:
     inputs:
       name:
         type: choice
-        description: Which package to release?
+        description: |
+          Which package to release?
+          - (json-difference) will be published to npm and trigger deploy to S3
+          - (json-difference-cli) will be published to npm
         options:
           - json-difference
           - json-difference-cli

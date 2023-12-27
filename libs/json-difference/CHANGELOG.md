@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.16.0](https://github.com/lukascivil/json-difference/compare/json-difference-1.15.8...json-difference-1.16.0) (2023-12-27)
+
+
+### Features
+
+* adjust prepare to s3 script ([14af68e](https://github.com/lukascivil/json-difference/commit/14af68e1d06354073dafbe9a37eef92b8cc7f61f))
+
 ## [1.15.8](https://github.com/lukascivil/json-difference/compare/json-difference-1.15.7...json-difference-1.15.8) (2023-12-27)
 
 ## [1.15.7](https://github.com/lukascivil/json-difference/compare/json-difference-1.15.6...json-difference-1.15.7) (2023-08-06)

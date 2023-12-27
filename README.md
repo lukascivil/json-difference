@@ -3,7 +3,7 @@
 [![Total Downloads](https://img.shields.io/npm/dt/json-difference.svg)](https://img.shields.io/npm/dt/json-difference.svg)
 [![npm version](http://img.shields.io/npm/v/json-difference.svg?style=flat)](https://www.npmjs.com/package/json-difference 'View this project on npm')
 [![CD](https://github.com/lukascivil/json-difference/actions/workflows/cd.yml/badge.svg)](https://github.com/lukascivil/json-difference/actions/workflows/cd.yml)
-[![Node.js Package](https://github.com/lukascivil/jsondiffer/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/lukascivil/jsondiffer/actions/workflows/npm-publish-github-packages.yml)
+[![Release and Publish](https://github.com/lukascivil/json-difference/actions/workflows/release-and-publish.yml/badge.svg)](https://github.com/lukascivil/json-difference/actions/workflows/release-and-publish.yml)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![codecov](https://codecov.io/gh/lukascivil/json-difference/branch/master/graph/badge.svg?token=um2lc3uRKd)](https://codecov.io/gh/lukascivil/json-difference)
 [![MIT License](https://img.shields.io/npm/l/deep-object-diff.svg?style=flat)](https://github.com/lukascivil/jsondiffer/blob/master/LICENSE)
@@ -13,6 +13,8 @@ Computes the difference between two objects and returns an intuitive result. No 
 The question you should ask is: Given my old structure what was changed, removed or added to the new structure?
 
 This repository contains two npm packages, json-difference and its cli version (json-difference-cli).
+
+It's a very lightweight lib that costs only 🪶 1.95 kB │ gzip: 0.79 kB.
 
 ## Live Demo
 

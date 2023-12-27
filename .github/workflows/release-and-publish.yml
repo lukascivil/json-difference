@@ -74,3 +74,28 @@ jobs:
       - name: Tag last-release
         shell: bash
         run: git tag -f last-release
+
+      - name: CheckOut after bot commit and release
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Build Apps to S3
+        if: github.event.inputs.name == 'json-difference' || github.event.inputs.name == 'all'
+        run: |
+          yarn nx run-many --target=build-to-s3 --projects=json-difference
+
+      - name: Deploy Json Difference to Amazon S3 🚀
+        if: github.event.inputs.name == 'json-difference' || github.event.inputs.name == 'all'
+        uses: reggionick/s3-deploy@v4
+        with:
+          folder: libs/json-difference/dist.browser-s3
+          bucket: ${{ secrets.AWS_S3_BUCKET }}
+          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+          delete-removed: false
+          no-cache: true
+          private: true
+          files-to-include: '{.*/**,**}'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

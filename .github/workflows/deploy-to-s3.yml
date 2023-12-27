@@ -39,7 +39,7 @@ jobs:
           folder: libs/json-difference/dist.browser-s3
           bucket: ${{ secrets.AWS_S3_BUCKET }}
           bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-          delete-removed: true
+          delete-removed: false
           no-cache: true
           private: true
           files-to-include: '{.*/**,**}'

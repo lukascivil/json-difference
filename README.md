@@ -2,7 +2,7 @@
 
 [![Total Downloads](https://img.shields.io/npm/dt/json-difference.svg)](https://img.shields.io/npm/dt/json-difference.svg)
 [![npm version](http://img.shields.io/npm/v/json-difference.svg?style=flat)](https://www.npmjs.com/package/json-difference 'View this project on npm')
-[![CI](https://github.com/lukascivil/jsondiffer/actions/workflows/main.yml/badge.svg)](https://github.com/lukascivil/jsondiffer/actions/workflows/main.yml)
+[![CD](https://github.com/lukascivil/json-difference/actions/workflows/cd.yml/badge.svg)](https://github.com/lukascivil/json-difference/actions/workflows/cd.yml)
 [![Node.js Package](https://github.com/lukascivil/jsondiffer/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/lukascivil/jsondiffer/actions/workflows/npm-publish-github-packages.yml)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![codecov](https://codecov.io/gh/lukascivil/json-difference/branch/master/graph/badge.svg?token=um2lc3uRKd)](https://codecov.io/gh/lukascivil/json-difference)

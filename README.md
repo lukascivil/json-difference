@@ -33,7 +33,8 @@ Or
 
 ```html
 <script type="module">
-  import { getDiff } from 'https://rawgit.com/lukascivil/jsondiffer/master/dist.browser/json-difference.mjs'
+  // https://json-difference.s3.amazonaws.com/<a.b.c>/json-difference-<a.b.c>.mjs
+  import { getDiff } from 'https://json-difference.s3.amazonaws.com/1.16.0/json-difference-1.16.0.mjs'
 </script>
 ```
 

@@ -30,7 +30,7 @@
         "baseBranch": "master",
         "syncVersions": false,
         "push": true,
-        "skipCommitTypes": ["docs", "ci", "release"]
+        "skipCommitTypes": []
       }
     },
     "github": {

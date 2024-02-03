@@ -4,6 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "show": "yarn nx show project json-difference --web",
     "graph": "yarn nx graph",
     "graph:affected": "yarn nx graph --affected",
     "release": "npx nx run-many --target=version --parallel=1 ${0}"

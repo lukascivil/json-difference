@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "env": { "es2020": true, "node": true },
+  "extends": ["../../.eslintrc.base.json", "eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react-hooks/recommended"],
+  "ignorePatterns": ["!**/*"],
+  "plugins": ["react-refresh"],
+  "overrides": [
+    {
+      "files": ["package.json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": "error"
+      }
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 {
+  "name": "playground",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "targets": {
@@ -21,9 +22,8 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/playground/**/*.{js,ts}", "apps/playground/package.json"],
+        "lintFilePatterns": ["{projectRoot}/**/*.{js,ts}", "{projectRoot}/package.json"],
         "maxWarnings": 0
       }
     },

@@ -15,7 +15,7 @@
         "@nx/dependency-checks": [
           "error",
           {
-            "ignoredFiles": ["libs/json-difference/vite.config.ts"]
+            "ignoredFiles": ["apps/playground/vite.config.ts"]
           }
         ]
       }

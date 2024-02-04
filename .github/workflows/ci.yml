@@ -2,7 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [master]
+    types:
+      - opened
+      - synchronize
 
 jobs:
   build:
@@ -32,9 +34,6 @@ jobs:
 
       - name: Test
         run: yarn nx run-many --target=test
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
 
       - name: Build
         run: yarn nx run-many --target=build

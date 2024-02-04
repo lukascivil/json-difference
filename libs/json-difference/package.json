@@ -21,7 +21,7 @@
     "json",
     "diff"
   ],
-  "dependencies": {
+  "devDependencies": {
     "vite": "^5.0.10",
     "vite-plugin-dts": "~2.3.0"
   }

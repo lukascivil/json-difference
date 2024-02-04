@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import yargs from 'yargs'
-import { getDiff } from 'json-difference'
+import { getDiff } from '@json-difference'
 
 /**
  * @description This is a cli tool to get the difference between two json strings

@@ -34,7 +34,9 @@ jobs:
         run: yarn nx run-many --target=test
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Build
         run: |

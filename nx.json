@@ -16,17 +16,16 @@
     "build": {
       "dependsOn": ["^build"]
     },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
     "type-check": {
       "dependsOn": ["^type-check"]
     },
     "test": {
       "dependsOn": ["^test"]
     },
-    "build-playground": {
-      "dependsOn": ["^build-playground"]
+    "@nx/eslint:lint": {
+      "dependsOn": ["^lint"],
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.base.json", "{workspaceRoot}/tools/eslint-rules/**/*"]
     }
   },
   "affected": {

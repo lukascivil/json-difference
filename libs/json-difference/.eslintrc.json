@@ -6,7 +6,12 @@
       "files": ["package.json"],
       "parser": "jsonc-eslint-parser",
       "rules": {
-        "@nx/dependency-checks": "error"
+        "@nx/dependency-checks": [
+          "error",
+          {
+            "ignoredFiles": ["libs/json-difference/vite.config.ts", "libs/json-difference/vite.config.browser.ts"]
+          }
+        ]
       }
     }
   ]

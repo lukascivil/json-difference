@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.16.1](https://github.com/lukascivil/json-difference/compare/json-difference-1.16.0...json-difference-1.16.1) (2024-02-04)
+
 ## [1.16.0](https://github.com/lukascivil/json-difference/compare/json-difference-1.15.8...json-difference-1.16.0) (2023-12-27)
 
 

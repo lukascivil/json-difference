@@ -2,7 +2,7 @@
 import sanitizeDelta from './sanitize-delta'
 
 // Models
-import { Delta } from '../models/jsondiffer.model'
+import { Delta } from '../models/json-difference.model'
 
 describe('sanitizeDelta helper', () => {
   test.only('Should remove unnecessary @{}', () => {

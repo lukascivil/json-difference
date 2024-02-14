@@ -1,5 +1,5 @@
 // Models
-import { StructPaths } from '../models/jsondiffer.model'
+import { StructPaths } from '../models/json-difference.model'
 
 const generatePath = (isArray: boolean, currentPath: string, newPath: string, lodashLike: boolean): string => {
   const prefix = lodashLike ? (isArray ? '[' : '.') : '/'

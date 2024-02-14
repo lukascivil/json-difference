@@ -1,5 +1,5 @@
 // Models
-import { EditedPath, StructPaths } from '../models/jsondiffer.model'
+import { EditedPath, StructPaths } from '../models/json-difference.model'
 
 /**
  * This method returns all paths whose leaf value has changed

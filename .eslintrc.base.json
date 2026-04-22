@@ -1,64 +1,45 @@
 {
-  "root": true,
-  "ignorePatterns": ["**/*"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "prettier", "jest", "@nx"],
   "extends": ["plugin:@typescript-eslint/recommended"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "prettier/prettier": [
-          "error",
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "overrides": [],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "no-console": "off",
+    "prefer-const": "error",
+    "@typescript-eslint/semi": ["off"],
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "@nx/enforce-module-boundaries": [
+      "error",
+      {
+        "depConstraints": [
           {
-            "endOfLine": "auto"
-          }
-        ],
-        "no-console": "off",
-        "prefer-const": "error",
-        "@typescript-eslint/semi": ["off"],
-        "@typescript-eslint/no-explicit-any": ["off"],
-        "@nx/enforce-module-boundaries": [
-          "error",
+            "sourceTag": "scope:shared",
+            "onlyDependOnLibsWithTags": ["scope:shared"]
+          },
           {
-            "depConstraints": [
-              {
-                "sourceTag": "scope:shared",
-                "onlyDependOnLibsWithTags": ["scope:shared"]
-              },
-              {
-                "sourceTag": "scope:playground",
-                "onlyDependOnLibsWithTags": ["scope:shared", "scope:playground"]
-              },
-              {
-                "sourceTag": "scope:example",
-                "onlyDependOnLibsWithTags": ["scope:shared", "scope:example"]
-              },
-              {
-                "sourceTag": "type:feature",
-                "onlyDependOnLibsWithTags": ["type:feature"]
-              }
-            ]
+            "sourceTag": "scope:playground",
+            "onlyDependOnLibsWithTags": ["scope:shared", "scope:playground"]
+          },
+          {
+            "sourceTag": "scope:example",
+            "onlyDependOnLibsWithTags": ["scope:shared", "scope:example"]
+          },
+          {
+            "sourceTag": "type:feature",
+            "onlyDependOnLibsWithTags": ["type:feature"]
           }
         ]
       }
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
-      "env": {
-        "jest": true
-      },
-      "rules": {}
-    }
-  ]
+    ]
+  }
 }

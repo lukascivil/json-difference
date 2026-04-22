@@ -4,10 +4,11 @@
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "libs/json-difference-cli/bin",
-        "main": "libs/json-difference-cli/src/index.ts",
-        "tsConfig": "libs/json-difference-cli/tsconfig.lib.json"
+        "outputPath": "{projectRoot}/bin",
+        "main": "{projectRoot}/src/index.ts",
+        "tsConfig": "{projectRoot}/tsconfig.lib.json"
       }
     },
     "version": {
@@ -29,13 +30,13 @@
     "npm": {
       "executor": "ngx-deploy-npm:deploy",
       "access": "public",
-      "distFolderPath": "libs/json-difference-cli",
+      "distFolderPath": "{projectRoot}",
       "buildTarget": "json-difference-cli:build"
     },
     "install-local": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["nx run json-difference-cli:build", "npm install -g libs/json-difference-cli/"],
+        "commands": ["nx run json-difference-cli:build", "npm install -g {projectRoot}/"],
         "parallel": false
       }
     },

@@ -5,15 +5,17 @@
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "libs/json-difference/dist"
+        "outputPath": "{projectRoot}/dist"
       }
     },
     "build-browser": {
       "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "libs/json-difference/dist.browser",
-        "configFile": "libs/json-difference/vite.config.browser.ts"
+        "outputPath": "{projectRoot}/dist.browser",
+        "configFile": "{projectRoot}/vite.config.browser.mts"
       }
     },
     "build-to-s3": {

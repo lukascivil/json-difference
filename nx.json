@@ -4,32 +4,30 @@
     "appsDir": "apps",
     "libsDir": "libs"
   },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["lint", "test", "type-check"]
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"]
     },
     "type-check": {
-      "dependsOn": ["^type-check"]
+      "dependsOn": ["^type-check"],
+      "cache": true
     },
     "test": {
-      "dependsOn": ["^test"]
+      "dependsOn": ["^test"],
+      "cache": true
     },
     "@nx/eslint:lint": {
       "dependsOn": ["^lint"],
       "cache": true,
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.base.json", "{workspaceRoot}/tools/eslint-rules/**/*"]
+      "inputs": ["default", "{workspaceRoot}/eslint.config.mjs", "{workspaceRoot}/tools/eslint-rules/**/*"]
     }
   },
-  "affected": {
-    "defaultBase": "master"
-  },
-  "packageManager": "yarn"
+  "defaultBase": "master",
+  "packageManager": "yarn",
+  "analytics": false,
+  "release": {
+    "version": {
+      "preVersionCommand": "yarn dlx nx run-many -t build"
+    }
+  }
 }

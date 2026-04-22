@@ -1,29 +1,22 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "ignoreDeprecations": "6.0",
     "strict": true,
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "ES2020",
-    "module": "esnext",
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "allowJs": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "baseUrl": "./",
-    "paths": {
-      "@json-difference": ["libs/json-difference/src/index.ts"]
-    }
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "sourceMap": true,
+    "types": ["node"],
+    "baseUrl": "."
   },
-  "include": ["src"],
   "exclude": ["node_modules"]
 }

@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
+  root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/playground',
-  plugins: [react(), viteTsConfigPaths()],
+  plugins: [react()],
+  resolve: { tsconfigPaths: true },
   base: '/json-difference'
 })

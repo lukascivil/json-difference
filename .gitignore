@@ -19,3 +19,8 @@ node_modules
 
 # NX
 .nx
+
+# Claude Code
+.claude/settings.local.json
+
+.claude/worktrees

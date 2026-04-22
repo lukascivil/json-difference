@@ -8,7 +8,8 @@
     "graph": "yarn nx graph",
     "graph:affected": "yarn nx graph --affected",
     "release": "yarn nx run-many --target=version --parallel=1 ${0}",
-    "upgrade": "yarn npm-check-updates --interactive"
+    "upgrade": "yarn npm-check-updates --interactive",
+    "claude": "yarn nx run mcp-json-diff:build --no-tui && claude"
   },
   "devDependencies": {
     "@anthropic-ai/claude-code": "^2.1.117",

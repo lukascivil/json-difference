@@ -7,6 +7,8 @@ node_modules
 /libs/**/dist.browser
 /libs/**/dist.browser-s3
 /libs/**/coverage
+/libs/**/bin
+/tools/**/bin
 
 # Yarn 3 files
 .pnp.*

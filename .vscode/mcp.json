@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "json-diff": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/tools/mcp-json-diff/bin/src/index.js"]
+    }
+  }
+}

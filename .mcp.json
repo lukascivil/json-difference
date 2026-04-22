@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "json-diff": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["./tools/mcp-json-diff/bin/src/index.js"]
+    }
+  }
+}

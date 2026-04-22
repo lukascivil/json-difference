@@ -4,6 +4,7 @@
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "{projectRoot}/bin",
         "main": "{projectRoot}/src/index.ts",

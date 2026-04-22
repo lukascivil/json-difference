@@ -19,6 +19,7 @@
     "json-difference-cli": "./bin/src/index.js"
   },
   "dependencies": {
+    "json-difference": "1.16.1",
     "yargs": "^17.7.2"
   }
 }

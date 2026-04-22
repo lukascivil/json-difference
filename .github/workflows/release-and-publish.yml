@@ -29,14 +29,14 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup Node environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '18.17.0'
+          node-version: '24.15.0'
           cache: 'yarn'
           cache-dependency-path: |
             .yarn
@@ -52,7 +52,7 @@ jobs:
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         id: setSHAs
-        uses: nrwl/nx-set-shas@v3
+        uses: nrwl/nx-set-shas@v5
         with:
           main-branch-name: 'master'
 

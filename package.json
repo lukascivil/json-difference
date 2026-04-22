@@ -11,6 +11,7 @@
     "upgrade": "yarn npm-check-updates --interactive"
   },
   "devDependencies": {
+    "@anthropic-ai/claude-code": "^2.1.117",
     "@chakra-ui/react": "^3.35.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",

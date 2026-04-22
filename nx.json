@@ -23,5 +23,6 @@
     }
   },
   "defaultBase": "master",
-  "packageManager": "yarn"
+  "packageManager": "yarn",
+  "analytics": false
 }

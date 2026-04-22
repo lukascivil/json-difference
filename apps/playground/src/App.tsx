@@ -42,7 +42,7 @@ const App = () => {
   return (
     <>
       <Container maxW={'12xl'}>
-        <Stack as={Box} spacing={{ base: 8, md: 12 }} py={{ base: 20, md: 4 }}>
+        <Stack as={Box} gap={{ base: 8, md: 12 }} py={{ base: 20, md: 4 }}>
           <Heading fontWeight={600} textAlign={'center'} fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }} lineHeight={'110%'}>
             Make Diff with Playground
             <br />
@@ -60,7 +60,7 @@ const App = () => {
               <Editor width="100%" height="300" language="json" theme="vs-dark" onChange={setNewJson} value={newJson} />
             </GridItem>
             <GridItem w="100%">
-              <Stack direction={['row']} spacing="12px">
+              <Stack direction={['row']} gap="12px">
                 <Box w="100%">
                   <Text>Delta</Text>
                   <Textarea rows={12} value={result?.delta ?? ''} placeholder="Here is a sample placeholder" />
@@ -76,8 +76,7 @@ const App = () => {
             <GridItem w="100%" textAlign={'center'}>
               <Box pt={6}>
                 <Button
-                  leftIcon={<AddIcon />}
-                  colorScheme={'green'}
+                  colorPalette={'green'}
                   bg={'green.400'}
                   rounded={'full'}
                   px={6}
@@ -86,13 +85,13 @@ const App = () => {
                   }}
                   onClick={handleAddExample}
                 >
+                  <AddIcon />
                   Add example
                 </Button>
               </Box>
               <Box pt={5}>
                 <Button
-                  leftIcon={<DeleteIcon />}
-                  colorScheme={'green'}
+                  colorPalette={'red'}
                   bg={'red.400'}
                   rounded={'full'}
                   px={6}
@@ -101,6 +100,7 @@ const App = () => {
                   }}
                   onClick={handleClearClick}
                 >
+                  <DeleteIcon />
                   Clear
                 </Button>
               </Box>

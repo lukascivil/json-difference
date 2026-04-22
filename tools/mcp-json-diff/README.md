@@ -30,6 +30,12 @@ yarn nx run mcp-json-diff:build
 node tools/mcp-json-diff/bin/src/index.js
 ```
 
+Browser inspector (opens MCP Inspector UI connected to this server):
+
+```bash
+yarn nx run mcp-json-diff:test-browser
+```
+
 ## Client configuration
 
 ### Claude Code / Claude Desktop (`mcp.json` or `claude_desktop_config.json`)

@@ -15,6 +15,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@jscutlery/semver": "^6.1.2",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "@nx/devkit": "22.6.5",
     "@nx/eslint": "22.6.5",
     "@nx/eslint-plugin": "22.6.5",
@@ -71,7 +72,8 @@
     "vite": "^8.0.9",
     "vite-plugin-dts": "~4.5.4",
     "vite-plugin-static-copy": "^4.1.0",
-    "vite-tsconfig-paths": "^6.1.1"
+    "vite-tsconfig-paths": "^6.1.1",
+    "zod": "^4.3.6"
   },
   "packageManager": "yarn@4.14.1"
 }

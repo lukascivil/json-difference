@@ -16,12 +16,7 @@
     "skipDefaultLibCheck": true,
     "sourceMap": true,
     "types": ["node"],
-    "baseUrl": ".",
-    "paths": {
-      "@json-difference": ["libs/json-difference/src/index.ts"],
-      "@org/cafe": ["libs/cafe/src/index.ts"],
-      "@myorg/leite": ["libas/leite/src/index.ts"]
-    }
+    "baseUrl": "."
   },
   "exclude": ["node_modules"]
 }

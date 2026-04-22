@@ -6,11 +6,9 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "module": "ESNext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
-    "outDir": "./dist" /* Redirect output structure to the directory. */,
+    "module": "ESNext",
     "esModuleInterop": true,
-    "rootDir": "./src" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
-    "strict": true /* Enable all strict type-checking options. */,
+    "strict": true,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   "include": ["src"]

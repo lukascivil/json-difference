@@ -1,5 +1,5 @@
 // Packages
-import { getDiff, Delta } from 'json-difference'
+import { getDiff, Delta } from '@json-difference'
 import * as fs from 'fs'
 import * as path from 'path'
 

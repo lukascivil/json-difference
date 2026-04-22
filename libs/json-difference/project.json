@@ -15,7 +15,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "{projectRoot}/dist.browser",
-        "configFile": "{projectRoot}/vite.config.browser.ts"
+        "configFile": "{projectRoot}/vite.config.browser.mts"
       }
     },
     "build-to-s3": {

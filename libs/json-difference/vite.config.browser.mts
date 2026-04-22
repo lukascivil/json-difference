@@ -3,17 +3,18 @@ import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
 import fs from 'fs'
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
+import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
 
 const version: string = JSON.parse(fs.readFileSync('libs/json-difference/package.json', 'utf-8')).version
 
 export default defineConfig({
+  root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/json-difference',
   plugins: [
-    dts({
-      entryRoot: 'src',
-      tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-      skipDiagnostics: true
-    })
+    nxViteTsPaths(),
+    nxCopyAssetsPlugin(['*.md']),
+    dts({ entryRoot: 'src', tsconfigPath: path.join(import.meta.dirname, 'tsconfig.lib.json'), pathsToAliases: false })
   ],
   build: {
     lib: {

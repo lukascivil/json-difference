@@ -24,5 +24,10 @@
   },
   "defaultBase": "master",
   "packageManager": "yarn",
-  "analytics": false
+  "analytics": false,
+  "release": {
+    "version": {
+      "preVersionCommand": "yarn dlx nx run-many -t build"
+    }
+  }
 }

@@ -6,7 +6,7 @@
   "type": "module",
   "dependencies": {
     "react": "^19.2.5",
-    "@chakra-ui/icons": "^2.1.0",
+    "lucide-react": "^1.8.0",
     "@chakra-ui/react": "^3.34.0",
     "json-difference": "1.16.1",
     "react-dom": "^19.2.5",

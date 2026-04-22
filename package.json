@@ -11,7 +11,6 @@
     "upgrade": "yarn npm-check-updates --interactive"
   },
   "devDependencies": {
-    "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^3.34.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
@@ -53,6 +52,7 @@
     "jest": "^30.3.0",
     "json-difference": "1.16.1",
     "jsonc-eslint-parser": "^3.1.0",
+    "lucide-react": "^1.8.0",
     "monaco-editor": "^0.55.1",
     "ngx-deploy-npm": "^9.0.0",
     "npm-check-updates": "^21.0.3",

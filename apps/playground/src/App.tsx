@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react'
 import { Box, Heading, Container, Text, Button, Stack, Grid, GridItem, Textarea } from '@chakra-ui/react'
 import Editor from 'react-monaco-editor'
 import { getDiff } from 'json-difference'
-import { DeleteIcon, AddIcon } from '@chakra-ui/icons'
+import { Trash2, Plus } from 'lucide-react'
 
 const oldJsonExample = `{ "foo": { "bar": "true" } }`
 const newJsonExample = `{ "foo": { } }`
@@ -85,7 +85,7 @@ const App = () => {
                   }}
                   onClick={handleAddExample}
                 >
-                  <AddIcon />
+                  <Plus size={16} />
                   Add example
                 </Button>
               </Box>
@@ -100,7 +100,7 @@ const App = () => {
                   }}
                   onClick={handleClearClick}
                 >
-                  <DeleteIcon />
+                  <Trash2 size={16} />
                   Clear
                 </Button>
               </Box>

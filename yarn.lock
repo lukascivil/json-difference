@@ -58,9 +58,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ark-ui/react@npm:^5.34.1":
-  version: 5.36.1
-  resolution: "@ark-ui/react@npm:5.36.1"
+"@ark-ui/react@npm:5.36.2":
+  version: 5.36.2
+  resolution: "@ark-ui/react@npm:5.36.2"
   dependencies:
     "@internationalized/date": "npm:3.12.0"
     "@zag-js/accordion": "npm:1.40.0"
@@ -132,7 +132,7 @@ __metadata:
   peerDependencies:
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
-  checksum: 10/710a6c8c6ea30fbe71b726cd0e44af7ed85d37c750c88402c4cdafaf1a1a80f972853fe0796a2eaa107edc0a0f684105a542e7b72580f2c83e0ea670c58a5f3d
+  checksum: 10/042ac4040f3d331c40adc2077544f39e270c7b7ee1289d7b4d2e92fb2259fa030105910ff6640a8f6c62d436fe109b3efc4bb77d0b4bf603f466028ebd35acda
   languageName: node
   linkType: hard
 
@@ -2083,11 +2083,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/react@npm:^3.34.0":
-  version: 3.34.0
-  resolution: "@chakra-ui/react@npm:3.34.0"
+"@chakra-ui/react@npm:^3.35.0":
+  version: 3.35.0
+  resolution: "@chakra-ui/react@npm:3.35.0"
   dependencies:
-    "@ark-ui/react": "npm:^5.34.1"
+    "@ark-ui/react": "npm:5.36.2"
     "@emotion/is-prop-valid": "npm:^1.4.0"
     "@emotion/serialize": "npm:^1.3.3"
     "@emotion/use-insertion-effect-with-fallbacks": "npm:^1.2.0"
@@ -2098,7 +2098,7 @@ __metadata:
     "@emotion/react": ">=11"
     react: ">=18"
     react-dom: ">=18"
-  checksum: 10/0f795063be8a4d98d4fea4a952e8f6172e622b69c66456e888b14ca42b6e77b8fb1317130a6d5e176e8dc5483740b6e7bf3b312020021d259cc5e3b893504913
+  checksum: 10/7d5e9a4d82d89bdd7b2fa270fae6c2273f13f0130ac392e65c4f119e71f6891c2bb7f8c62f653a83745294a3e75b82deff3f60f99370941c0425f87dce53759d
   languageName: node
   linkType: hard
 
@@ -15449,7 +15449,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@chakra-ui/react": "npm:^3.34.0"
+    "@chakra-ui/react": "npm:^3.35.0"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.1"
     "@jscutlery/semver": "npm:^6.1.2"

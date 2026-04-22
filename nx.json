@@ -19,7 +19,7 @@
     "@nx/eslint:lint": {
       "dependsOn": ["^lint"],
       "cache": true,
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.base.json", "{workspaceRoot}/tools/eslint-rules/**/*"]
+      "inputs": ["default", "{workspaceRoot}/eslint.config.mjs", "{workspaceRoot}/tools/eslint-rules/**/*"]
     }
   },
   "defaultBase": "master",

@@ -19,6 +19,12 @@
         "command": "yarn tsx {projectRoot}/src/index.ts"
       }
     },
+    "test-browser": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn dlx @modelcontextprotocol/inspector yarn tsx {projectRoot}/src/index.ts"
+      }
+    },
     "type-check": {
       "executor": "nx:run-commands",
       "options": {

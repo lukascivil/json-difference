@@ -107,6 +107,117 @@ server.registerTool(
   }
 )
 
+server.registerPrompt(
+  'summarize-breaking-changes',
+  {
+    title: 'Summarize breaking API changes',
+    description: 'Compare two API responses/schemas and list only the BREAKING changes, grouped by severity.',
+    argsSchema: {
+      original: z.string().describe('Original JSON (stringified)'),
+      modified: z.string().describe('Modified JSON (stringified)')
+    }
+  },
+  ({ original, modified }) => ({
+    messages: [
+      {
+        role: 'user',
+        content: {
+          type: 'text',
+          text:
+            'Use the `get_diff` tool on the two JSON payloads below, then list ONLY the breaking changes. ' +
+            'Group them as: (1) Removed fields, (2) Type changes, (3) Renamed/moved fields. ' +
+            'For each item, give the path and a one-line impact note. Ignore additive changes.\n\n' +
+            `Original:\n\`\`\`json\n${original}\n\`\`\`\n\nModified:\n\`\`\`json\n${modified}\n\`\`\``
+        }
+      }
+    ]
+  })
+)
+
+server.registerPrompt(
+  'generate-changelog',
+  {
+    title: 'Generate CHANGELOG entry from diff',
+    description: 'Produces a Keep-a-Changelog formatted entry (Added / Changed / Removed) from two JSON versions.',
+    argsSchema: {
+      original: z.string().describe('Previous version JSON (stringified)'),
+      modified: z.string().describe('New version JSON (stringified)'),
+      version: z.string().optional().describe('Version label for the entry header, e.g. "1.2.0"')
+    }
+  },
+  ({ original, modified, version }) => ({
+    messages: [
+      {
+        role: 'user',
+        content: {
+          type: 'text',
+          text:
+            'Call `get_diff` on the two JSON payloads below and convert the delta into a CHANGELOG entry ' +
+            'following Keep-a-Changelog format with `### Added`, `### Changed`, `### Removed` sections. ' +
+            'Each bullet must reference the JSON path. Be terse.\n\n' +
+            `Version header: ${version ?? '(infer or use Unreleased)'}\n\n` +
+            `Previous:\n\`\`\`json\n${original}\n\`\`\`\n\nNew:\n\`\`\`json\n${modified}\n\`\`\``
+        }
+      }
+    ]
+  })
+)
+
+server.registerPrompt(
+  'explain-config-drift',
+  {
+    title: 'Explain config drift in plain language',
+    description: 'Compare two configs (baseline vs actual) and explain drift in prose aimed at non-engineers.',
+    argsSchema: {
+      baseline: z.string().describe('Baseline/expected config JSON (stringified)'),
+      actual: z.string().describe('Current/observed config JSON (stringified)')
+    }
+  },
+  ({ baseline, actual }) => ({
+    messages: [
+      {
+        role: 'user',
+        content: {
+          type: 'text',
+          text:
+            'Use `get_diff` on the two configs below. Then write a short paragraph (non-technical audience) ' +
+            'explaining how the actual config drifted from the baseline. Mention concrete settings, not JSON paths. ' +
+            'End with a one-line risk assessment: low / medium / high and why.\n\n' +
+            `Baseline:\n\`\`\`json\n${baseline}\n\`\`\`\n\nActual:\n\`\`\`json\n${actual}\n\`\`\``
+        }
+      }
+    ]
+  })
+)
+
+server.registerPrompt(
+  'migration-guide',
+  {
+    title: 'Generate schema migration guide',
+    description: 'Produces a step-by-step migration guide for consumers moving from schema v1 to v2.',
+    argsSchema: {
+      v1: z.string().describe('Old schema example JSON (stringified)'),
+      v2: z.string().describe('New schema example JSON (stringified)')
+    }
+  },
+  ({ v1, v2 }) => ({
+    messages: [
+      {
+        role: 'user',
+        content: {
+          type: 'text',
+          text:
+            'Use `get_diff` to compare the two schema examples below. Then produce a migration guide with: ' +
+            '(1) a summary table of field-level changes, ' +
+            '(2) numbered migration steps a consumer must perform, ' +
+            '(3) a sample `jq` or code snippet to transform a v1 payload into v2 where feasible.\n\n' +
+            `v1 example:\n\`\`\`json\n${v1}\n\`\`\`\n\nv2 example:\n\`\`\`json\n${v2}\n\`\`\``
+        }
+      }
+    ]
+  })
+)
+
 const main = async () => {
   const transport = new StdioServerTransport()
   await server.connect(transport)

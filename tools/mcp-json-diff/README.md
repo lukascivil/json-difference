@@ -15,6 +15,19 @@ MCP server that exposes the `json-difference` library as tools for AI agents
 All JSON inputs accept objects, arrays, or JSON-encoded strings.
 Optional `isLodashLike: true` switches paths to bracket notation (`a[0].b`).
 
+## Prompts
+
+User-invocable templates (appear in Claude Desktop under `/` menu, in Claude Code as slash commands, etc.):
+
+| Prompt | Arguments | Output |
+|---|---|---|
+| `summarize-breaking-changes` | `original`, `modified` | Breaking changes grouped by severity |
+| `generate-changelog` | `original`, `modified`, `version?` | Keep-a-Changelog formatted entry |
+| `explain-config-drift` | `baseline`, `actual` | Plain-language drift explanation + risk level |
+| `migration-guide` | `v1`, `v2` | Field change table + numbered steps + transform snippet |
+
+Each prompt instructs the agent to call the `get_diff` tool internally, so you get deterministic delta + LLM narrative in one shot.
+
 ## Running
 
 Dev (via `tsx`, no build step):
@@ -28,6 +41,12 @@ Production (compiled to `bin/`):
 ```bash
 yarn nx run mcp-json-diff:build
 node tools/mcp-json-diff/bin/src/index.js
+```
+
+Browser inspector (opens MCP Inspector UI connected to this server):
+
+```bash
+yarn nx run mcp-json-diff:test-browser
 ```
 
 ## Client configuration

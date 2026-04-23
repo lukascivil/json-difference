@@ -1,9 +1,14 @@
 // Packages
+import { readFileSync } from 'fs'
+import { join } from 'path'
 import { getDiff } from '.'
 
 // Models
 import { JsonPatch } from '../models/json-difference.model'
 import { generateJsonPatch } from './generate-json-patch'
+
+const FIXTURE_DIR = join(__dirname, '..', '..', 'fixture')
+const loadFixture = (name: string): any => JSON.parse(readFileSync(join(FIXTURE_DIR, name), 'utf8'))
 
 describe('GenerateJsonPatch function', () => {
   test('Should generate JSON Patch operations with nested array/object swap', () => {
@@ -70,5 +75,24 @@ describe('GenerateJsonPatch function', () => {
     const result = generateJsonPatch(delta)
 
     expect(result).toEqual(expectedResult)
+  })
+
+  /**
+   * Integration tests covering the large stress fixtures. Patches from these
+   * deltas contain hundreds of ops — structural invariants are asserted
+   * instead of concrete values.
+   */
+  describe('with fixture files', () => {
+    const oldJson = loadFixture('oldJson.json')
+    const newJson = loadFixture('newJson.json')
+
+    test('Should generate the full JSON Patch that transforms oldJson into newJson', () => {
+      const expectedResult: Array<JsonPatch> = loadFixture('jsonPatch.json')
+
+      const delta = getDiff(oldJson, newJson)
+      const result = generateJsonPatch(delta)
+
+      expect(result).toEqual(expectedResult)
+    })
   })
 })

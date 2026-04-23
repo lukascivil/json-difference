@@ -1,0 +1,615 @@
+[
+  {
+    "op": "remove",
+    "path": "/contatos_emergencia/0/telefones/1"
+  },
+  {
+    "op": "remove",
+    "path": "/produtos/1/atributos/congelado"
+  },
+  {
+    "op": "remove",
+    "path": "/palavras_especiais/idiomas/3"
+  },
+  {
+    "op": "remove",
+    "path": "/palavras_especiais/idiomas/4"
+  },
+  {
+    "op": "remove",
+    "path": "/documentos/passaporte/numero"
+  },
+  {
+    "op": "remove",
+    "path": "/documentos/passaporte/validade"
+  },
+  {
+    "op": "remove",
+    "path": "/preferencias/categorias/3"
+  },
+  {
+    "op": "remove",
+    "path": "/preferencias/cores/2"
+  },
+  {
+    "op": "remove",
+    "path": "/preferencias/newsletter_ids/2"
+  },
+  {
+    "op": "remove",
+    "path": "/documentos/passaporte"
+  },
+  {
+    "op": "remove",
+    "path": "/pontuacoes/4"
+  },
+  {
+    "op": "remove",
+    "path": "/pontuacoes/5"
+  },
+  {
+    "op": "replace",
+    "path": "/uuid",
+    "value": "550e8400-e29b-41d4-a716-446655440001"
+  },
+  {
+    "op": "replace",
+    "path": "/bloqueado",
+    "value": true
+  },
+  {
+    "op": "replace",
+    "path": "/nome",
+    "value": "João da Silva Santos"
+  },
+  {
+    "op": "replace",
+    "path": "/nome_social",
+    "value": ""
+  },
+  {
+    "op": "replace",
+    "path": "/apelido",
+    "value": "João"
+  },
+  {
+    "op": "replace",
+    "path": "/descricao",
+    "value": "Usuário com acentuação: á, à, ã, â, é, ê, í, ó, ô, õ, ú, ü, ç e caracteres extras."
+  },
+  {
+    "op": "replace",
+    "path": "/observacao",
+    "value": "Linha 1\nLinha 2 alterada\nLinha 3"
+  },
+  {
+    "op": "replace",
+    "path": "/citacao",
+    "value": "Ele disse: \"ação concluída com sucesso\"."
+  },
+  {
+    "op": "replace",
+    "path": "/caminho",
+    "value": "/arquivos/joao/dados.json"
+  },
+  {
+    "op": "replace",
+    "path": "/url",
+    "value": "https://exemplo.com.br/perfil/joao?origem=acao&status=valido"
+  },
+  {
+    "op": "replace",
+    "path": "/email",
+    "value": "joao.santos@example.com"
+  },
+  {
+    "op": "replace",
+    "path": "/telefone",
+    "value": "+55-11-97777-6655"
+  },
+  {
+    "op": "replace",
+    "path": "/idade",
+    "value": 35
+  },
+  {
+    "op": "replace",
+    "path": "/peso",
+    "value": 81.9
+  },
+  {
+    "op": "replace",
+    "path": "/saldo",
+    "value": 9800.15
+  },
+  {
+    "op": "replace",
+    "path": "/percentual_conclusao",
+    "value": 87.4
+  },
+  {
+    "op": "replace",
+    "path": "/numero_negativo",
+    "value": -40
+  },
+  {
+    "op": "replace",
+    "path": "/unicode",
+    "value": "São Tomé e Príncipe | mañana | garçon | coração | infância | pinguim | 🚀"
+  },
+  {
+    "op": "replace",
+    "path": "/palavras_especiais/com_til",
+    "value": "não, maçã, órfão, limão"
+  },
+  {
+    "op": "replace",
+    "path": "/palavras_especiais/idiomas/2",
+    "value": "italiano"
+  },
+  {
+    "op": "replace",
+    "path": "/datas_serializadas/iso",
+    "value": "2026-04-24T08:00:00.000Z"
+  },
+  {
+    "op": "replace",
+    "path": "/datas_serializadas/br",
+    "value": "24/04/2026 05:00:00"
+  },
+  {
+    "op": "replace",
+    "path": "/datas_serializadas/somente_data",
+    "value": "2026-04-24"
+  },
+  {
+    "op": "replace",
+    "path": "/configuracoes/tema",
+    "value": "claro"
+  },
+  {
+    "op": "replace",
+    "path": "/configuracoes/notificacoes/sms",
+    "value": true
+  },
+  {
+    "op": "replace",
+    "path": "/configuracoes/notificacoes/push",
+    "value": false
+  },
+  {
+    "op": "replace",
+    "path": "/configuracoes/notificacoes/frequencia",
+    "value": "semanal"
+  },
+  {
+    "op": "replace",
+    "path": "/configuracoes/privacidade/perfil_publico",
+    "value": true
+  },
+  {
+    "op": "replace",
+    "path": "/configuracoes/privacidade/mostrar_email",
+    "value": true
+  },
+  {
+    "op": "replace",
+    "path": "/configuracoes/privacidade/mostrar_telefone",
+    "value": false
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/0/logradouro",
+    "value": "Rua das Acácias"
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/0/complemento",
+    "value": "Casa 2"
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/0/referencia",
+    "value": "Em frente à praça"
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/1/tipo",
+    "value": "entrega"
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/1/logradouro",
+    "value": "Rua do Comércio"
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/1/numero",
+    "value": "500"
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/1/bairro",
+    "value": "Centro"
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/1/cidade",
+    "value": "Santos"
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/1/cep",
+    "value": "11010-001"
+  },
+  {
+    "op": "replace",
+    "path": "/enderecos/1/referencia",
+    "value": null
+  },
+  {
+    "op": "replace",
+    "path": "/contatos_emergencia/1/nome",
+    "value": "Carlos"
+  },
+  {
+    "op": "replace",
+    "path": "/contatos_emergencia/1/parentesco",
+    "value": "amigo"
+  },
+  {
+    "op": "replace",
+    "path": "/contatos_emergencia/1/telefones/0",
+    "value": "+55-31-96666-5555"
+  },
+  {
+    "op": "replace",
+    "path": "/tags/1",
+    "value": "vip"
+  },
+  {
+    "op": "replace",
+    "path": "/tags/2",
+    "value": "acao"
+  },
+  {
+    "op": "replace",
+    "path": "/tags/3",
+    "value": "Rio de Janeiro"
+  },
+  {
+    "op": "replace",
+    "path": "/pontuacoes/2",
+    "value": 8.25
+  },
+  {
+    "op": "replace",
+    "path": "/pontuacoes/3",
+    "value": 0
+  },
+  {
+    "op": "replace",
+    "path": "/preferencias/categorias/1",
+    "value": "cinema"
+  },
+  {
+    "op": "replace",
+    "path": "/preferencias/categorias/2",
+    "value": "viagens"
+  },
+  {
+    "op": "replace",
+    "path": "/preferencias/cores/1",
+    "value": "preto"
+  },
+  {
+    "op": "replace",
+    "path": "/preferencias/newsletter_ids/1",
+    "value": 300
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/0/dispositivo/sistema",
+    "value": "Windows"
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/0/dispositivo/navegador",
+    "value": "Edge"
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/1/data",
+    "value": "2026-04-22T21:10:10Z"
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/1/ip",
+    "value": "172.16.1.20"
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/1/dispositivo/tipo",
+    "value": "tablet"
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/1/dispositivo/sistema",
+    "value": "iPadOS"
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/1/dispositivo/navegador",
+    "value": "Safari"
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/1/localizacao/cidade",
+    "value": "Rio de Janeiro"
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/1/localizacao/coords/lat",
+    "value": -22.906847
+  },
+  {
+    "op": "replace",
+    "path": "/historico_acessos/1/localizacao/coords/lng",
+    "value": -43.172896
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/0/nome",
+    "value": "Café Torrado e Moído Premium"
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/0/preco",
+    "value": 21.9
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/0/estoque",
+    "value": 95
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/0/atributos/origem",
+    "value": "Sul de Minas"
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/0/atributos/organico",
+    "value": false
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/0/variacoes/1/nome",
+    "value": "extra forte"
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/0/variacoes/1/ativo",
+    "value": true
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/1/sku",
+    "value": "SKU-003"
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/1/nome",
+    "value": "Bolo de Cenoura"
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/1/preco",
+    "value": 32
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/1/estoque",
+    "value": 15
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/1/atributos/peso_gramas",
+    "value": 750
+  },
+  {
+    "op": "replace",
+    "path": "/produtos/1/variacoes",
+    "value": []
+  },
+  {
+    "op": "replace",
+    "path": "/matriz_mista/0/2",
+    "value": 4
+  },
+  {
+    "op": "replace",
+    "path": "/matriz_mista/1/2",
+    "value": "tres"
+  },
+  {
+    "op": "replace",
+    "path": "/matriz_mista/2/1",
+    "value": null
+  },
+  {
+    "op": "replace",
+    "path": "/matriz_mista/2/2",
+    "value": false
+  },
+  {
+    "op": "replace",
+    "path": "/matriz_mista/3/0/chave",
+    "value": "valor alterado"
+  },
+  {
+    "op": "replace",
+    "path": "/matriz_mista/3/1/outra",
+    "value": 3
+  },
+  {
+    "op": "replace",
+    "path": "/chaves_especiais/nome completo",
+    "value": "João da Silva Santos"
+  },
+  {
+    "op": "replace",
+    "path": "/chaves_especiais/endereço-principal",
+    "value": "Rua das Acácias, 123"
+  },
+  {
+    "op": "replace",
+    "path": "/chaves_especiais/123campo",
+    "value": "valor alterado na chave"
+  },
+  {
+    "op": "replace",
+    "path": "/chaves_especiais/@metadata/versão",
+    "value": "1.1.0"
+  },
+  {
+    "op": "replace",
+    "path": "/chaves_especiais/@metadata/origem",
+    "value": "novo-sistema"
+  },
+  {
+    "op": "replace",
+    "path": "/workflow/etapas/1/status",
+    "value": "concluído"
+  },
+  {
+    "op": "replace",
+    "path": "/workflow/responsaveis/primario/nome",
+    "value": "Ana Claudia"
+  },
+  {
+    "op": "replace",
+    "path": "/workflow/responsaveis/secundario/id",
+    "value": 503
+  },
+  {
+    "op": "replace",
+    "path": "/workflow/responsaveis/secundario/nome",
+    "value": "Marcos"
+  },
+  {
+    "op": "replace",
+    "path": "/limites/saque/diario",
+    "value": 2000
+  },
+  {
+    "op": "replace",
+    "path": "/limites/saque/mensal",
+    "value": 12000
+  },
+  {
+    "op": "replace",
+    "path": "/limites/transferencia/diario",
+    "value": 4500
+  },
+  {
+    "op": "replace",
+    "path": "/limites/transferencia/mensal",
+    "value": 35000
+  },
+  {
+    "op": "replace",
+    "path": "/metadata/atualizado_em",
+    "value": "2026-04-23T08:00:00Z"
+  },
+  {
+    "op": "replace",
+    "path": "/metadata/versao",
+    "value": 8
+  },
+  {
+    "op": "replace",
+    "path": "/metadata/hash",
+    "value": "xyz789def000"
+  },
+  {
+    "op": "replace",
+    "path": "/metadata/origem/sistema",
+    "value": "portal-admin-v2"
+  },
+  {
+    "op": "replace",
+    "path": "/metadata/origem/modulo",
+    "value": "cadastro-avancado"
+  },
+  {
+    "op": "replace",
+    "path": "/metadata/origem/ambiente",
+    "value": "prod"
+  },
+  {
+    "op": "add",
+    "path": "/documentos/cnh",
+    "value": {}
+  },
+  {
+    "op": "add",
+    "path": "/documentos/cnh/numero",
+    "value": "9988776655"
+  },
+  {
+    "op": "add",
+    "path": "/documentos/cnh/categoria",
+    "value": "B"
+  },
+  {
+    "op": "add",
+    "path": "/documentos/cnh/validade",
+    "value": "2029-05-30"
+  },
+  {
+    "op": "add",
+    "path": "/tags/5",
+    "value": "novo"
+  },
+  {
+    "op": "add",
+    "path": "/produtos/1/atributos/sem_gluten",
+    "value": false
+  },
+  {
+    "op": "add",
+    "path": "/produtos/1/variacoes/0",
+    "value": {}
+  },
+  {
+    "op": "add",
+    "path": "/produtos/1/variacoes/0/nome",
+    "value": "com cobertura"
+  },
+  {
+    "op": "add",
+    "path": "/produtos/1/variacoes/0/ativo",
+    "value": true
+  },
+  {
+    "op": "add",
+    "path": "/workflow/etapas/2",
+    "value": {}
+  },
+  {
+    "op": "add",
+    "path": "/workflow/etapas/2/id",
+    "value": 3
+  },
+  {
+    "op": "add",
+    "path": "/workflow/etapas/2/nome",
+    "value": "publicação"
+  },
+  {
+    "op": "add",
+    "path": "/workflow/etapas/2/status",
+    "value": "em_andamento"
+  }
+]

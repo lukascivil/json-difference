@@ -5,17 +5,19 @@
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "apps/playground/dist"
+        "outputPath": "{projectRoot}/dist"
       }
     },
     "serve": {
       "executor": "@nx/vite:dev-server",
-      "defaultConfiguration": "development"
+      "options": {
+        "buildTarget": "playground:build"
+      }
     },
     "preview": {
       "executor": "@nx/vite:preview-server",
-      "defaultConfiguration": "development",
       "options": {
         "buildTarget": "playground:build"
       }

@@ -3,6 +3,7 @@ import { useState, useMemo } from 'react'
 import { Box, Heading, Container, Text, Button, Stack, Grid, GridItem, Textarea } from '@chakra-ui/react'
 import Editor from 'react-monaco-editor'
 import { getDiff } from 'json-difference'
+import { version as jsonDifferenceVersion } from 'json-difference/package.json'
 import { Trash2, Plus } from 'lucide-react'
 
 const oldJsonExample = `{ "foo": { "bar": "true" } }`
@@ -43,13 +44,18 @@ const App = () => {
     <>
       <Container maxW={'12xl'}>
         <Stack as={Box} gap={{ base: 8, md: 12 }} py={{ base: 20, md: 4 }}>
-          <Heading fontWeight={600} textAlign={'center'} fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }} lineHeight={'110%'}>
-            Make Diff with Playground
-            <br />
-            <Text as={'span'} color={'green.400'}>
-              JSON Difference
+          <Box textAlign={'center'}>
+            <Heading fontWeight={600} fontSize={{ base: '2xl', sm: '4xl', md: '4xl' }} lineHeight={'110%'}>
+              Make Diff with Playground
+              <br />
+              <Text as={'span'} color={'green.400'}>
+                JSON Difference
+              </Text>
+            </Heading>
+            <Text mt={2} fontSize={'sm'} color={'gray.500'}>
+              v{jsonDifferenceVersion}
             </Text>
-          </Heading>
+          </Box>
           <Grid templateColumns="repeat(2, 1fr)" gap="1">
             <GridItem w="100%">
               <Text>Original JSON</Text>

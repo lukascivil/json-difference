@@ -19,6 +19,11 @@ on:
           - json-difference-cli
           - all
         required: true
+      dry_run:
+        type: boolean
+        description: 'Dry run: preview versioning/publish without tagging, publishing, or deploying to S3'
+        default: false
+        required: false
 
 jobs:
   main:
@@ -69,9 +74,10 @@ jobs:
 
       - name: Version And Publishment
         shell: bash
-        run: yarn release ${{ github.event.inputs.name == 'all' && '--all' || '--projects=' }}${{ github.event.inputs.name == 'all' && ' ' || github.event.inputs.name }}
+        run: yarn ${{ github.event.inputs.dry_run == 'true' && 'release:dry-run' || 'release' }} ${{ github.event.inputs.name == 'all' && '--all' || '--projects=' }}${{ github.event.inputs.name == 'all' && ' ' || github.event.inputs.name }}
 
       - name: Tag last-release
+        if: github.event.inputs.dry_run != 'true'
         shell: bash
         run: git tag -f last-release
 
@@ -81,7 +87,7 @@ jobs:
           yarn nx run-many --target=build-to-s3 --projects=json-difference
 
       - name: Deploy Json Difference to Amazon S3 🚀
-        if: github.event.inputs.name == 'json-difference' || github.event.inputs.name == 'all'
+        if: github.event.inputs.dry_run != 'true' && (github.event.inputs.name == 'json-difference' || github.event.inputs.name == 'all')
         uses: reggionick/s3-deploy@v4
         with:
           folder: libs/json-difference/dist.browser-s3

@@ -8,6 +8,7 @@
     "graph": "yarn nx graph",
     "graph:affected": "yarn nx graph --affected",
     "release": "yarn nx run-many --target=version --parallel=1 ${0}",
+    "release:dry-run": "yarn nx run-many --target=version --parallel=1 ${0} --dry-run",
     "upgrade": "yarn npm-check-updates --interactive",
     "claude": "yarn nx run mcp-json-diff:build --no-tui && claude"
   },

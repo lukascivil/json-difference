@@ -1,5 +1,6 @@
 // Models
 import { EditedPath, StructPaths } from '../models/jsondiffer.model'
+import { ARRAY_SENTINEL, OBJECT_SENTINEL, unwrapSentinel } from '../helpers/unwrap-sentinel'
 
 /**
  * This method returns all paths whose leaf value has changed
@@ -35,10 +36,10 @@ export const getEditedPaths = (oldStructPaths: StructPaths, newStructPaths: Stru
         continue
       }
 
-      if (oldStructPaths[key] === '@{}' || oldStructPaths[key] === '@[]') {
-        const newStructValue = newStructPaths[key] === '@{}' ? {} : newStructPaths[key] === '@[]' ? [] : newStructPaths[key]
+      if (oldStructPaths[key] === OBJECT_SENTINEL || oldStructPaths[key] === ARRAY_SENTINEL) {
+        const newStructValue = unwrapSentinel(newStructPaths[key])
 
-        if (oldStructPaths[key] === '@{}') {
+        if (oldStructPaths[key] === OBJECT_SENTINEL) {
           if ('{}' !== JSON.stringify(newStructPaths[key])) {
             diffs.push([key, {}, newStructValue])
           }

@@ -1,0 +1,258 @@
+{
+  "id": 1001,
+  "uuid": "550e8400-e29b-41d4-a716-446655440001",
+  "ativo": true,
+  "bloqueado": true,
+  "nome": "João da Silva Santos",
+  "nome_social": "",
+  "apelido": "João",
+  "descricao": "Usuário com acentuação: á, à, ã, â, é, ê, í, ó, ô, õ, ú, ü, ç e caracteres extras.",
+  "observacao": "Linha 1\nLinha 2 alterada\nLinha 3",
+  "citacao": "Ele disse: \"ação concluída com sucesso\".",
+  "caminho": "/arquivos/joao/dados.json",
+  "url": "https://exemplo.com.br/perfil/joao?origem=acao&status=valido",
+  "email": "joao.santos@example.com",
+  "telefone": "+55-11-97777-6655",
+  "cpf_mascarado": "***.123.456-**",
+  "idade": 35,
+  "altura": 1.78,
+  "peso": 81.9,
+  "saldo": 9800.15,
+  "percentual_conclusao": 87.4,
+  "numero_negativo": -40,
+  "zero": 0,
+  "nulo": null,
+  "string_vazia": "",
+  "array_vazio": [],
+  "objeto_vazio": {},
+  "unicode": "São Tomé e Príncipe | mañana | garçon | coração | infância | pinguim | 🚀",
+  "palavras_especiais": {
+    "com_til": "não, maçã, órfão, limão",
+    "com_cedilha": "açaí, canção, preço, faça, endereço",
+    "idiomas": ["português", "español", "italiano"]
+  },
+  "datas_serializadas": {
+    "iso": "2026-04-24T08:00:00.000Z",
+    "br": "24/04/2026 05:00:00",
+    "somente_data": "2026-04-24"
+  },
+  "configuracoes": {
+    "tema": "claro",
+    "idioma": "pt-BR",
+    "notificacoes": {
+      "email": true,
+      "sms": true,
+      "push": false,
+      "frequencia": "semanal"
+    },
+    "privacidade": {
+      "perfil_publico": true,
+      "mostrar_email": true,
+      "mostrar_telefone": false
+    }
+  },
+  "enderecos": [
+    {
+      "tipo": "residencial",
+      "logradouro": "Rua das Acácias",
+      "numero": "123",
+      "complemento": "Casa 2",
+      "bairro": "Jardim São Luís",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "pais": "Brasil",
+      "cep": "01234-567",
+      "referencia": "Em frente à praça"
+    },
+    {
+      "tipo": "entrega",
+      "logradouro": "Rua do Comércio",
+      "numero": "500",
+      "complemento": null,
+      "bairro": "Centro",
+      "cidade": "Santos",
+      "estado": "SP",
+      "pais": "Brasil",
+      "cep": "11010-001",
+      "referencia": null
+    }
+  ],
+  "contatos_emergencia": [
+    {
+      "nome": "Márcia",
+      "parentesco": "irmã",
+      "telefones": ["+55-11-90000-1111"]
+    },
+    {
+      "nome": "Carlos",
+      "parentesco": "amigo",
+      "telefones": ["+55-31-96666-5555"]
+    }
+  ],
+  "documentos": {
+    "rg": {
+      "numero": "12.345.678-9",
+      "uf": "SP",
+      "emissao": "2018-02-10"
+    },
+    "cnh": {
+      "numero": "9988776655",
+      "categoria": "B",
+      "validade": "2029-05-30"
+    }
+  },
+  "tags": ["cliente", "vip", "acao", "Rio de Janeiro", "teste-json", "novo"],
+  "pontuacoes": [10, 9.5, 8.25, 0],
+  "preferencias": {
+    "categorias": ["tecnologia", "cinema", "viagens"],
+    "cores": ["azul", "preto"],
+    "newsletter_ids": [101, 300]
+  },
+  "historico_acessos": [
+    {
+      "data": "2026-04-20T08:15:00Z",
+      "ip": "192.168.0.10",
+      "dispositivo": {
+        "tipo": "desktop",
+        "sistema": "Windows",
+        "navegador": "Edge"
+      },
+      "localizacao": {
+        "cidade": "São Paulo",
+        "pais": "Brasil",
+        "coords": {
+          "lat": -23.55052,
+          "lng": -46.633308
+        }
+      }
+    },
+    {
+      "data": "2026-04-22T21:10:10Z",
+      "ip": "172.16.1.20",
+      "dispositivo": {
+        "tipo": "tablet",
+        "sistema": "iPadOS",
+        "navegador": "Safari"
+      },
+      "localizacao": {
+        "cidade": "Rio de Janeiro",
+        "pais": "Brasil",
+        "coords": {
+          "lat": -22.906847,
+          "lng": -43.172896
+        }
+      }
+    }
+  ],
+  "produtos": [
+    {
+      "sku": "SKU-001",
+      "nome": "Café Torrado e Moído Premium",
+      "preco": 21.9,
+      "estoque": 95,
+      "atributos": {
+        "peso_gramas": 500,
+        "origem": "Sul de Minas",
+        "organico": false
+      },
+      "variacoes": [
+        {
+          "nome": "tradicional",
+          "ativo": true
+        },
+        {
+          "nome": "extra forte",
+          "ativo": true
+        }
+      ]
+    },
+    {
+      "sku": "SKU-003",
+      "nome": "Bolo de Cenoura",
+      "preco": 32,
+      "estoque": 15,
+      "atributos": {
+        "peso_gramas": 750,
+        "sem_gluten": false
+      },
+      "variacoes": [
+        {
+          "nome": "com cobertura",
+          "ativo": true
+        }
+      ]
+    }
+  ],
+  "matriz_mista": [
+    [1, 2, 4],
+    ["um", "dois", "tres"],
+    [true, null, false],
+    [
+      {
+        "chave": "valor alterado"
+      },
+      {
+        "outra": 3
+      }
+    ]
+  ],
+  "chaves_especiais": {
+    "nome completo": "João da Silva Santos",
+    "endereço-principal": "Rua das Acácias, 123",
+    "123campo": "valor alterado na chave",
+    "@metadata": {
+      "versão": "1.1.0",
+      "origem": "novo-sistema"
+    }
+  },
+  "workflow": {
+    "etapas": [
+      {
+        "id": 1,
+        "nome": "criação",
+        "status": "concluído"
+      },
+      {
+        "id": 2,
+        "nome": "validação",
+        "status": "concluído"
+      },
+      {
+        "id": 3,
+        "nome": "publicação",
+        "status": "em_andamento"
+      }
+    ],
+    "responsaveis": {
+      "primario": {
+        "id": 501,
+        "nome": "Ana Claudia"
+      },
+      "secundario": {
+        "id": 503,
+        "nome": "Marcos"
+      }
+    }
+  },
+  "limites": {
+    "saque": {
+      "diario": 2000,
+      "mensal": 12000
+    },
+    "transferencia": {
+      "diario": 4500,
+      "mensal": 35000
+    }
+  },
+  "metadata": {
+    "criado_em": "2026-04-01T12:00:00Z",
+    "atualizado_em": "2026-04-23T08:00:00Z",
+    "versao": 8,
+    "hash": "xyz789def000",
+    "origem": {
+      "sistema": "portal-admin-v2",
+      "modulo": "cadastro-avancado",
+      "ambiente": "prod"
+    }
+  }
+}

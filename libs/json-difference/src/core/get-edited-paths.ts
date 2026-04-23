@@ -1,5 +1,5 @@
 // Models
-import { EditedPath, StructPaths } from '../models/jsondiffer.model'
+import { EditedPath, StructPaths } from '../models/json-difference.model'
 import { ARRAY_SENTINEL, OBJECT_SENTINEL, unwrapSentinel } from '../helpers/unwrap-sentinel'
 
 /**

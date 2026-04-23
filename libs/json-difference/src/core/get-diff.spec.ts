@@ -1,8 +1,13 @@
 // Packages
+import { readFileSync } from 'fs'
+import { join } from 'path'
 import { getDiff } from '.'
 
 // Models
 import { Delta } from '../models/jsondiffer.model'
+
+const FIXTURE_DIR = join(__dirname, '..', '..', 'fixture')
+const loadFixture = (name: string): any => JSON.parse(readFileSync(join(FIXTURE_DIR, name), 'utf8'))
 
 describe('GetDiff function', () => {
   test('Should return the difference between two basic structures', () => {
@@ -388,5 +393,17 @@ describe('GetDiff function', () => {
 
     expect(result).toEqual(expectedResult)
     expect(lodashResult).toEqual(expectedLodashResult)
+  })
+
+  describe('With fixture files', () => {
+    const oldJson = loadFixture('oldJson.json')
+    const newJson = loadFixture('newJson.json')
+    const delta = loadFixture('delta.json')
+
+    test('Should compare newJson and oldJson', () => {
+      const result = getDiff(oldJson, newJson)
+
+      expect(result).toEqual(delta)
+    })
   })
 })

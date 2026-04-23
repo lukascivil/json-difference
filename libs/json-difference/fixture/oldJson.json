@@ -1,0 +1,247 @@
+{
+  "id": 1001,
+  "uuid": "550e8400-e29b-41d4-a716-446655440000",
+  "ativo": true,
+  "bloqueado": false,
+  "nome": "João da Silva",
+  "nome_social": "Joãozinho",
+  "apelido": "Jõao",
+  "descricao": "Usuário com acentuação: á, à, ã, â, é, ê, í, ó, ô, õ, ú, ü, ç.",
+  "observacao": "Linha 1\nLinha 2\nLinha 3",
+  "citacao": "Ele disse: \"ação concluída com êxito\".",
+  "caminho": "C:\\arquivos\\joao\\dados.json",
+  "url": "https://exemplo.com.br/perfil/joao?origem=ação&status=válido",
+  "email": "joao.silva+teste@example.com",
+  "telefone": "+55-11-99888-7766",
+  "cpf_mascarado": "***.123.456-**",
+  "idade": 34,
+  "altura": 1.78,
+  "peso": 82.45,
+  "saldo": 10500.9,
+  "percentual_conclusao": 99.95,
+  "numero_negativo": -45,
+  "zero": 0,
+  "nulo": null,
+  "string_vazia": "",
+  "array_vazio": [],
+  "objeto_vazio": {},
+  "unicode": "São Tomé e Príncipe | mañana | garçon | coração | infância | pingüim | 😊",
+  "palavras_especiais": {
+    "com_til": "não, maçã, órfão, limões",
+    "com_cedilha": "açaí, canção, preço, faça, endereço",
+    "idiomas": ["português", "español", "français", "Deutsch", "English"]
+  },
+  "datas_serializadas": {
+    "iso": "2026-04-23T10:30:45.000Z",
+    "br": "23/04/2026 07:30:45",
+    "somente_data": "2026-04-23"
+  },
+  "configuracoes": {
+    "tema": "escuro",
+    "idioma": "pt-BR",
+    "notificacoes": {
+      "email": true,
+      "sms": false,
+      "push": true,
+      "frequencia": "diária"
+    },
+    "privacidade": {
+      "perfil_publico": false,
+      "mostrar_email": false,
+      "mostrar_telefone": true
+    }
+  },
+  "enderecos": [
+    {
+      "tipo": "residencial",
+      "logradouro": "Rua das Açucenas",
+      "numero": "123",
+      "complemento": "Apto 45B",
+      "bairro": "Jardim São Luís",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "pais": "Brasil",
+      "cep": "01234-567",
+      "referencia": "Próximo à estação"
+    },
+    {
+      "tipo": "comercial",
+      "logradouro": "Av. Brigadeiro Faria Lima",
+      "numero": "2000",
+      "complemento": null,
+      "bairro": "Itaim Bibi",
+      "cidade": "São Paulo",
+      "estado": "SP",
+      "pais": "Brasil",
+      "cep": "04538-132",
+      "referencia": "Torre norte"
+    }
+  ],
+  "contatos_emergencia": [
+    {
+      "nome": "Márcia",
+      "parentesco": "irmã",
+      "telefones": ["+55-11-90000-1111", "+55-11-90000-2222"]
+    },
+    {
+      "nome": "José",
+      "parentesco": "pai",
+      "telefones": ["+55-21-97777-8888"]
+    }
+  ],
+  "documentos": {
+    "rg": {
+      "numero": "12.345.678-9",
+      "uf": "SP",
+      "emissao": "2018-02-10"
+    },
+    "passaporte": {
+      "numero": "AB123456",
+      "validade": "2030-12-01"
+    }
+  },
+  "tags": ["cliente", "premium", "ação", "São Paulo", "teste-json"],
+  "pontuacoes": [10, 9.5, 8, 7.75, 0, -1],
+  "preferencias": {
+    "categorias": ["tecnologia", "livros", "música", "viagens"],
+    "cores": ["azul", "verde", "cinza"],
+    "newsletter_ids": [101, 102, 205]
+  },
+  "historico_acessos": [
+    {
+      "data": "2026-04-20T08:15:00Z",
+      "ip": "192.168.0.10",
+      "dispositivo": {
+        "tipo": "desktop",
+        "sistema": "macOS",
+        "navegador": "Chrome"
+      },
+      "localizacao": {
+        "cidade": "São Paulo",
+        "pais": "Brasil",
+        "coords": {
+          "lat": -23.55052,
+          "lng": -46.633308
+        }
+      }
+    },
+    {
+      "data": "2026-04-21T19:45:10Z",
+      "ip": "10.0.0.5",
+      "dispositivo": {
+        "tipo": "mobile",
+        "sistema": "Android",
+        "navegador": "Chrome Mobile"
+      },
+      "localizacao": {
+        "cidade": "Campinas",
+        "pais": "Brasil",
+        "coords": {
+          "lat": -22.90556,
+          "lng": -47.06083
+        }
+      }
+    }
+  ],
+  "produtos": [
+    {
+      "sku": "SKU-001",
+      "nome": "Café Torrado e Moído",
+      "preco": 18.9,
+      "estoque": 120,
+      "atributos": {
+        "peso_gramas": 500,
+        "origem": "Minas Gerais",
+        "organico": true
+      },
+      "variacoes": [
+        {
+          "nome": "tradicional",
+          "ativo": true
+        },
+        {
+          "nome": "forte",
+          "ativo": false
+        }
+      ]
+    },
+    {
+      "sku": "SKU-002",
+      "nome": "Pão de Queijo",
+      "preco": 24.5,
+      "estoque": 0,
+      "atributos": {
+        "peso_gramas": 1000,
+        "congelado": true
+      },
+      "variacoes": []
+    }
+  ],
+  "matriz_mista": [
+    [1, 2, 3],
+    ["um", "dois", "três"],
+    [true, false, null],
+    [
+      {
+        "chave": "valor"
+      },
+      {
+        "outra": 2
+      }
+    ]
+  ],
+  "chaves_especiais": {
+    "nome completo": "João da Silva",
+    "endereço-principal": "Rua das Açucenas, 123",
+    "123campo": "valor numérico na chave",
+    "@metadata": {
+      "versão": "1.0.0",
+      "origem": "sistema-legado"
+    }
+  },
+  "workflow": {
+    "etapas": [
+      {
+        "id": 1,
+        "nome": "criação",
+        "status": "concluído"
+      },
+      {
+        "id": 2,
+        "nome": "validação",
+        "status": "pendente"
+      }
+    ],
+    "responsaveis": {
+      "primario": {
+        "id": 501,
+        "nome": "Ana Cláudia"
+      },
+      "secundario": {
+        "id": 502,
+        "nome": "Luís"
+      }
+    }
+  },
+  "limites": {
+    "saque": {
+      "diario": 1500,
+      "mensal": 10000
+    },
+    "transferencia": {
+      "diario": 5000,
+      "mensal": 40000
+    }
+  },
+  "metadata": {
+    "criado_em": "2026-04-01T12:00:00Z",
+    "atualizado_em": "2026-04-22T22:10:00Z",
+    "versao": 7,
+    "hash": "abc123def456",
+    "origem": {
+      "sistema": "portal-admin",
+      "modulo": "cadastro",
+      "ambiente": "homolog"
+    }
+  }
+}

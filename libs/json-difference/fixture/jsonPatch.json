@@ -1,35 +1,11 @@
 [
   {
     "op": "remove",
-    "path": "/contatos_emergencia/0/telefones/1"
-  },
-  {
-    "op": "remove",
     "path": "/produtos/1/atributos/congelado"
   },
   {
     "op": "remove",
-    "path": "/palavras_especiais/idiomas/3"
-  },
-  {
-    "op": "remove",
-    "path": "/palavras_especiais/idiomas/4"
-  },
-  {
-    "op": "remove",
-    "path": "/documentos/passaporte/numero"
-  },
-  {
-    "op": "remove",
-    "path": "/documentos/passaporte/validade"
-  },
-  {
-    "op": "remove",
-    "path": "/preferencias/categorias/3"
-  },
-  {
-    "op": "remove",
-    "path": "/preferencias/cores/2"
+    "path": "/contatos_emergencia/0/telefones/1"
   },
   {
     "op": "remove",
@@ -37,7 +13,31 @@
   },
   {
     "op": "remove",
-    "path": "/documentos/passaporte"
+    "path": "/preferencias/cores/2"
+  },
+  {
+    "op": "remove",
+    "path": "/preferencias/categorias/3"
+  },
+  {
+    "op": "remove",
+    "path": "/palavras_especiais/idiomas/4"
+  },
+  {
+    "op": "remove",
+    "path": "/palavras_especiais/idiomas/3"
+  },
+  {
+    "op": "remove",
+    "path": "/documentos/passaporte/validade"
+  },
+  {
+    "op": "remove",
+    "path": "/documentos/passaporte/numero"
+  },
+  {
+    "op": "remove",
+    "path": "/pontuacoes/5"
   },
   {
     "op": "remove",
@@ -45,7 +45,7 @@
   },
   {
     "op": "remove",
-    "path": "/pontuacoes/5"
+    "path": "/documentos/passaporte"
   },
   {
     "op": "replace",

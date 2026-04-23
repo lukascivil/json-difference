@@ -4,7 +4,17 @@ import { Delta, JsonPatch, JsonPatchAdd, JsonPatchRemove, JsonPatchReplace } fro
 // Helpers
 import { toJsonPointer } from '../helpers/to-json-pointer'
 
-const byDepthDesc = (a: JsonPatchRemove, b: JsonPatchRemove): number => b.path.split('/').length - a.path.split('/').length
+const byRemoveOrder = (jsonPatchRemoveA: JsonPatchRemove, jsonPatchRemoveB: JsonPatchRemove): number => {
+  const depthA = jsonPatchRemoveA.path.split('/').length
+  const depthB = jsonPatchRemoveB.path.split('/').length
+  if (depthA !== depthB) {
+    return depthB - depthA
+  }
+  // Same depth: order descending so that higher array indices are removed
+  // first and subsequent removes at lower indices stay valid (splice shifts
+  // later elements left).
+  return jsonPatchRemoveB.path.localeCompare(jsonPatchRemoveA.path, undefined, { numeric: true })
+}
 
 /**
  * Build an RFC 6902 JSON Patch that describes the transformation from the
@@ -15,14 +25,15 @@ const byDepthDesc = (a: JsonPatchRemove, b: JsonPatchRemove): number => b.path.s
  *
  * Operation ordering is chosen so that the patch can be applied sequentially
  * against the original document:
- *   1. `remove` ops, deepest path first (so a parent is not removed before its children)
+ *   1. `remove` ops, deepest path first; on ties, descending by numeric token
+ *      so array indices shift correctly (remove `/arr/4` before `/arr/3`)
  *   2. `replace` ops in delta order
  *   3. `add` ops in delta order (DFS already places parents before children)
  */
 export const generateJsonPatch = (delta: Delta): Array<JsonPatch> => {
   const removeOps: Array<JsonPatchRemove> = delta.removed
     .map(([path]) => ({ op: 'remove' as const, path: toJsonPointer(path) }))
-    .sort(byDepthDesc)
+    .sort(byRemoveOrder)
 
   const replaceOps: Array<JsonPatchReplace> = delta.edited.map(([path, , newValue]) => ({
     op: 'replace' as const,

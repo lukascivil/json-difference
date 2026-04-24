@@ -24,6 +24,10 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
+      - name: Build
+        run: |
+          yarn nx run-many --target=build
+
       - name: Lint
         run: yarn nx run-many --target=lint
 

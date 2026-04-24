@@ -13,3 +13,22 @@ export interface Delta {
 export interface JsonDiffOptions {
   isLodashLike?: boolean
 }
+
+export interface JsonPatchRemove {
+  op: 'remove'
+  path: string
+}
+
+export interface JsonPatchReplace {
+  op: 'replace'
+  path: string
+  value: any
+}
+
+export interface JsonPatchAdd {
+  op: 'add'
+  path: string
+  value: any
+}
+
+export type JsonPatch = JsonPatchRemove | JsonPatchReplace | JsonPatchAdd

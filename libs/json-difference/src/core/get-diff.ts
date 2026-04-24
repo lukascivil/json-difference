@@ -4,8 +4,8 @@ import { getPathsDiff } from './get-paths-diff'
 import { getStructPaths } from './get-struct-paths'
 
 // Models
-import { Delta, JsonDiffOptions } from '../models/jsondiffer.model'
 import sanitizeDelta from '../helpers/sanitize-delta'
+import { Delta, JsonDiffOptions } from '../models/json-difference.model'
 
 const defaultOptions: JsonDiffOptions = {
   isLodashLike: false

@@ -1,5 +1,5 @@
 // Models
-import { PathsDiff, StructPaths } from '../models/jsondiffer.model'
+import { PathsDiff, StructPaths } from '../models/json-difference.model'
 import { unwrapSentinel } from '../helpers/unwrap-sentinel'
 
 /**
@@ -17,7 +17,7 @@ import { unwrapSentinel } from '../helpers/unwrap-sentinel'
  * const result = getPathsDiff(oldStruct, newStruct)
  *
  *  console.log(result)
- *  // Output: ["2": "tea"]
+ *  // Output: [["2", "tea"]]
  */
 export const getPathsDiff = (oldStructPaths: StructPaths, newStructPaths: StructPaths): Array<PathsDiff> => {
   const diff: Array<PathsDiff> = []

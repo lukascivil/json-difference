@@ -7,7 +7,8 @@
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "{projectRoot}/dist"
+        "outputPath": "{projectRoot}/dist",
+        "generatePackageJson": false
       }
     },
     "build-browser": {
@@ -15,7 +16,8 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "{projectRoot}/dist.browser",
-        "configFile": "{projectRoot}/vite.config.browser.mts"
+        "configFile": "{projectRoot}/vite.config.browser.mts",
+        "generatePackageJson": false
       }
     },
     "build-to-s3": {

@@ -11,11 +11,13 @@ on:
       dry_run:
         type: boolean
         description: |
-          Dry run: preview versioning/publish without tagging, publishing, or deploying to S3.
+          Dry run: preview versioning/publish without tagging, publishing, or deploying.
 
           nx release decides which packages need a bump from conventional commits and runs the steps for the monorepo:
           - json-difference: published to npm and browser bundle deployed to S3
           - json-difference-cli: published to npm
+          - playground: versioned/tagged/changelogged (private, not published to npm) and deployed to GitHub Pages
+          - mcp-json-diff: versioned/tagged/changelogged (private, not published to npm); in-repo json-difference dep kept in sync
         default: false
         required: false
 
@@ -87,3 +89,12 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Deploy Playground to Github Pages 🚀
+        if: github.event.inputs.dry_run != 'true'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: chore/gh-pages
+          target-folder: .
+          folder: apps/playground/dist
+          token: ${{ secrets.GITHUB_TOKEN }}

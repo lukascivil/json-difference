@@ -24,6 +24,10 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
+      - name: Build
+        run: |
+          yarn nx run-many --target=build
+
       - name: Lint
         run: yarn nx run-many --target=lint
 
@@ -37,15 +41,3 @@ jobs:
         uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-
-      - name: Build
-        run: |
-          yarn nx run-many --target=build --projects=playground
-
-      - name: Deploy Playground to Github Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: chore/gh-pages
-          target-folder: .
-          folder: apps/playground/dist
-          token: ${{ secrets.GITHUB_TOKEN }}

@@ -11,28 +11,6 @@
         "tsConfig": "{projectRoot}/tsconfig.lib.json"
       }
     },
-    "version": {
-      "executor": "@jscutlery/semver:version",
-      "options": {
-        "postTargets": ["json-difference-cli:github", "json-difference-cli:npm"],
-        "baseBranch": "master",
-        "syncVersions": false,
-        "push": true
-      }
-    },
-    "github": {
-      "executor": "@jscutlery/semver:github",
-      "options": {
-        "tag": "${tag}",
-        "notes": "${notes}"
-      }
-    },
-    "npm": {
-      "executor": "ngx-deploy-npm:deploy",
-      "access": "public",
-      "distFolderPath": "{projectRoot}",
-      "buildTarget": "json-difference-cli:build"
-    },
     "install-local": {
       "executor": "nx:run-commands",
       "options": {

@@ -60,7 +60,7 @@ yarn nx run mcp-json-diff:test-browser       # open @modelcontextprotocol/inspec
 yarn nx run json-difference-cli:install-local # build CLI and `npm install -g` it
 
 yarn graph                                   # full dep graph; yarn graph:affected for subset
-yarn release[:dry-run]                       # per-project semver (do not run casually)
+yarn release[:dry-run]                       # nx release: version + changelog + publish (do not run casually)
 ```
 
 The `claude` script (`yarn claude`) builds the MCP server then launches Claude Code with it available — `.mcp.json` points at `tools/mcp-json-diff/bin/src/index.js`, so the MCP server must be built before it will respond.
@@ -104,7 +104,9 @@ Changing a project's tags in `project.json` changes who can import it — update
 
 # Release flow
 
-Each publishable lib versions independently via `@jscutlery/semver` → `ngx-deploy-npm` → GitHub release, driven by **conventional commits**. `nx.json`'s `release.version.preVersionCommand` runs `nx run-many -t build` first. Do not hand-edit versions; do not amend published commits. CI workflows live in `.github/workflows/` (`ci.yml`, `cd.yml`, `release-and-publish.yml`).
+Each publishable lib (`json-difference`, `json-difference-cli`) versions **independently** via the built-in `nx release` (config in `nx.json` → `release`). Driven by **conventional commits**: `feat` → minor, `fix`/`docs`/`chore`/`refactor` → patch, `BREAKING CHANGE` → major (custom mapping in `release.conventionalCommits.types`). Tag pattern is `{projectName}-{version}` (no leading `v`). `release.version.preVersionCommand` runs `nx run-many -t build` first. `nx release` handles version + CHANGELOG.md + git commit/tag/push + GitHub release + npm publish in one shot.
+
+Run via `yarn release` (= `yarn nx release`); `yarn release:dry-run` previews. Do not hand-edit versions; do not amend published commits. CI workflows live in `.github/workflows/` (`ci.yml`, `cd.yml`, `release-and-publish.yml`).
 
 # Conventions
 

@@ -55,26 +55,24 @@ jobs:
       - name: Yarn Install
         run: yarn install --immutable
 
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        id: setSHAs
-        uses: nrwl/nx-set-shas@v5
-        with:
-          main-branch-name: 'master'
-
       - name: Set npmrc
         run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
-
-      - run: ls -a
-      - run: |
-          echo "BASE: ${{ steps.setSHAs.outputs.base }}"
-          echo "HEAD: ${{ steps.setSHAs.outputs.head }}"
 
       - name: Check npm credentials
         run: npm whoami
 
-      - name: Version And Publishment
+      - name: Release & Publish
         shell: bash
-        run: yarn ${{ github.event.inputs.dry_run == 'true' && 'release:dry-run' || 'release' }} ${{ github.event.inputs.name == 'all' && '--all' || '--projects=' }}${{ github.event.inputs.name == 'all' && ' ' || github.event.inputs.name }}
+        run: |
+          PROJECTS_FLAG=""
+          if [ "${{ github.event.inputs.name }}" != "all" ]; then
+            PROJECTS_FLAG="--projects=${{ github.event.inputs.name }}"
+          fi
+          DRY_RUN_FLAG=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            DRY_RUN_FLAG="--dry-run"
+          fi
+          yarn nx release --yes $PROJECTS_FLAG $DRY_RUN_FLAG
 
       - name: Tag last-release
         if: github.event.inputs.dry_run != 'true'

@@ -1,3 +1,9 @@
+## 1.9.3 (2026-04-24)
+
+### 🧱 Updated Dependencies
+
+- Updated json-difference to 1.16.3
+
 ## 1.9.2 (2026-04-24)
 
 ### Documentation

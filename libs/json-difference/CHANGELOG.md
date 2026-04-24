@@ -1,3 +1,13 @@
+## 1.16.3 (2026-04-24)
+
+### Chores
+
+- include playground in nx release pipeline ([#99](https://github.com/lukascivil/json-difference/pull/99))
+
+### ❤️ Thank You
+
+- lucas cordeiro da Silva @lukascivil
+
 ## 1.16.2 (2026-04-24)
 
 ### Refactors

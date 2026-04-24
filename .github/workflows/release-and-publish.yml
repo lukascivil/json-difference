@@ -17,6 +17,7 @@ on:
           - json-difference: published to npm and browser bundle deployed to S3
           - json-difference-cli: published to npm
           - playground: versioned/tagged/changelogged (private, not published to npm) and deployed to GitHub Pages
+          - mcp-json-diff: versioned/tagged/changelogged (private, not published to npm); in-repo json-difference dep kept in sync
         default: false
         required: false
 

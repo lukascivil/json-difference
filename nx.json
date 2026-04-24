@@ -26,7 +26,7 @@
   "packageManager": "yarn",
   "analytics": false,
   "release": {
-    "projects": ["json-difference", "json-difference-cli", "playground"],
+    "projects": ["json-difference", "json-difference-cli", "playground", "mcp-json-diff"],
     "projectsRelationship": "independent",
     "releaseTagPattern": "{projectName}-{version}",
     "version": {

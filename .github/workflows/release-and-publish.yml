@@ -8,20 +8,14 @@ env:
 on:
   workflow_dispatch:
     inputs:
-      name:
-        type: choice
-        description: |
-          Which package to release?
-          - (json-difference) will be published to npm and trigger deploy to S3
-          - (json-difference-cli) will be published to npm
-        options:
-          - json-difference
-          - json-difference-cli
-          - all
-        required: true
       dry_run:
         type: boolean
-        description: 'Dry run: preview versioning/publish without tagging, publishing, or deploying to S3'
+        description: |
+          Dry run: preview versioning/publish without tagging, publishing, or deploying to S3.
+
+          nx release decides which packages need a bump from conventional commits and runs the steps for the monorepo:
+          - json-difference: published to npm and browser bundle deployed to S3
+          - json-difference-cli: published to npm
         default: false
         required: false
 
@@ -64,15 +58,11 @@ jobs:
       - name: Release & Publish
         shell: bash
         run: |
-          PROJECTS_FLAG=""
-          if [ "${{ github.event.inputs.name }}" != "all" ]; then
-            PROJECTS_FLAG="--projects=${{ github.event.inputs.name }}"
-          fi
           DRY_RUN_FLAG=""
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             DRY_RUN_FLAG="--dry-run"
           fi
-          yarn nx release --yes $PROJECTS_FLAG $DRY_RUN_FLAG
+          yarn nx release --yes $DRY_RUN_FLAG
 
       - name: Tag last-release
         if: github.event.inputs.dry_run != 'true'
@@ -80,12 +70,11 @@ jobs:
         run: git tag -f last-release
 
       - name: Build Apps to S3
-        if: github.event.inputs.name == 'json-difference' || github.event.inputs.name == 'all'
-        run: |
-          yarn nx run-many --target=build-to-s3 --projects=json-difference
+        if: github.event.inputs.dry_run != 'true'
+        run: yarn nx run-many --target=build-to-s3 --projects=json-difference
 
       - name: Deploy Json Difference to Amazon S3 🚀
-        if: github.event.inputs.dry_run != 'true' && (github.event.inputs.name == 'json-difference' || github.event.inputs.name == 'all')
+        if: github.event.inputs.dry_run != 'true'
         uses: reggionick/s3-deploy@v4
         with:
           folder: libs/json-difference/dist.browser-s3

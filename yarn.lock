@@ -10329,7 +10329,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-difference@npm:^1.16.2":
+"json-difference@npm:1.16.2":
   version: 1.16.2
   resolution: "json-difference@npm:1.16.2"
   checksum: 10/5fbd64efdbfd917cc9120ba8352cd1e5d685471156502df7c909d4848884f321f2b1695542cc57121a84e4e74e6acc4e5714aed35a6b6986ce7e4837139e9a01
@@ -12456,7 +12456,7 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.5.2"
     framer-motion: "npm:^12.38.0"
     jest: "npm:^30.3.0"
-    json-difference: "npm:^1.16.2"
+    json-difference: "npm:1.16.2"
     jsonc-eslint-parser: "npm:^3.1.0"
     lucide-react: "npm:^1.8.0"
     monaco-editor: "npm:^0.55.1"

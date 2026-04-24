@@ -1,6 +1,6 @@
 {
   "name": "json-difference-cli",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "author": "lukascivil",
   "homepage": "https://github.com/lukascivil/json-difference#readme",
   "description": "json-difference cli lib",
@@ -19,7 +19,7 @@
     "json-difference-cli": "./bin/src/index.js"
   },
   "dependencies": {
-    "json-difference": "1.16.1",
+    "json-difference": "1.16.2",
     "yargs": "^17.7.2"
   }
 }

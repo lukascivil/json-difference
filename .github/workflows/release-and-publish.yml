@@ -16,6 +16,7 @@ on:
           nx release decides which packages need a bump from conventional commits and runs the steps for the monorepo:
           - json-difference: published to npm and browser bundle deployed to S3
           - json-difference-cli: published to npm
+          - playground: versioned/tagged/changelogged only (private, not published to npm)
         default: false
         required: false
 

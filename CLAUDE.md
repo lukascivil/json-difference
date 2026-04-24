@@ -104,7 +104,7 @@ Changing a project's tags in `project.json` changes who can import it — update
 
 # Release flow
 
-Each publishable lib (`json-difference`, `json-difference-cli`) versions **independently** via the built-in `nx release` (config in `nx.json` → `release`). Driven by **conventional commits**: `feat` → minor, `fix`/`docs`/`chore`/`refactor` → patch, `BREAKING CHANGE` → major (custom mapping in `release.conventionalCommits.types`). Tag pattern is `{projectName}-{version}` (no leading `v`). `release.version.preVersionCommand` runs `nx run-many -t build` first. `nx release` handles version + CHANGELOG.md + git commit/tag/push + GitHub release + npm publish in one shot.
+`json-difference`, `json-difference-cli`, and `playground` each version **independently** via the built-in `nx release` (config in `nx.json` → `release`). Driven by **conventional commits**: `feat` → minor, `fix`/`docs`/`chore`/`refactor` → patch, `BREAKING CHANGE` → major (custom mapping in `release.conventionalCommits.types`). Tag pattern is `{projectName}-{version}` (no leading `v`). `release.version.preVersionCommand` runs `nx run-many -t build` first. `nx release` handles version + CHANGELOG.md + git commit/tag/push + GitHub release + npm publish in one shot. `playground` is marked `"private": true` in its `package.json`, so it gets versioned/tagged/changelogged but is skipped by `npm publish`.
 
 Run via `yarn release` (= `yarn nx release`); `yarn release:dry-run` previews. Do not hand-edit versions; do not amend published commits. CI workflows live in `.github/workflows/` (`ci.yml`, `cd.yml`, `release-and-publish.yml`).
 
